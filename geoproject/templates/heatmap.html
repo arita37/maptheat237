@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+  <head>
+    <title>Beacon Map Selection</title>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <link rel="stylesheet" href='{% static "css/style.css" %}'>
+
+    <script>
+     document.oncontextmenu= function (e) {
+       console.log(e.button);
+       if (e.button == 2) {
+         e.preventDefault();
+         return false;}}
+    </script>
+  </head>
+
+  <body>
+  <div class="container">
+    <div class="pac-card col-md-12">
+      <div>
+        <div id="title">Beacon Map Selection</div>
+        <div id="type-selector" class="pac-controls">
+
+<!---
+          <input type="radio" name="type" id="changetype-all" checked="checked">
+          <label for="changetype-all">All</label>
+
+          <input type="radio" name="type" id="changetype-establishment">
+          <label for="changetype-establishment">Establishments</label>
+
+          <input type="radio" name="type" id="changetype-address">
+          <label for="changetype-address">Addresses</label>
+
+
+          <input type="radio" name="type" id="changetype-geocode">
+          <label for="changetype-geocode">Geocodes</label>
+        </div>
+        <div id="strict-bounds-selector" class="pac-controls">
+          <input type="checkbox" id="use-strict-bounds" value="">
+          <label for="use-strict-bounds">Strict Bounds</label>
+        </div>
+--->
+        <div id="alert_place"></div>
+      </div>
+
+
+      <div id="pac-container"><input id="pac-input" type="text" placeholder="Enter a location"</div>
+
+      <input class="btn btn-danger btn-lg" type="button" value="Show Beacon"            onclick="beacon_show();"       />
+      <input class="btn btn-danger btn-lg" type="button" value="Clean Map"              onclick="beacon_delete();"     />
+      <input class="btn btn-danger btn-lg" type="button" value="Clean CV Beacon"        onclick="beacon_delete_target();"     />
+      <input class="btn btn-danger btn-lg" type="button" value="Compute Best Beacon"    onclick="beacon_get_best();" />
+
+
+<!--
+      <input class="btn btn-danger btn-lg" type="button" value="Save  CV Beacon"        onclick="beacon_save_target();"       />
+
+      <input class="btn btn-danger btn-lg" type="button" value="Select best beacon" onclick="insert_points();" />
+      <input class="btn btn-danger btn-lg" type="button" value="Show Beacon" onclick="send_points();" />
+      <input class="btn btn-danger btn-lg" type="button" value="Remove Beacons" onclick="deleteMarkers();" />
+      <input class="btn btn-danger btn-lg" type="button" value="Select best beacon" onclick="insert_points();" />
+--->
+
+    </div>
+
+    <br><br><br>
+    <div id="map" class="col-md-12"></div>
+
+
+    <br><br><br>
+    <div id="infowindow-content">
+      <img src="" width="16" height="16" id="place-icon">
+      <span id="place-name"  class="title"></span><br>
+      <span id="place-address"></span>
+    </div>
+
+
+    <br><br><br>
+    <div class="col-md-12">
+	    <table class="table table-inverse table-bordered">
+		  <thead>
+		    <tr>
+		      <th>Latitude</th>
+		      <th>Longitude</th>
+		      <th>Address</th>
+		    </tr>
+		  </thead>
+          <!--  Data to insert      --->
+		  <tbody id="data"></tbody>
+		</table>
+	</div>
+
+    </div></div>
+
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAmWX0-q2XOLGVD69-MQQSM-r8-9R1CWi4&libraries=places&callback=initMap"
+        async defer></script>
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+
+    <script src='maptheat237\geoproject\static\gg\map_js_css/custom.js'></script>
+   	<script src="https://cdn.jsdelivr.net/lodash/4.17.4/lodash.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+
+
+  </body>
+</html>
+
+
+
+

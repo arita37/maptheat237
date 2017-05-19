@@ -1,0 +1,142 @@
+
+
+#map {
+        height: 650px;
+      }
+#description {
+        font-family: Roboto;
+        font-size: 15px;
+        font-weight: 300;
+      }
+
+#infowindow-content .title {
+        font-weight: bold;
+      }
+
+#infowindow-content {
+        display: none;
+      }
+
+#map #infowindow-content {
+        display: inline;
+      }
+
+      .pac-card {
+        margin: 10px 10px 0 0;
+        border-radius: 2px 0 0 2px;
+        box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        outline: none;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+        background-color: #fff;
+        font-family: Roboto;
+      }
+
+      #pac-container {
+        padding-bottom: 12px;
+        margin-right: 12px;
+      }
+
+      .pac-controls {
+        display: inline-block;
+        padding: 5px 11px;
+      }
+
+      .pac-controls label {
+        font-family: Roboto;
+        font-size: 13px;
+        font-weight: 300;
+      }
+
+      #pac-input {
+        background-color: #fff;
+        font-family: Roboto;
+        font-size: 15px;
+        font-weight: 300;
+        margin-left: 12px;
+        padding: 0 11px 0 13px;
+        text-overflow: ellipsis;
+        width: 400px;
+      }
+
+      #pac-input:focus {
+        border-color: #4d90fe;
+      }
+
+
+
+.btn-group-lg>.btn,.btn-lg{
+	padding:.25rem 0.5rem;
+	font-size:0.85rem;
+	border-radius:.3rem
+}
+
+.btn-group-sm>.btn,.btn-sm{
+	padding:.25rem .5rem;
+	font-size:.875rem;
+	border-radius:.2rem
+}
+
+
+
+.btn-danger {
+    color: #FFF;
+    background-color: rgba(162, 26, 22, 1);
+    border-color: #D9534F;
+}
+
+
+#title {
+    color: #FFF;
+    background-color: rgba(137, 28, 28, 1);
+    font-size: 20px;
+    font-weight: 500;
+    padding: 3px 5px;
+}
+
+
+
+
+
+
+
+
+
+/* ----------------------------------------------Homepage Content------------------------------------- */
+#homecontent{padding:30px 0 25px 0;}
+#homecontent ul{display:inline; margin:0; padding:0; list-style:none;}
+#homecontent li{display:block; float:left; width:290px; margin:0 45px 0 0;}
+#homecontent li.last{margin-right:0;}
+#homecontent h2{margin-bottom:15px;}
+#homecontent p{margin:0 0 20px 0; line-height:1.4em;}
+#homecontent p.readmore{margin-bottom:5px;}
+#homecontent p.readmore a{margin-bottom:0; padding:5px 15px; font-weight:bold; line-height:normal; color:#C80000; background-color:#F0F0F0;}
+#imageline{padding:30px 0; border-top:1px dotted #999999;}
+#imageline ul{display:inline; margin:0; padding:0; list-style:none;}
+#imageline li{display:block; float:left; margin:0 10px 0 0; padding:4px; border:1px solid #999999;}
+#imageline li.last{margin-right:0;}
+
+
+
+
+/* ----------------------------------------------Content------------------------------------- */
+
+#container{padding:30px 0; line-height:1.4em;}
+#container a{color:#C80000; background-color:#FFFFFF;}
+#container h1, #container h2, #container h3, #container h4, #container h5, #container h6{margin-bottom:15px; padding-bottom:8px; border-bottom:1px dotted #CCCCCC;}
+#content{display:block; float:left; width:630px;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

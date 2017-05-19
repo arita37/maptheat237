@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<!-- saved from url=(0066)http://apps.socib.es/Leaflet.TimeDimension/examples/example12.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Leaflet TimeDimension</title>
+        
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <link rel="stylesheet" href="./Leaflet TimeDimension_files/default.min.css">
+        <link rel="stylesheet" href="./Leaflet TimeDimension_files/leaflet.css">
+        <link rel="stylesheet" href="./Leaflet TimeDimension_files/Control.FullScreen.min.css">
+        <link rel="stylesheet" href="./Leaflet TimeDimension_files/leaflet.timedimension.control.css">
+        <link rel="stylesheet" href="./Leaflet TimeDimension_files/style.css">
+        <style>
+        a.leaflet-control-timecontrol.timecontrol-date {
+            width: 120px;
+            padding-left: 30px !important;
+            font-weight: bold;
+        }
+        </style>
+    </head>
+    <body class="">
+        <div class="container">
+            <div id="header">
+                <h1>Leaflet TimeDimension example 12</h1>                
+                <h2>Noise-Commercial complaints from <a href="https://nycopendata.socrata.com/Social-Services/311-Service-Requests-from-2010-to-Present/erm2-nwe9">NYC OpenData</a></h2>
+            </div>
+            <div id="map" class="map leaflet-container leaflet-touch leaflet-fade-anim leaflet-grab leaflet-touch-drag leaflet-touch-zoom" tabindex="0" style="position: relative;"><div class="leaflet-pane leaflet-map-pane" style="transform: translate3d(153px, -131px, 0px);"><div class="leaflet-pane leaflet-tile-pane"><div class="leaflet-layer " style="z-index: 1; opacity: 1;"><div class="leaflet-tile-container leaflet-zoom-animated" style="z-index: 18; transform: translate3d(221px, 441px, 0px) scale(0.25);"></div><div class="leaflet-tile-container leaflet-zoom-animated" style="z-index: 20; transform: translate3d(0px, 0px, 0px) scale(1);"><img alt="" src="./Leaflet TimeDimension_files/47.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(73px, 272px, 0px); opacity: 1;"><img alt="" src="./Leaflet TimeDimension_files/46.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(73px, 16px, 0px); opacity: 1;"><img alt="" src="./Leaflet TimeDimension_files/47(1).png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(-183px, 272px, 0px); opacity: 1;"><img alt="" src="./Leaflet TimeDimension_files/47(2).png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(329px, 272px, 0px); opacity: 1;"><img alt="" src="./Leaflet TimeDimension_files/48.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(73px, 528px, 0px); opacity: 1;"><img alt="" src="./Leaflet TimeDimension_files/46(1).png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(-183px, 16px, 0px); opacity: 1;"><img alt="" src="./Leaflet TimeDimension_files/46(2).png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(329px, 16px, 0px); opacity: 1;"><img alt="" src="./Leaflet TimeDimension_files/48(1).png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(-183px, 528px, 0px); opacity: 1;"><img alt="" src="./Leaflet TimeDimension_files/48(2).png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(329px, 528px, 0px); opacity: 1;"></div></div></div><div class="leaflet-pane leaflet-shadow-pane"></div><div class="leaflet-pane leaflet-overlay-pane"><div class="leaflet-zoom-hide" style="width: 731px; height: 500px; position: relative; transform: translate(-153px, 131px);"><canvas class="heatmap-canvas" width="731" height="500" style="position: absolute; left: 0px; top: 0px;"></canvas></div></div><div class="leaflet-pane leaflet-marker-pane"></div><div class="leaflet-pane leaflet-tooltip-pane"></div><div class="leaflet-pane leaflet-popup-pane"></div><div class="leaflet-proxy leaflet-zoom-animated" style="transform: translate3d(9611.5px, 12141px, 0px) scale(64);"></div></div><div class="leaflet-control-container"><div class="leaflet-top leaflet-left"><div class="leaflet-control-zoom leaflet-bar leaflet-control"><a class="leaflet-control-zoom-in" href="http://apps.socib.es/Leaflet.TimeDimension/examples/example12.html#" title="Zoom in">+</a><a class="leaflet-control-zoom-out" href="http://apps.socib.es/Leaflet.TimeDimension/examples/example12.html#" title="Zoom out">-</a><a class="leaflet-control-zoom-fullscreen fullscreen-icon" href="http://apps.socib.es/Leaflet.TimeDimension/examples/example12.html#" title="Full Screen" style="outline: none;"></a></div></div><div class="leaflet-top leaflet-right"></div><div class="leaflet-bottom leaflet-left"><div class="leaflet-bar leaflet-bar-horizontal leaflet-bar-timecontrol leaflet-control"><a class="leaflet-control-timecontrol timecontrol-backward" href="http://apps.socib.es/Leaflet.TimeDimension/examples/example12.html#" title="Backward"></a><a class="leaflet-control-timecontrol timecontrol-play play" href="http://apps.socib.es/Leaflet.TimeDimension/examples/example12.html#" title="Play"></a><a class="leaflet-control-timecontrol timecontrol-forward" href="http://apps.socib.es/Leaflet.TimeDimension/examples/example12.html#" title="Forward"></a><a class="leaflet-control-timecontrol timecontrol-date utc" href="http://apps.socib.es/Leaflet.TimeDimension/examples/example12.html#" title="UTC Time">May 2013</a><div class="leaflet-control-timecontrol timecontrol-slider timecontrol-dateslider"><div class="slider"><div class="knob main" style="transform: translate3d(89.8876px, 0px, 0px);"></div></div></div><div class="leaflet-control-timecontrol timecontrol-slider timecontrol-speed"><span class="speed">1fps</span><div class="slider"><div class="knob" style="transform: translate3d(5px, 0px, 0px);"></div></div></div></div></div><div class="leaflet-bottom leaflet-right"><div class="leaflet-control-attribution leaflet-control"><a href="http://leafletjs.com/" title="A JS library for interactive maps">Leaflet</a> | Map tiles by <a href="http://stamen.com/">Stamen Design</a>, under <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a>. Data by <a href="http://openstreetmap.org/">OpenStreetMap</a>, under <a href="http://www.openstreetmap.org/copyright">ODbL</a>., <a href="https://nycopendata.socrata.com/Social-Services/311-Service-Requests-from-2010-to-Present/erm2-nwe9">NYC OpenData</a></div></div></div></div>
+
+
+            <h2>Code</h2>
+            <pre><code class="javascript hljs" id="code"><span class="hljs-built_in">Date</span>.prototype.format = <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(mask, utc)</span> </span>{
+    <span class="hljs-keyword">return</span> dateFormat(<span class="hljs-keyword">this</span>, mask, utc);
+};
+
+<span class="hljs-comment">// Attibution: SODA API requests based on this example: https://github.com/chriswhong/soda-leaflet</span>
+
+L.TimeDimension.Layer.SODAHeatMap = L.TimeDimension.Layer.extend({
+
+    initialize: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(options)</span> </span>{
+        <span class="hljs-keyword">var</span> heatmapCfg = {
+            radius: <span class="hljs-number">15</span>,
+            maxOpacity: <span class="hljs-number">.8</span>,
+            scaleRadius: <span class="hljs-literal">false</span>,
+            useLocalExtrema: <span class="hljs-literal">false</span>,
+            latField: <span class="hljs-string">'lat'</span>,
+            lngField: <span class="hljs-string">'lng'</span>,
+            valueField: <span class="hljs-string">'count'</span>
+        };
+        heatmapCfg = $.extend({}, heatmapCfg, options.heatmatOptions || {});
+        <span class="hljs-keyword">var</span> layer = <span class="hljs-keyword">new</span> HeatmapOverlay(heatmapCfg);
+        L.TimeDimension.Layer.prototype.initialize.call(<span class="hljs-keyword">this</span>, layer, options);
+        <span class="hljs-keyword">this</span>._currentLoadedTime = <span class="hljs-number">0</span>;
+        <span class="hljs-keyword">this</span>._currentTimeData = {
+            max: <span class="hljs-keyword">this</span>.options.heatmapMax || <span class="hljs-number">10</span>,
+            data: []
+        };
+        <span class="hljs-keyword">this</span>._baseURL = <span class="hljs-keyword">this</span>.options.baseURL || <span class="hljs-literal">null</span>;
+        <span class="hljs-keyword">this</span>._period = <span class="hljs-keyword">this</span>.options.period || <span class="hljs-string">"P1M"</span>;
+    },
+
+    onAdd: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(map)</span> </span>{
+        L.TimeDimension.Layer.prototype.onAdd.call(<span class="hljs-keyword">this</span>, map);
+        map.addLayer(<span class="hljs-keyword">this</span>._baseLayer);
+        <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>._timeDimension) {
+            <span class="hljs-keyword">this</span>._getDataForTime(<span class="hljs-keyword">this</span>._timeDimension.getCurrentTime());
+        }
+    },
+
+    _onNewTimeLoading: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(ev)</span> </span>{
+        <span class="hljs-keyword">this</span>._getDataForTime(ev.time);
+        <span class="hljs-keyword">return</span>;
+    },
+
+    isReady: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(time)</span> </span>{
+        <span class="hljs-keyword">return</span> (<span class="hljs-keyword">this</span>._currentLoadedTime == time);
+    },
+
+    _update: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-keyword">this</span>._baseLayer.setData(<span class="hljs-keyword">this</span>._currentTimeData);
+        <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;
+    },
+
+    _getDataForTime: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(time)</span> </span>{
+        <span class="hljs-keyword">if</span> (!<span class="hljs-keyword">this</span>._baseURL || !<span class="hljs-keyword">this</span>._map) {
+            <span class="hljs-keyword">return</span>;
+        }
+        <span class="hljs-keyword">var</span> url = <span class="hljs-keyword">this</span>._constructQuery(time);
+        $.getJSON(url, (<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(data)</span> </span>{
+            <span class="hljs-keyword">delete</span> <span class="hljs-keyword">this</span>._currentTimeData.data;
+            <span class="hljs-keyword">this</span>._currentTimeData.data = [];
+            <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> i = <span class="hljs-number">0</span>; i &lt; data.length; i++) {
+                <span class="hljs-keyword">var</span> marker = data[i];
+                <span class="hljs-keyword">if</span> (marker.location) {
+                    <span class="hljs-keyword">this</span>._currentTimeData.data.push({
+                        lat: marker.location.latitude,
+                        lng: marker.location.longitude,
+                        count: <span class="hljs-number">1</span>
+                    });
+                }
+            }
+            <span class="hljs-keyword">this</span>._currentLoadedTime = time;
+            <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>._timeDimension &amp;&amp; time == <span class="hljs-keyword">this</span>._timeDimension.getCurrentTime() &amp;&amp; !<span class="hljs-keyword">this</span>._timeDimension.isLoading()) {
+                <span class="hljs-keyword">this</span>._update();
+            }
+            <span class="hljs-keyword">this</span>.fire(<span class="hljs-string">'timeload'</span>, {
+                time: time
+            });
+        }).bind(<span class="hljs-keyword">this</span>));
+    },
+
+    _constructQuery: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(time)</span> </span>{
+        <span class="hljs-keyword">var</span> bbox = <span class="hljs-keyword">this</span>._map.getBounds();
+        <span class="hljs-keyword">var</span> sodaQueryBox = [bbox._northEast.lat, bbox._southWest.lng, bbox._southWest.lat, bbox._northEast.lng];
+
+        <span class="hljs-keyword">var</span> startDate = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>(time);
+        <span class="hljs-keyword">var</span> endDate = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>(startDate.getTime());
+        L.TimeDimension.Util.addTimeDuration(endDate, <span class="hljs-keyword">this</span>._period, <span class="hljs-literal">false</span>);
+
+        <span class="hljs-keyword">var</span> where = <span class="hljs-string">"&amp;$where=created_date &gt; '"</span> +
+            startDate.format(<span class="hljs-string">'yyyy-mm-dd'</span>) +
+            <span class="hljs-string">"' AND created_date &lt; '"</span> +
+            endDate.format(<span class="hljs-string">'yyyy-mm-dd'</span>) +
+            <span class="hljs-string">"' AND within_box(location,"</span> +
+            sodaQueryBox +
+            <span class="hljs-string">")&amp;$order=created_date desc"</span>;
+
+        <span class="hljs-keyword">var</span> url = <span class="hljs-keyword">this</span>._baseURL + where;
+        <span class="hljs-keyword">return</span> url;
+    }
+
+});
+
+L.timeDimension.layer.sodaHeatMap = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(options)</span> </span>{
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> L.TimeDimension.Layer.SODAHeatMap(options);
+};
+
+
+
+<span class="hljs-keyword">var</span> currentTime = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>();
+currentTime.setUTCDate(<span class="hljs-number">1</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>);
+
+<span class="hljs-keyword">var</span> map = L.map(<span class="hljs-string">'map'</span>, {
+    zoom: <span class="hljs-number">12</span>,
+    fullscreenControl: <span class="hljs-literal">true</span>,
+    timeDimension: <span class="hljs-literal">true</span>,    
+    timeDimensionOptions: {
+        timeInterval: <span class="hljs-string">"2010-01-01/"</span> + currentTime.toISOString(),
+        period: <span class="hljs-string">"P1M"</span>,
+        currentTime: currentTime
+    },
+    center: [<span class="hljs-number">40.74</span>, -<span class="hljs-number">73.9</span>],
+});
+
+<span class="hljs-keyword">var</span> layer = <span class="hljs-keyword">new</span> L.StamenTileLayer(<span class="hljs-string">"toner-lite"</span>);
+map.addLayer(layer);
+
+<span class="hljs-keyword">var</span> testSODALayer = L.timeDimension.layer.sodaHeatMap({
+    baseURL: <span class="hljs-string">'https://data.cityofnewyork.us/resource/erm2-nwe9.json?$select=location,closed_date,complaint_type,street_name,created_date,status,unique_key,agency_name,due_date,descriptor,location_type,agency,incident_address&amp;complaint_type=Noise - Commercial'</span>,
+});
+testSODALayer.addTo(map);
+map.attributionControl.addAttribution(<span class="hljs-string">'&lt;a href="https://nycopendata.socrata.com/Social-Services/311-Service-Requests-from-2010-to-Present/erm2-nwe9"&gt;NYC OpenData&lt;/a&gt;'</span>);
+
+L.Control.TimeDimensionCustom = L.Control.TimeDimension.extend({
+    _getDisplayDateFormat: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(date)</span></span>{
+        <span class="hljs-keyword">return</span> date.format(<span class="hljs-string">"mmmm yyyy"</span>);
+    }    
+});
+<span class="hljs-keyword">var</span> timeDimensionControl = <span class="hljs-keyword">new</span> L.Control.TimeDimensionCustom({
+    playerOptions: {
+        buffer: <span class="hljs-number">1</span>,
+        minBufferReady: -<span class="hljs-number">1</span>
+    }
+});
+map.addControl(<span class="hljs-keyword">this</span>.timeDimensionControl);
+</code></pre>            
+
+            <div class="prev-example">
+                <a href="http://apps.socib.es/Leaflet.TimeDimension/examples/example11.html">Example 11: NOAA Operational Climate Data Records (SST)</a>
+            </div>                 
+            <div class="next-example">
+                <a href="http://apps.socib.es/Leaflet.TimeDimension/examples/example13.html">Example 13: Demo of L.TimeDimension.WMS.timeseries Layer</a>
+            </div>
+            <div id="footer">
+                <a class="leaflet-timedimension" href="http://apps.socib.es/Leaflet.TimeDimension/examples/index.html">Leaflet.TimeDimension examples</a>
+                <a class="github" href="https://github.com/socib/Leaflet.TimeDimension" title="Fork Leaflet.TimeDimension at GitHub!"><span>Fork Leaflet.TimeDimension at GitHub</span></a>
+            </div>                          
+        </div>
+        <script type="text/javascript" src="./Leaflet TimeDimension_files/jquery.min.js.download"></script>
+        <script type="text/javascript" src="./Leaflet TimeDimension_files/leaflet.js.download"></script>
+        <script type="text/javascript" src="./Leaflet TimeDimension_files/Control.FullScreen.min.js.download"></script>
+        <script type="text/javascript" src="./Leaflet TimeDimension_files/NonTiledLayer.js.download"></script>
+        <script type="text/javascript" src="./Leaflet TimeDimension_files/iso8601.min.js.download"></script>
+        <script type="text/javascript" src="./Leaflet TimeDimension_files/heatmap.min.js.download"></script>        
+        <script type="text/javascript" src="./Leaflet TimeDimension_files/leaflet-heatmap.js.download"></script>
+        <script type="text/javascript" src="./Leaflet TimeDimension_files/tile.stamen.js.download"></script>
+        <script type="text/javascript" src="./Leaflet TimeDimension_files/dateformat.js.download"></script>        
+        
+        <script type="text/javascript" src="./Leaflet TimeDimension_files/leaflet.timedimension.js.download"></script>
+        <script type="text/javascript" src="./Leaflet TimeDimension_files/leaflet.timedimension.util.js.download"></script>
+        <script type="text/javascript" src="./Leaflet TimeDimension_files/leaflet.timedimension.layer.js.download"></script>
+        <script type="text/javascript" src="./Leaflet TimeDimension_files/leaflet.timedimension.layer.wms.js.download"></script>
+        <script type="text/javascript" src="./Leaflet TimeDimension_files/leaflet.timedimension.layer.geojson.js.download"></script>
+        <script type="text/javascript" src="./Leaflet TimeDimension_files/leaflet.timedimension.player.js.download"></script>
+        <script type="text/javascript" src="./Leaflet TimeDimension_files/leaflet.timedimension.control.js.download"></script>        
+        <script type="text/javascript" src="./Leaflet TimeDimension_files/baselayers.js.download"></script>
+        <script type="text/javascript" src="./Leaflet TimeDimension_files/example12.js.download"></script>
+        <script src="./Leaflet TimeDimension_files/highlight.min.js.download"></script>
+        <script type="text/javascript">
+            $(document).ready(function() {
+                $.ajax('js/example12.js', {dataType: 'script'})
+                    .always(function(response) {                        
+                        $("#code").text(response.responseText);
+                        $('pre code').each(function(i, block) {
+                            hljs.highlightBlock(block);
+                        });
+                    });
+            });
+        </script>        
+    
+
+</body></html>

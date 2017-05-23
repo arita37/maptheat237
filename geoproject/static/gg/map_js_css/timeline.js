@@ -6,12 +6,12 @@
         var lookup = {};
 
         //Load Locations
-        $.getJSON("..\static\gg\map_js_css\icon.json", function (data) {
+        $.getJSON("../static/gg/map_js_css/icon.json", function (data) {
             localStorage.locationData = JSON.stringify(data);
         });
 
 
-        $.getJSON("..\static\gg\map_js_css\heatmap.json", function (data) {
+        $.getJSON("../static/gg/map_js_css/heatmap.json", function (data) {
             var steps = '';
             localStorage.heatmapData = JSON.stringify(data);
             $.each(data, function (index, value) {

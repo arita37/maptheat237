@@ -393,7 +393,7 @@ function initMap() {
         //Load Icons
         $.each(JSON.parse(localStorage.locationData), function (index, value) {
             if (value.date == date) {
-                placeMarker({ lat: value.lat, lng: value.long }, 'static\gg\map_js_css\map_icons/' + value.icon);
+                placeMarker({ lat: value.lat, lng: value.long }, '..\static\gg\map_js_css\map_icons/' + value.icon);
             }
         });
 
@@ -494,7 +494,7 @@ function loadHeatmapMarkers() {
     var date = JSON.parse(localStorage.heatmapData)[0].date;
     $.each(JSON.parse(localStorage.locationData), function (index, value) {
         if (value.date == date) {
-            placeMarker({ lat: value.lat, lng: value.long }, 'static\gg\map_js_css\map_icons/' + value.icon);
+            placeMarker({ lat: value.lat, lng: value.long }, '..\static\gg\map_js_css\map_icons/' + value.icon);
         }
     });
 

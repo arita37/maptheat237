@@ -1,118 +1,122 @@
-      function getCookie(name) {
-         var cookieValue = null;
-         if (document.cookie && document.cookie != '') {
-             var cookies = document.cookie.split(';');
-             for (var i = 0; i < cookies.length; i++) {
-                 var cookie = jQuery.trim(cookies[i]);
-                 // Does this cookie string begin with the name we want?
-                 if (cookie.substring(0, name.length + 1) == (name + '=')) {
-                     cookieValue = decodeURIComponent(cookie.substring(name.length +1));
-                     break;
-                 }  } }
-         return cookieValue;}
-
-      //GLOBAL VARS    --------------------------------------------------------------------------
-      var points=[];  //array for points
-      var markers=[];     //array for markers
-      var map;
-
-      var beacon_id=[];
-      var beacon_target=[];
-      var beacon_target_latlng=[];
-
-
-    PNG_NORMAL=   'http://maps.google.com/mapfiles/kml/paddle/grn-circle-lv.png';
-    PNG_SELECTED= 'http://maps.google.com/mapfiles/ms/icons/red-dot.png';
-    PNG_BEST=    'http://maps.google.com/mapfiles/kml/paddle/blu-stars.png';
-
-    //################## Google Map  ##########################################################
-    function deleteMarkers() {
-        setMapOnAll(null);
-        $('#data').empty();
-        markers = [];
-        points = [];
+function getCookie(name) {
+    var cookieValue = null;
+    if (document.cookie && document.cookie != '') {
+        var cookies = document.cookie.split(';');
+        for (var i = 0; i < cookies.length; i++) {
+            var cookie = jQuery.trim(cookies[i]);
+            // Does this cookie string begin with the name we want?
+            if (cookie.substring(0, name.length + 1) == (name + '=')) {
+                cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                break;
+            }
+        }
     }
+    return cookieValue;
+}
+
+//GLOBAL VARS    --------------------------------------------------------------------------
+var points = [];  //array for points
+var markers = [];     //array for markers
+var map;
+
+var beacon_id = [];
+var beacon_target = [];
+var beacon_target_latlng = [];
 
 
-    function beacon_delete() {
-        $('#data').empty();
-        markers = [];
-        points = [];
+PNG_NORMAL = 'http://maps.google.com/mapfiles/kml/paddle/grn-circle-lv.png';
+PNG_SELECTED = 'http://maps.google.com/mapfiles/ms/icons/red-dot.png';
+PNG_BEST = 'http://maps.google.com/mapfiles/kml/paddle/blu-stars.png';
 
-        beacon_id=[];
-        beacon_latlng= [];
-        setMapOnMarkers(beacon_marker, null);
-
-        beacon_target_latlng=[];
-        beacon_target_b_id=[];
-
-        beacon_best_id=[];
-        beacon_best_latlng=[];
-        setMapOnMarkers(beacon_best_markers, null);
-    }
+//################## Google Map  ##########################################################
+function deleteMarkers() {
+    setMapOnAll(null);
+    $('#data').empty();
+    markers = [];
+    points = [];
+}
 
 
-    function beacon_delete_target() {
-     $('#data').empty();
+function beacon_delete() {
+    $('#data').empty();
+    markers = [];
+    points = [];
 
-     imax= beacon_target_latlng.length
-     for(var i=0; i<imax; i++) {
-       latlng= beacon_target_latlng[i];
-       jloc= $.inArray( latlng , beacon_latlng  );
-       beacon_marker[jloc].setIcon(PNG_NORMAL) ;
-     };
+    beacon_id = [];
+    beacon_latlng = [];
+    setMapOnMarkers(beacon_marker, null);
 
-        beacon_target_latlng=[];
-        beacon_target_b_id=[];
+    beacon_target_latlng = [];
+    beacon_target_b_id = [];
 
-     imax= beacon_best_latlng.length
-     for(var i=0; i<imax; i++) {
-       latlng= beacon_best_latlng[i];
-       jloc= $.inArray( latlng , beacon_latlng  );
-       beacon_marker[jloc].setIcon(PNG_NORMAL) ;
-     };
-
-        beacon_best_id=[];
-        beacon_best_latlng=[];
-        setMapOnMarkers(beacon_best_markers, null);
-    }
+    beacon_best_id = [];
+    beacon_best_latlng = [];
+    setMapOnMarkers(beacon_best_markers, null);
+}
 
 
-    function beacon_delete_best() {
-     $('#data').empty();
+function beacon_delete_target() {
+    $('#data').empty();
 
-     imax= beacon_best_latlng.length
-     for(var i=0; i<imax; i++) {
-       latlng= beacon_best_latlng[i];
-       jloc= $.inArray( latlng , beacon_latlng  );
-       beacon_marker[jloc].setIcon(PNG_NORMAL) ;
-     };
+    imax = beacon_target_latlng.length
+    for (var i = 0; i < imax; i++) {
+        latlng = beacon_target_latlng[i];
+        jloc = $.inArray(latlng, beacon_latlng);
+        beacon_marker[jloc].setIcon(PNG_NORMAL);
+    };
 
-        beacon_best_id=[];
-        beacon_best_latlng=[];
-        setMapOnMarkers(beacon_best_markers, null);
-    }
+    beacon_target_latlng = [];
+    beacon_target_b_id = [];
+
+    imax = beacon_best_latlng.length
+    for (var i = 0; i < imax; i++) {
+        latlng = beacon_best_latlng[i];
+        jloc = $.inArray(latlng, beacon_latlng);
+        beacon_marker[jloc].setIcon(PNG_NORMAL);
+    };
+
+    beacon_best_id = [];
+    beacon_best_latlng = [];
+    setMapOnMarkers(beacon_best_markers, null);
+}
 
 
-    function beacon_save_target() {
-        $('#data').empty();
+function beacon_delete_best() {
+    $('#data').empty();
 
-    }
+    imax = beacon_best_latlng.length
+    for (var i = 0; i < imax; i++) {
+        latlng = beacon_best_latlng[i];
+        jloc = $.inArray(latlng, beacon_latlng);
+        beacon_marker[jloc].setIcon(PNG_NORMAL);
+    };
+
+    beacon_best_id = [];
+    beacon_best_latlng = [];
+    setMapOnMarkers(beacon_best_markers, null);
+}
+
+
+function beacon_save_target() {
+    $('#data').empty();
+
+}
 
 
 
 
-     // Sets the map on all markers in the array.
-    function placeMarker(location) {
-        var marker = new google.maps.Marker({
-            position: location,
-            map: map
-        });
-        markers.push(marker);   //add marker to markers array
-        points.push(location);  //add marker location to the array
-      }
+// Sets the map on all markers in the array.
+function placeMarker(location, icon) {
+    var marker = new google.maps.Marker({
+        position: location,
+        icon: icon,
+        map: map
+    });
+    markers.push(marker);   //add marker to markers array
+    points.push(location);  //add marker location to the array
+}
 
-    function colorMarkers(color) { //No need use Google Map
+function colorMarkers(color) { //No need use Google Map
     return {
         path: 'M 0,0 C -2,-20 -10,-22 -10,-30 A 10,10 0 1,1 10,-30 C 10,-22 2,-20 0,0 z',
         fillColor: color,
@@ -120,19 +124,24 @@
         strokeColor: '#000',
         strokeWeight: 2,
         scale: 1
-        };}
+    };
+}
 
 
-    // Deletes all markers in the array by removing references to them.
-      function setMapOnMarkers(markers, map) {
-        for (var i = 0; i < markers.length; i++) {
-          markers[i].setMap(map); }}
+// Deletes all markers in the array by removing references to them.
+function setMapOnMarkers(markers, map) {
+    for (var i = 0; i < markers.length; i++) {
+        markers[i].setMap(map);
+    }
+}
 
 
-      // Sets the map on all markers in the array.
-      function setMapOnAll(map) {
-        for (var i = 0; i < markers.length; i++) {
-          markers[i].setMap(map);}}
+// Sets the map on all markers in the array.
+function setMapOnAll(map) {
+    for (var i = 0; i < markers.length; i++) {
+        markers[i].setMap(map);
+    }
+}
 
 
 
@@ -159,117 +168,375 @@
 
 */
 
+//Initialize array data for Heatmap
 
+
+
+
+var Datas = [new google.maps.LatLng(35.689, 139.6917)];
+var pointArray = new google.maps.MVCArray(Datas);
 
 //######################################## GOOGLE MAP INIT #######################################################
-      function initMap() {
-        //########################## Style
-        var styles = [{"featureType": "landscape", "stylers": [{"hue": "#FFBB00"}, {"saturation": 43.400000000000006}, {"lightness": 37.599999999999994}, {"gamma": 1}]}, {"featureType": "road.highway", "stylers": [{"hue": "#FFC200"}, {"saturation": -61.8}, {"lightness": 45.599999999999994}, {"gamma": 1}]},
-            {"featureType": "road.arterial", "stylers": [{"hue": "#FF0300"}, {"saturation": -100}, {"lightness": 51.19999999999999}, {"gamma": 1}]}, {"featureType": "road.local", "stylers": [{"hue": "#FF0300"}, {"saturation": -100}, {"lightness": 52}, {"gamma": 1}]},
-            {"featureType": "water", "stylers": [{"hue": "#0078FF"}, {"saturation": -13.200000000000003}, {"lightness": 2.4000000000000057}, {"gamma": 1}]}, {"featureType": "poi", "stylers": [{"hue": "#00FF6A"}, {"saturation": -1.0989010989011234}, {"lightness": 11.200000000000017}, {"gamma": 1}]}];
-        var styledMapType = new google.maps.StyledMapType(styles, { name: 'Styled' });
+function initMap() {
+    //########################## Style
+    //var styles = [{ "featureType": "landscape", "stylers": [{ "hue": "#FFBB00" }, { "saturation": 43.400000000000006 }, { "lightness": 37.599999999999994 }, { "gamma": 1 }] }, { "featureType": "road.highway", "stylers": [{ "hue": "#FFC200" }, { "saturation": -61.8 }, { "lightness": 45.599999999999994 }, { "gamma": 1 }] },
+    //    { "featureType": "road.arterial", "stylers": [{ "hue": "#FF0300" }, { "saturation": -100 }, { "lightness": 51.19999999999999 }, { "gamma": 1 }] }, { "featureType": "road.local", "stylers": [{ "hue": "#FF0300" }, { "saturation": -100 }, { "lightness": 52 }, { "gamma": 1 }] },
+    //    { "featureType": "water", "stylers": [{ "hue": "#0078FF" }, { "saturation": -13.200000000000003 }, { "lightness": 2.4000000000000057 }, { "gamma": 1 }] }, { "featureType": "poi", "stylers": [{ "hue": "#00FF6A" }, { "saturation": -1.0989010989011234 }, { "lightness": 11.200000000000017 }, { "gamma": 1 }] }];
 
-        var options = {
-          mapTypeControlOptions: { mapTypeIds: ['Styled'] },
-          center: {lat: 35.6895, lng: 139.6917},
-          zoom: 16,
-          //disableDefaultUI: true,
-          mapTypeId: 'Styled'
-          };
+    var styles = [
+  {
+      "elementType": "geometry",
+      "stylers": [
+        {
+            "color": "#f5f5f5"
+        }
+      ]
+  },
+  {
+      "elementType": "labels.icon",
+      "stylers": [
+        {
+            "visibility": "on"
+        }
+      ]
+  },
+  {
+      "elementType": "labels.text.fill",
+      "stylers": [
+        {
+            "color": "#616161"
+        }
+      ]
+  },
+  {
+      "elementType": "labels.text.stroke",
+      "stylers": [
+        {
+            "color": "#f5f5f5"
+        }
+      ]
+  },
+  {
+      "featureType": "administrative.locality",
+      "elementType": "labels.text",
+      "stylers": [
+        {
+            "weight": 6.5
+        }
+      ]
+  },
+  {
+      "featureType": "poi",
+      "elementType": "geometry",
+      "stylers": [
+        {
+            "color": "#eeeeee"
+        }
+      ]
+  },
+  {
+      "featureType": "poi",
+      "elementType": "labels.text.fill",
+      "stylers": [
+        {
+            "color": "#757575"
+        }
+      ]
+  },
+  {
+      "featureType": "poi.park",
+      "elementType": "geometry",
+      "stylers": [
+        {
+            "color": "#e5e5e5"
+        }
+      ]
+  },
+  {
+      "featureType": "poi.park",
+      "elementType": "labels.text.fill",
+      "stylers": [
+        {
+            "color": "#9e9e9e"
+        }
+      ]
+  },
+  {
+      "featureType": "road",
+      "elementType": "geometry",
+      "stylers": [
+        {
+            "color": "#ffffff"
+        }
+      ]
+  },
+  {
+      "featureType": "road.arterial",
+      "elementType": "labels.text.fill",
+      "stylers": [
+        {
+            "color": "#757575"
+        }
+      ]
+  },
+  {
+      "featureType": "road.highway",
+      "elementType": "geometry",
+      "stylers": [
+        {
+            "color": "#dadada"
+        }
+      ]
+  },
+  {
+      "featureType": "road.highway",
+      "elementType": "labels.text.fill",
+      "stylers": [
+        {
+            "color": "#616161"
+        }
+      ]
+  },
+  {
+      "featureType": "road.local",
+      "elementType": "labels.text.fill",
+      "stylers": [
+        {
+            "color": "#9e9e9e"
+        }
+      ]
+  },
+  {
+      "featureType": "transit.line",
+      "elementType": "geometry",
+      "stylers": [
+        {
+            "color": "#e5e5e5"
+        }
+      ]
+  },
+  {
+      "featureType": "transit.station",
+      "elementType": "geometry",
+      "stylers": [
+        {
+            "color": "#eeeeee"
+        }
+      ]
+  },
+  {
+      "featureType": "water",
+      "elementType": "geometry",
+      "stylers": [
+        {
+            "color": "#c9c9c9"
+        }
+      ]
+  },
+  {
+      "featureType": "water",
+      "elementType": "labels.text.fill",
+      "stylers": [
+        {
+            "color": "#9e9e9e"
+        }
+      ]
+  }
+    ];
+    styles = [{
+        stylers:
+            [{ hue: "#8d919a" }, { saturation: -82 }, { lightness: 33 }]
+    },
+        { featureType: "landscape", elementType: "geometry.fill", stylers: [{ color: "#e8ebee" }] },
+        { featureType: "poi", elementType: "geometry.fill", stylers: [{ color: "#d9dde3" }] }];
 
-        map = new google.maps.Map(document.getElementById('map'), options);
+    var styledMapType = new google.maps.StyledMapType(styles, { name: 'Styled' });
 
-        map.mapTypes.set('Styled', styledMapType);
+    var options = {
+        mapTypeControlOptions: { mapTypeIds: ['Styled'] },
+        center: { lat: 35.6895, lng: 139.6917 },
+        zoom: 16,
+        //disableDefaultUI: true,
+        mapTypeId: 'Styled'
+    };
 
-        var card = document.getElementById('pac-card');
-        var input = document.getElementById('pac-input');
-        var types = document.getElementById('type-selector');
-        var strictBounds = document.getElementById('strict-bounds-selector');
+    map = new google.maps.Map(document.getElementById('map'), options);
 
-        //add marker on click
-        map.controls[google.maps.ControlPosition.TOP_RIGHT].push(card);
+    map.mapTypes.set('Styled', styledMapType);
 
-        /*  // Map is clickable everywhere
-        google.maps.event.addListener(map, 'click', function(event) {
-          placeMarker(event.latLng);
+    var card = document.getElementById('pac-card');
+    var input = document.getElementById('pac-input');
+    var types = document.getElementById('type-selector');
+    var strictBounds = document.getElementById('strict-bounds-selector');
+
+    //add marker on click
+    map.controls[google.maps.ControlPosition.TOP_RIGHT].push(card);
+
+
+    //Load heatmap for first date
+    pointArray = loadHeatmapMarkers();
+    // pointArray = new google.maps.MVCArray(Datas);
+
+    heatmap = new google.maps.visualization.HeatmapLayer({
+        radius: 20,
+        data: pointArray
+    });
+
+    heatmap.setMap(map);
+
+
+    //Change Heatmap with date
+    $(document).on('click', 'ol.olTimeline li', function (e) {
+        var date = $(this).find("a").attr('data-date');
+        deleteMarkers();
+
+        //Load Icons
+        $.each(JSON.parse(localStorage.locationData), function (index, value) {
+            if (value.date == date) {
+                placeMarker({ lat: value.lat, lng: value.long }, 'maptheat237\geoproject\static\gg\map_js_css\map_icons/' + value.icon);
+            }
         });
-        */
+
+        //Load Heatmap
+        var data = [];
+        $.each(JSON.parse(localStorage.heatmapData), function (index, value) {
+            if (value.date == date) {
+                data.push([value.lat, value.long]);
+            }
+        });
+        success(data);
+    });
 
 
-      //##################   Auto Complete  ######################################################
-      var autocomplete = new google.maps.places.Autocomplete(input);
-        // Bind the map's bounds (viewport) property to the autocomplete object,
-        // so that the autocomplete requests use the current map bounds for the
-        // bounds option in the request.
-      autocomplete.bindTo('bounds', map);
-      var infowindow = new google.maps.InfoWindow();
-      var infowindowContent = document.getElementById('infowindow-content');
-      infowindow.setContent(infowindowContent);
-      var marker = new google.maps.Marker({
-          map: map,
-          anchorPoint: new google.maps.Point(0, -29)
-      });
+
+    /*  // Map is clickable everywhere
+    google.maps.event.addListener(map, 'click', function(event) {
+      placeMarker(event.latLng);
+    });
+    */
 
 
-      autocomplete.addListener('place_changed', function() {
-          infowindow.close();
-          marker.setVisible(false);
-          var place = autocomplete.getPlace();
-          if (!place.geometry) {
+    //##################   Auto Complete  ######################################################
+    var autocomplete = new google.maps.places.Autocomplete(input);
+    // Bind the map's bounds (viewport) property to the autocomplete object,
+    // so that the autocomplete requests use the current map bounds for the
+    // bounds option in the request.
+    autocomplete.bindTo('bounds', map);
+    var infowindow = new google.maps.InfoWindow();
+    var infowindowContent = document.getElementById('infowindow-content');
+    infowindow.setContent(infowindowContent);
+    var marker = new google.maps.Marker({
+        map: map,
+        anchorPoint: new google.maps.Point(0, -29)
+    });
+
+
+    autocomplete.addListener('place_changed', function () {
+        infowindow.close();
+        marker.setVisible(false);
+        var place = autocomplete.getPlace();
+        if (!place.geometry) {
             // User entered the name of a Place that was not suggested and
             // pressed the Enter key, or the Place Details request failed.
             $('#alert_place').html('<div class="alert alert-danger alert-dismissible fade show" role="alert"> <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>No place found for <strong>' + place.name + '</strong> Click a place from the search dropdown</div>')
             return;
-          }
+        }
 
-          // If the place has a geometry, then present it on a map.
-          if (place.geometry.viewport) {
+        // If the place has a geometry, then present it on a map.
+        if (place.geometry.viewport) {
             map.fitBounds(place.geometry.viewport);
-          } else {
+        } else {
             map.setCenter(place.geometry.location);
             map.setZoom(17);  // Why 17? Because it looks good.
-          }
-          marker.setPosition(place.geometry.location);
+        }
+        marker.setPosition(place.geometry.location);
 
-          var address = '';
-          if (place.address_components) {
+        var address = '';
+        if (place.address_components) {
             address = [
               (place.address_components[0] && place.address_components[0].short_name || ''),
               (place.address_components[1] && place.address_components[1].short_name || ''),
               (place.address_components[2] && place.address_components[2].short_name || '')
             ].join(' ');
-          }
+        }
 
-          infowindowContent.children['place-icon'].src = place.icon;
-          infowindowContent.children['place-name'].textContent = place.name;
-          infowindowContent.children['place-address'].textContent = address;
-          infowindow.open(map, marker);
-      });
+        infowindowContent.children['place-icon'].src = place.icon;
+        infowindowContent.children['place-name'].textContent = place.name;
+        infowindowContent.children['place-address'].textContent = address;
+        infowindow.open(map, marker);
+    });
 
-      // Sets a listener on a radio button to change the filter type on Places
-      // Autocomplete.
-      function setupClickListener(id, types) {
-          var radioButton = document.getElementById(id);
-          radioButton.addEventListener('click', function() {
+    // Sets a listener on a radio button to change the filter type on Places
+    // Autocomplete.
+    function setupClickListener(id, types) {
+        var radioButton = document.getElementById(id);
+        radioButton.addEventListener('click', function () {
             autocomplete.setTypes(types);
-          });
-      }
+        });
+    }
 
-      setupClickListener('changetype-all', []);
-      setupClickListener('changetype-address', ['address']);
-      setupClickListener('changetype-establishment', ['establishment']);
-      setupClickListener('changetype-geocode', ['geocode']);
+    setupClickListener('changetype-all', []);
+    setupClickListener('changetype-address', ['address']);
+    setupClickListener('changetype-establishment', ['establishment']);
+    setupClickListener('changetype-geocode', ['geocode']);
 
-      document.getElementById('use-strict-bounds')
-            .addEventListener('click', function() {
+    document.getElementById('use-strict-bounds')
+          .addEventListener('click', function () {
               console.log('Checkbox clicked! New state=' + this.checked);
-              autocomplete.setOptions({strictBounds: this.checked});
-            });
-      }
+              autocomplete.setOptions({ strictBounds: this.checked });
+          });
+}
 
 
-function markerCoords(markerobject){
-    google.maps.event.addListener(markerobject, 'dragend', function(evt){
+//Load Heatmap and Markers on initMap
+function loadHeatmapMarkers() {
+    console.log(JSON.parse(localStorage.heatmapData))
+    var date = JSON.parse(localStorage.heatmapData)[0].date;
+    $.each(JSON.parse(localStorage.locationData), function (index, value) {
+        if (value.date == date) {
+            placeMarker({ lat: value.lat, lng: value.long }, 'maptheat237\geoproject\static\gg\map_js_css\map_icons/' + value.icon);
+        }
+    });
+
+    //Load Heatmap    
+    var data = [];
+    $.each(JSON.parse(localStorage.heatmapData), function (index, value) {
+        if (value.date == date) {
+            data.push([value.lat, value.long]);
+        }
+    });
+    var pointArray = [];
+    for (var i = 0; i < data.length; i++) {
+        pointArray.push(new google.maps.LatLng(data[i][0],
+                                               data[i][1]));
+    }
+    return pointArray;
+}
+
+//Reset Heatmap Data
+function success(data) {
+    while (Datas.length > 0) {
+        Datas.pop();
+    }
+
+    pointArray = new google.maps.MVCArray(reboot(data));
+    heatmap.setData(pointArray);
+}
+
+//Reinitialise Heatmap Data
+function reboot(Ddatas) {
+    //    alert(Ddatas);
+    var arraino = [];
+    for (a in Ddatas) {
+        arraino.push(new google.maps.LatLng(
+            Ddatas[a][0],
+            Ddatas[a][1]));
+    }
+    //    alert(arraino);
+    return (arraino);
+}
+function markerCoords(markerobject) {
+    google.maps.event.addListener(markerobject, 'dragend', function (evt) {
         infoWindow.setOptions({
             content: '<p>Marker dropped: Current Lat: ' + evt.latLng.lat().toFixed(3) + ' Current Lng: ' + evt.latLng.lng().toFixed(3) + '</p>'
         });
@@ -277,7 +544,7 @@ function markerCoords(markerobject){
     });
 
     google.maps.event.addListener(markerobject, 'drag',
-       function(evt){ console.log("marker is being dragged"); });
+       function (evt) { console.log("marker is being dragged"); });
 }
 //#################################################################################################################################
 //#################################################################################################################################
@@ -286,132 +553,133 @@ function markerCoords(markerobject){
 
 
 //################ USER ACTION   ##########################################################
-    // Get Best Beacon   -----------------------------------------------------------------
-    var beacon_best_markers= [];
-    var beacon_best_id= [];
-    var beacon_best_latlng= [];
+// Get Best Beacon   -----------------------------------------------------------------
+var beacon_best_markers = [];
+var beacon_best_id = [];
+var beacon_best_latlng = [];
 
-    function beacon_get_best(){
-      var http = new XMLHttpRequest();
-      var url  =   '/beacon_get_best/'
-      var params = "points="+JSON.stringify(beacon_target_b_id);
-      http.open("POST", url, true); http.setRequestHeader("Content-type", "application/x-www-form-urlencoded"); http.setRequestHeader("X-CSRFToken", getCookie('csrftoken'));
+function beacon_get_best() {
+    var http = new XMLHttpRequest();
+    var url = '/beacon_get_best/'
+    var params = "points=" + JSON.stringify(beacon_target_b_id);
+    http.open("POST", url, true); http.setRequestHeader("Content-type", "application/x-www-form-urlencoded"); http.setRequestHeader("X-CSRFToken", getCookie('csrftoken'));
 
-      //Call a function when the state changes.
-      http.onreadystatechange = function() {
-        if(http.readyState == 4 && http.status == 200) {
-          obj=          JSON.parse(http.responseText);
-          json_beacon=  obj['json_beacon'];
-          beacon_delete_best();
+    //Call a function when the state changes.
+    http.onreadystatechange = function () {
+        if (http.readyState == 4 && http.status == 200) {
+            obj = JSON.parse(http.responseText);
+            json_beacon = obj['json_beacon'];
+            beacon_delete_best();
 
-          // HTML table showing the points  --------------------------------------------------
-          // ['b_id', 'shop_name', 'address', 'postal'    ],
-          $('#data').empty();   // Table HTML "data"
-          imax= json_beacon.features.length;
-          for (var i=0; i<imax; i++)
-          { row=  '<tr><td>'+ json_beacon.features[i].geometry.coordinates[1]+'</td><td>'+json_beacon.features[i].geometry.coordinates[0];
-            row+= '</td><td>'+json_beacon.features[i].properties.postal+'</td>        </tr>';
-            $('#data').append(row);
-          }
-          // $('#data').append('<tr><td>'+json_beacon.features[i].geometry.coordinates[1]+'</td><td>'+json_beacon.features[i].geometry.coordinates[0]+'</td><td>'+json_beacon.features[i].properties.postal+'</td>        </tr>');
-          $('#data').append('<th colspan="3">Inputs</th><tr><td></td></tr>');
+            // HTML table showing the points  --------------------------------------------------
+            // ['b_id', 'shop_name', 'address', 'postal'    ],
+            $('#data').empty();   // Table HTML "data"
+            imax = json_beacon.features.length;
+            for (var i = 0; i < imax; i++) {
+                row = '<tr><td>' + json_beacon.features[i].geometry.coordinates[1] + '</td><td>' + json_beacon.features[i].geometry.coordinates[0];
+                row += '</td><td>' + json_beacon.features[i].properties.postal + '</td>        </tr>';
+                $('#data').append(row);
+            }
+            // $('#data').append('<tr><td>'+json_beacon.features[i].geometry.coordinates[1]+'</td><td>'+json_beacon.features[i].geometry.coordinates[0]+'</td><td>'+json_beacon.features[i].properties.postal+'</td>        </tr>');
+            $('#data').append('<th colspan="3">Inputs</th><tr><td></td></tr>');
 
 
-          //Print into Front End Map   ------------------------------------------------------
-          imax= json_beacon.features.length;
-          for (var i=0; i<imax; i++)
-          { lat= json_beacon.features[i].geometry.coordinates[1]; lng= json_beacon.features[i].geometry.coordinates[0];
-            var marker = new google.maps.Marker({
-                position: new google.maps.LatLng(lat, lng ),
-                map: map,
-                icon: PNG_BEST,
-                label:   'Best Assist Beacon',   //json_beacon.features[i].properties.b_id   //Beacon ID
-                title:   'Best Assist Beacon',
-                Content: 'Best Assist Beacon'
+            //Print into Front End Map   ------------------------------------------------------
+            imax = json_beacon.features.length;
+            for (var i = 0; i < imax; i++) {
+                lat = json_beacon.features[i].geometry.coordinates[1]; lng = json_beacon.features[i].geometry.coordinates[0];
+                var marker = new google.maps.Marker({
+                    position: new google.maps.LatLng(lat, lng),
+                    map: map,
+                    icon: PNG_BEST,
+                    label: 'Best Assist Beacon',   //json_beacon.features[i].properties.b_id   //Beacon ID
+                    title: 'Best Assist Beacon',
+                    Content: 'Best Assist Beacon'
 
-            });
-            beacon_best_markers.push(marker);
-            beacon_best_id.push(json_beacon.features[i].properties.b_id );
-            beacon_best_latlng.push( lat.toFixed(6) + ',' + lng.toFixed(6) );
+                });
+                beacon_best_markers.push(marker);
+                beacon_best_id.push(json_beacon.features[i].properties.b_id);
+                beacon_best_latlng.push(lat.toFixed(6) + ',' + lng.toFixed(6));
 
-          }
+            }
         }
-      }
-    http.send(params);
     }
+    http.send(params);
+}
 
 
-    beacon_target_latlng=[];
-    beacon_target_b_id=[];
-    function beacon_target_add(event) {
-     //  Add Target Beacon
-     // b_id= event.label()
-     lat= event.latLng.lat();     lng= event.latLng.lng()
-     latlng= lat.toFixed(6) +","+lng.toFixed(6)
+beacon_target_latlng = [];
+beacon_target_b_id = [];
+function beacon_target_add(event) {
+    //  Add Target Beacon
+    // b_id= event.label()
+    lat = event.latLng.lat(); lng = event.latLng.lng()
+    latlng = lat.toFixed(6) + "," + lng.toFixed(6)
 
-     iloc= $.inArray( latlng , beacon_target_latlng  )
-     if ( iloc > -1 ) {  // inside, Back to normal
-       this.setIcon(PNG_NORMAL);
+    iloc = $.inArray(latlng, beacon_target_latlng)
+    if (iloc > -1) {  // inside, Back to normal
+        this.setIcon(PNG_NORMAL);
 
-       beacon_target_b_id.splice(iloc,1);
-       beacon_target_latlng.splice(iloc,1);
-       //beacon_target_latlng.splice(iloc,1);
-     }
-     else  {            // Not inside, Create one
-       jloc= $.inArray( latlng , beacon_latlng  )  //Find in Big List
-       beacon_target_b_id.push( beacon_id[jloc]);
-       beacon_target_latlng.push( latlng);
-       //beacon_target_latlng( event.latLng );
-       //this.setIcon(PNG_SELECTED)
-       beacon_marker[jloc].setIcon(PNG_SELECTED)
-     }};
+        beacon_target_b_id.splice(iloc, 1);
+        beacon_target_latlng.splice(iloc, 1);
+        //beacon_target_latlng.splice(iloc,1);
+    }
+    else {            // Not inside, Create one
+        jloc = $.inArray(latlng, beacon_latlng)  //Find in Big List
+        beacon_target_b_id.push(beacon_id[jloc]);
+        beacon_target_latlng.push(latlng);
+        //beacon_target_latlng( event.latLng );
+        //this.setIcon(PNG_SELECTED)
+        beacon_marker[jloc].setIcon(PNG_SELECTED)
+    }
+};
 
 
-    //-----------------------------------------------------------------------------
-    beacon_latlng= [];
-    beacon_marker=[];
-    beacon_id=[];
-    function beacon_show(){
-      // Show beacons on the map
-      // alert("beacon_show");
-      beacon_delete();
-      var http = new XMLHttpRequest();
-      var url = '/beacon_show/'
-      var params = "area=0"   // +JSON.stringify(points);
-      http.open("POST", url, true); http.setRequestHeader("Content-type", "application/x-www-form-urlencoded"); http.setRequestHeader("X-CSRFToken", getCookie('csrftoken'));
-      // alert("beacon_show 2");
+//-----------------------------------------------------------------------------
+beacon_latlng = [];
+beacon_marker = [];
+beacon_id = [];
+function beacon_show() {
+    // Show beacons on the map
+    // alert("beacon_show");
+    beacon_delete();
+    var http = new XMLHttpRequest();
+    var url = '/beacon_show/'
+    var params = "area=0"   // +JSON.stringify(points);
+    http.open("POST", url, true); http.setRequestHeader("Content-type", "application/x-www-form-urlencoded"); http.setRequestHeader("X-CSRFToken", getCookie('csrftoken'));
+    // alert("beacon_show 2");
 
-      //Call a function when the state changes.
-      http.onreadystatechange = function() {
-        if(http.readyState == 4 && http.status == 200) {
-          // alert("beacon_show 200");
-          obj=           JSON.parse(http.responseText);
-          json_beacon=   obj['json_beacon']  // JSON.parse(obj.json_beacon)  // obj['json_beacon']
+    //Call a function when the state changes.
+    http.onreadystatechange = function () {
+        if (http.readyState == 4 && http.status == 200) {
+            // alert("beacon_show 200");
+            obj = JSON.parse(http.responseText);
+            json_beacon = obj['json_beacon']  // JSON.parse(obj.json_beacon)  // obj['json_beacon']
 
-          //Print into Front End Map   ------------------------------------------------------
-          imax= json_beacon.features.length;
-          // alert(  json_beacon.features[0].geometry.coordinates[1]  )
-          for (var i=0; i<imax; i++)
-          { var marker = new google.maps.Marker({
-                position: new google.maps.LatLng(json_beacon.features[i].geometry.coordinates[1], json_beacon.features[i].geometry.coordinates[0] ),
-                map: map,
-                icon: PNG_NORMAL,
-                // label: json_beacon.features[i].properties.b_id+'',   //Beacon ID
-                // Google http://kml4earth.appspot.com/icons.html
-                // content : ''
+            //Print into Front End Map   ------------------------------------------------------
+            imax = json_beacon.features.length;
+            // alert(  json_beacon.features[0].geometry.coordinates[1]  )
+            for (var i = 0; i < imax; i++) {
+                var marker = new google.maps.Marker({
+                    position: new google.maps.LatLng(json_beacon.features[i].geometry.coordinates[1], json_beacon.features[i].geometry.coordinates[0]),
+                    map: map,
+                    icon: PNG_NORMAL,
+                    // label: json_beacon.features[i].properties.b_id+'',   //Beacon ID
+                    // Google http://kml4earth.appspot.com/icons.html
+                    // content : ''
                 });
 
-             beacon_id.push(json_beacon.features[i].properties.b_id )
-             beacon_latlng.push( json_beacon.features[i].geometry.coordinates[1].toFixed(6) + ',' +json_beacon.features[i].geometry.coordinates[0].toFixed(6) )
+                beacon_id.push(json_beacon.features[i].properties.b_id)
+                beacon_latlng.push(json_beacon.features[i].geometry.coordinates[1].toFixed(6) + ',' + json_beacon.features[i].geometry.coordinates[0].toFixed(6))
 
-             marker.addListener('click', beacon_target_add);
-             beacon_marker.push(marker);
-//             points.push(new google.maps.LatLng(  json_beacon.features[i].geometry.coordinates[1], json_beacon.features[i].geometry.coordinates[0]  ));
-          }
+                marker.addListener('click', beacon_target_add);
+                beacon_marker.push(marker);
+                //             points.push(new google.maps.LatLng(  json_beacon.features[i].geometry.coordinates[1], json_beacon.features[i].geometry.coordinates[0]  ));
+            }
         }
-      }
-      http.send(params);
     }
+    http.send(params);
+}
 
 
 
@@ -638,79 +906,79 @@ Content-Type:  application/json
 
 
 
-    function send_points(){
-      var http = new XMLHttpRequest();
-      var url = '/getpoints/'
+function send_points() {
+    var http = new XMLHttpRequest();
+    var url = '/getpoints/'
 
-      var params = "points="+JSON.stringify(points);
-      http.open("POST", url, true);
-      http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-      http.setRequestHeader("X-CSRFToken", getCookie('csrftoken'));
+    var params = "points=" + JSON.stringify(points);
+    http.open("POST", url, true);
+    http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    http.setRequestHeader("X-CSRFToken", getCookie('csrftoken'));
 
-      http.onreadystatechange = function() {//Call a function when the state changes.
-        if(http.readyState == 4 && http.status == 200) {
-          deleteMarkers()
-          obj=    JSON.parse(http.responseText);
+    http.onreadystatechange = function () {//Call a function when the state changes.
+        if (http.readyState == 4 && http.status == 200) {
+            deleteMarkers()
+            obj = JSON.parse(http.responseText);
 
-          gjson=  JSON.parse(obj.near_points);
-          inputs= JSON.parse(obj.inputs);
+            gjson = JSON.parse(obj.near_points);
+            inputs = JSON.parse(obj.inputs);
 
-          $('#data').empty();
+            $('#data').empty();
 
-          // HTML table showing the points  --------------------------------------------------
-          var i=0;
-          jmax= gjson.features.length;
-          for (i; i<jmax ; i++)
-          { $('#data').append('<tr><td>'+gjson.features[i].geometry.coordinates[1]+'</td><td>'+gjson.features[i].geometry.coordinates[0]+'</td><td>'+gjson.features[i].properties.address+'</td>        </tr>');
-          }
-          $('#data').append('<th colspan="3">Inputs</th><tr><td></td></tr>');
+            // HTML table showing the points  --------------------------------------------------
+            var i = 0;
+            jmax = gjson.features.length;
+            for (i; i < jmax ; i++) {
+                $('#data').append('<tr><td>' + gjson.features[i].geometry.coordinates[1] + '</td><td>' + gjson.features[i].geometry.coordinates[0] + '</td><td>' + gjson.features[i].properties.address + '</td>        </tr>');
+            }
+            $('#data').append('<th colspan="3">Inputs</th><tr><td></td></tr>');
 
-          //Loop on the contents   -----------------------------------------------------------
-          i=0;
-          imax= inputs.length;
-          for (i; i<imax;i++)
-          { $('#data').append('<tr><td>'+inputs[i].PointList.lat+'</td><td>'+inputs[i].PointList.lng+'</td><td>'+inputs[i].PointList.address+'</td>       </tr>');
-          }
+            //Loop on the contents   -----------------------------------------------------------
+            i = 0;
+            imax = inputs.length;
+            for (i; i < imax; i++) {
+                $('#data').append('<tr><td>' + inputs[i].PointList.lat + '</td><td>' + inputs[i].PointList.lng + '</td><td>' + inputs[i].PointList.address + '</td>       </tr>');
+            }
 
-          //Print into Front End Map   ------------------------------------------------------
-          i=0;
-          for (i; i<imax; i++)
-          { var marker = new google.maps.Marker({
-                position: new google.maps.LatLng(inputs[i].PointList.lat, inputs[i].PointList.lng),
-                map: map
-            });
-            markers.push(marker);
-            points.push(new google.maps.LatLng(inputs[i].PointList.lat, inputs[i].PointList.lng));
-          }
+            //Print into Front End Map   ------------------------------------------------------
+            i = 0;
+            for (i; i < imax; i++) {
+                var marker = new google.maps.Marker({
+                    position: new google.maps.LatLng(inputs[i].PointList.lat, inputs[i].PointList.lng),
+                    map: map
+                });
+                markers.push(marker);
+                points.push(new google.maps.LatLng(inputs[i].PointList.lat, inputs[i].PointList.lng));
+            }
         }
     }
     http.send(params);
 
-    }
+}
 
 
 
 
 
 
-    function insert_points(){
-      alert("beacon_show");
-      var http = new XMLHttpRequest();
-      var url = '/insertpoints/'
-      var params = "points="+JSON.stringify(points);
-      http.open("POST", url, true);
-      http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-      http.setRequestHeader("X-CSRFToken", getCookie('csrftoken'));
-      http.onreadystatechange = function() {//Call a function when the state changes.
-        if(http.readyState == 4 && http.status == 200) {
-          $('#alert_place').html('<div class="alert alert-success alert-dismissible fade show" role="alert"> <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>kkk  Markers Inserted</div>');
+function insert_points() {
+    alert("beacon_show");
+    var http = new XMLHttpRequest();
+    var url = '/insertpoints/'
+    var params = "points=" + JSON.stringify(points);
+    http.open("POST", url, true);
+    http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    http.setRequestHeader("X-CSRFToken", getCookie('csrftoken'));
+    http.onreadystatechange = function () {//Call a function when the state changes.
+        if (http.readyState == 4 && http.status == 200) {
+            $('#alert_place').html('<div class="alert alert-success alert-dismissible fade show" role="alert"> <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>kkk  Markers Inserted</div>');
         }
-        else if(http.status == 500){
-          $('#alert_place').html('<div class="alert alert-danger alert-dismissible fade show" role="alert"> <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>An error occured, try to reduce number of points</div>');
+        else if (http.status == 500) {
+            $('#alert_place').html('<div class="alert alert-danger alert-dismissible fade show" role="alert"> <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>An error occured, try to reduce number of points</div>');
         }
     }
     http.send(params);
-    }
+}
 
 
 

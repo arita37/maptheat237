@@ -491,6 +491,7 @@ function initMap() {
 //Load Heatmap and Markers on initMap
 function loadHeatmapMarkers() {
     console.log(JSON.parse(localStorage.heatmapData))
+
     var date = JSON.parse(localStorage.heatmapData)[0].date;
     $.each(JSON.parse(localStorage.locationData), function (index, value) {
         if (value.date == date) {

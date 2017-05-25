@@ -55,9 +55,15 @@
     font-size: 15px;
     font-weight: 300;
     margin-left: 12px;
-    padding: 0 11px 0 13px;
+        padding: 5px 0px 5px 15px;
     text-overflow: ellipsis;
-    width: 400px;
+    width: 190px;    
+    border-radius: 999px;
+    text-align: left !important;
+    margin-right: 10px !important;    
+    height: 30px;
+    outline:none;
+    border: 2px solid rgb(174, 174, 174);
 }
 
     #pac-input:focus {
@@ -95,10 +101,41 @@
     padding: 3px 5px;
 }
 
+ 
 
 
 
+.Button--round.Button--default {
+    color: rgb(255, 255, 255);
+    background-color: rgb(125, 139, 157);
+    box-shadow: 1px 1px rgb(148, 160, 175) inset, -1px -1px rgb(110, 126, 146) inset;
+    margin-right: 20px;
+}
 
+
+.Button--round {
+    border-radius: 26px;
+    font-weight: bold;
+}
+
+.Button {
+    text-decoration: none;
+    display: inline-block;
+    margin-bottom: 0px;
+    font-weight: normal;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    background-image: none;
+    white-space: nowrap;
+    -moz-user-select: none;
+    border: 1px solid transparent;
+    padding: 0px 1.4em;
+    font-size: 12px;
+    line-height: 26px;
+    min-height: 26px;
+    letter-spacing: 0.1em;
+}
 
 
 
@@ -215,7 +252,7 @@ Main Components
     transition: opacity 0.2s;
     font-family: "Fira Sans", sans-serif;
     color: #383838;
-    background-color: #f8f8f8;
+    /*background-color: #f8f8f8;*/
     line-height: 1;
     font-size: 12px;
     box-sizing: border-box;
@@ -271,8 +308,8 @@ Main Components
             height: 100%;
             width: 20px;
             right: 0;
-            background-image: -webkit-linear-gradient(right, #f8f8f8, rgba(248, 248, 248, 0));
-            background-image: linear-gradient(to left, #f8f8f8, rgba(248, 248, 248, 0));
+            /*background-image: -webkit-linear-gradient(right, #f8f8f8, rgba(248, 248, 248, 0));
+            background-image: linear-gradient(to left, #f8f8f8, rgba(248, 248, 248, 0));*/
         }
 
         .cd-horizontal-timeline .events-wrapper::before {
@@ -283,8 +320,8 @@ Main Components
             height: 100%;
             width: 20px;
             left: 0;
-            background-image: -webkit-linear-gradient(left, #f8f8f8, rgba(248, 248, 248, 0));
-            background-image: linear-gradient(to right, #f8f8f8, rgba(248, 248, 248, 0));
+            /*background-image: -webkit-linear-gradient(left, #f8f8f8, rgba(248, 248, 248, 0));
+            background-image: linear-gradient(to right, #f8f8f8, rgba(248, 248, 248, 0));*/
         }
 
     .cd-horizontal-timeline .events {
@@ -487,4 +524,8 @@ Main Components
 
 .cd-horizontal-timeline .events a::before {
     content: none !important;
+}
+
+.addressSearchBox {
+    z-index: 1; position: absolute; right: 0px; top: 11%;padding-right: 20px;
 }

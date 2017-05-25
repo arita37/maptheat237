@@ -22,10 +22,11 @@
             dataType: 'json',
             async: false,         
             success: function (data) {
-           
+           debugger
             var steps = '';
-            localStorage.heatmapData = JSON.stringify(data);
-            $.each(data, function (index, value) {
+            localStorage.heatmapData = JSON.stringify(data.Locations);
+            localStorage.heatmapRadius = data.Radius;
+            $.each(data.Locations, function (index, value) {
                 var date = value.date;
                 if (!(date in lookup)) {
                     lookup[date] = 1;

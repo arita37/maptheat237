@@ -350,10 +350,10 @@ function initMap() {
         { featureType: "landscape", elementType: "geometry.fill", stylers: [{ color: "#e8ebee" }] },
         { featureType: "poi", elementType: "geometry.fill", stylers: [{ color: "#d9dde3" }] }];
 
-    var styledMapType = new google.maps.StyledMapType(styles, { name: 'Styled' });
+    var styledMapType = new google.maps.StyledMapType(styles, { name: '' });
 
     var options = {
-        mapTypeControlOptions: { mapTypeIds: ['Styled'] },
+        mapTypeControl: false,
         center: { lat: 35.6895, lng: 139.6917 },
         zoom: 16,
         //disableDefaultUI: true,
@@ -378,8 +378,8 @@ function initMap() {
     // pointArray = new google.maps.MVCArray(Datas);
 
     heatmap = new google.maps.visualization.HeatmapLayer({
-        radius: 20,
-        data: pointArray
+        radius: localStorage.heatmapRadius,
+        data: pointArray        
     });
 
     heatmap.setMap(map);
@@ -401,7 +401,7 @@ function initMap() {
         var data = [];
         $.each(JSON.parse(localStorage.heatmapData), function (index, value) {
             if (value.date == date) {
-                data.push([value.lat, value.long]);
+                data.push([value.lat, value.long, value.intensity]);
             }
         });
         success(data);
@@ -490,8 +490,7 @@ function initMap() {
 
 //Load Heatmap and Markers on initMap
 function loadHeatmapMarkers() {
-    console.log(JSON.parse(localStorage.heatmapData))
-
+    debugger
     var date = JSON.parse(localStorage.heatmapData)[0].date;
     $.each(JSON.parse(localStorage.locationData), function (index, value) {
         if (value.date == date) {
@@ -503,19 +502,21 @@ function loadHeatmapMarkers() {
     var data = [];
     $.each(JSON.parse(localStorage.heatmapData), function (index, value) {
         if (value.date == date) {
-            data.push([value.lat, value.long]);
+            data.push([value.lat, value.long, value.intensity]);
         }
     });
     var pointArray = [];
     for (var i = 0; i < data.length; i++) {
-        pointArray.push(new google.maps.LatLng(data[i][0],
-                                               data[i][1]));
+        pointArray.push({
+            location: new google.maps.LatLng(data[i][0],
+                                  data[i][1]), weight: data[i][2]});
     }
     return pointArray;
 }
 
 //Reset Heatmap Data
 function success(data) {
+    debugger
     while (Datas.length > 0) {
         Datas.pop();
     }
@@ -529,9 +530,9 @@ function reboot(Ddatas) {
     //    alert(Ddatas);
     var arraino = [];
     for (a in Ddatas) {
-        arraino.push(new google.maps.LatLng(
+        arraino.push({location: new google.maps.LatLng(
             Ddatas[a][0],
-            Ddatas[a][1]));
+            Ddatas[a][1]),weight:Ddatas[a][2]});
     }
     //    alert(arraino);
     return (arraino);

@@ -1,0 +1,7 @@
+{  "Circular_Graph1":  [
+    {"label": "iphone",  "pct":  "250%", "count": 10000,"color":"7f0000"},
+    {"label": "windows", "pct":  "250%", "count": 5000 ,"color":"cc0000"},
+     {"label": "android", "pct":  "250%", "count": 5000 ,"color":"d3d3d3"}
+     ]
+   
+}

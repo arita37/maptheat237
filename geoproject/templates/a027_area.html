@@ -1,0 +1,575 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>A027_cv</title>
+
+<!--- Internal testing ---->
+
+
+<script> var json_page= "../../geoproject/static/gg/custom_json/page_a027_area.json"
+
+var res={"data" : {}  };
+res.data=  JSON.parse('{ "textbox_topleft": { "meta": { "json_type": "value", "title": "" }, "data": [{ "title": "ユ－ザ－数", "value": "99,999", "image": "up",    "position": "left",   "color": "red"}, { "title": "ビ－コン反応数", "value": "25,999", "image": "down",  "position": "middle", "color": "red"}] }, "circularchart_left": [{ "label": "屋内", "value": "101 " }, { "label": "屋外", "value": "120"}, { "label": "不明", "value": "110 "}], "circularchart_right": [{ "label": "公開", "value": "101 "}, { "label": "非公開", "value": "120"}, { "label": "不明", "value": "110 " }], "table_bottom_1": { "meta": { "json_type": "table_small", "title": "Table 1"}, "data": { "columns": { "1": "ID", "2": "Location Type", "3": "value", "4": "Pct"}, "rows": [{ "1": "1", "2": "Office", "3": "1200", "4": "25.1%"}, { "1": "2", "2": "Kojou", "3": "1200", "4": "25.1%"}, { "1": "3", "2": "Public Park", "3": "1200", "4": "25.1%"}, { "1": "4", "2": "Office 3", "3": "1200", "4": "25.1%"}, { "1": "5", "2": "Kojou 2", "3": "1200", "4": "25.1%" }, { "1": "6", "2": "Public Office", "3": "1200", "4": "25.1%"} ]} }, "table_bottom_2": { "meta": { "json_type": "table_small", "title": "Table 1"}, "data": { "columns": { "1": "ID", "2": "Location Type", "3": "value", "4": "Pct"}, "rows": [{ "1": "1", "2": "Office", "3": "1200", "4": "25.1%"}, { "1": "2", "2": "Kojou", "3": "1200", "4": "25.1%"}, { "1": "3", "2": "Public Park", "3": "1200", "4": "25.1%"}, { "1": "4", "2": "Office 3", "3": "1200", "4": "25.1%"}, { "1": "5", "2": "Kojou 2", "3": "1200", "4": "25.1%"}, { "1": "6", "2": "Public Office", "3": "1200", "4": "25.1%"}] }}, "table_bottom_3": { "meta": { "json_type": "table_small", "title": "Table 1"}, "data": { "columns": { "1": "ID", "2": "Location Type", "3": "value", "4": "Pct"  }, "rows": [{ "1": "1", "2": "東京", "3": "1200", "4": "25.1%"}, { "1": "2", "2": "東京", "3": "1200", "4": "25.1%"}, { "1": "3", "2": "東京", "3": "1200", "4": "25.1%"}, { "1": "4", "2": "東京", "3": "1200", "4": "25.1%"}, { "1": "5", "2": "東京", "3": "1200", "4": "25.1%"}, { "1": "6", "2": "東京", "3": "1200", "4": "25.1%"}]} }, "graph_middle_tab1": { "daily_graph": { "meta": { "json_type": "graph_area", "title": "Daily Graph"}, "data": { "xaxis": { "label": "X labe1-1", "seriesname": "X category-1", "color": "1D8BD1", "anchorbordercolor": "1D8BD1", "anchorbgcolor": "1D8BD1", "data": [{ "value": "2016/01/15"}, { "value": "2016/02/15"}, { "value": "2016/03/15"}, { "value": "2016/04/15"}, { "value": "2016/05/15"}, { "value": "2016/06/15"}, { "value": "2016/07/15"}, { "value": "2016/08/15"}]}, "categories": [{ "label": "labe1-1", "seriesname": "category-1", "color": "8293A6", "anchorbordercolor": "8293A6", "anchorbgcolor": "8293A6", "data": [{ "value": "1000", "label": "label 1"}, { "value": "500", "label": "label 2"}, { "value": "3000", "label": "label 3"}, { "value": "2000", "label": "label 4"}, { "value": "5000", "label": "label 4"}, { "value": "3000", "label": "label 4"}, { "value": "7000", "label": "label 4"}, { "value": "8000", "label": "label 4"}]}]} }, "monthly_graph": { "meta": { "json_type": "graph_area", "title": "Daily Graph"}, "data": { "xaxis": { "label": "X labe1-1", "seriesname": "X category-1", "color": "1D8BD1", "anchorbordercolor": "1D8BD1", "anchorbgcolor": "1D8BD1", "data": [{ "value": "2016/01/15"}, { "value": "2016/02/15"}, { "value": "2016/03/15"}, { "value": "2016/04/15"}, { "value": "2016/05/15"}, { "value": "2016/06/15"}, { "value": "2016/07/15"}, { "value": "2016/08/15"}]}, "categories": [{ "label": "labe1-1", "seriesname": "category-1", "color": "8293A6", "anchorbordercolor": "8293A6", "anchorbgcolor": "8293A6", "data": [{ "value": "1000", "label": "label 1"}, { "value": "2000", "label": "label 2"}, { "value": "3000", "label": "label 3"}, { "value": "4000", "label": "label 4"}, { "value": "5000", "label": "label 4"}, { "value": "6000", "label": "label 4"}, { "value": "7000", "label": "label 4"}, { "value": "8000", "label": "label 4"}] }]} }, "weekly_graph": { "meta": { "json_type": "graph_area", "title": "Daily Graph"}, "data": { "xaxis": { "label": "X labe1-1", "seriesname": "X category-1", "color": "1D8BD1", "anchorbordercolor": "1D8BD1", "anchorbgcolor": "1D8BD1", "data": [{ "value": "2016/01/15"}, { "value": "2016/02/15"}, { "value": "2016/03/15"}, { "value": "2016/04/15"}, { "value": "2016/05/15"}, { "value": "2016/06/15"}, { "value": "2016/07/15"}, { "value": "2016/08/15"}]}, "categories": [{ "label": "labe1-1", "seriesname": "category-1", "color": "8293A6", "anchorbordercolor": "8293A6", "anchorbgcolor": "8293A6", "data": [{ "value": "1000", "label": "label 1"}, { "value": "2000", "label": "label 2"}, { "value": "3000", "label": "label 3"}, { "value": "4000", "label": "label 4"}, { "value": "5000", "label": "label 4"}, { "value": "6000", "label": "label 4"}, { "value": "7000", "label": "label 4"}, { "value": "8000", "label": "label 4"}]}]}} }, "graph_middle_tab2": { "daily_graph": { "meta": { "json_type": "graph_area", "title": "Daily Graph"}, "data": { "xaxis": { "label": "X labe1-1", "seriesname": "X category-1", "color": "1D8BD1", "anchorbordercolor": "1D8BD1", "anchorbgcolor": "1D8BD1", "data": [{ "value": "2016/01/15"}, { "value": "2016/02/15"}, { "value": "2016/03/15"}, { "value": "2016/04/15"}, { "value": "2016/05/15"}, { "value": "2016/06/15"}, { "value": "2016/07/15"}, { "value": "2016/08/15"}]}, "categories": [{ "label": "labe1-1", "seriesname": "category-1", "color": "8293A6", "anchorbordercolor": "8293A6", "anchorbgcolor": "8293A6", "data": [{ "value": "1000", "label": "label 1"}, { "value": "500", "label": "label 2"}, { "value": "3000", "label": "label 3"}, { "value": "2000", "label": "label 4"}, { "value": "5000", "label": "label 4"}, { "value": "3000", "label": "label 4"}, { "value": "7000", "label": "label 4"}, { "value": "8000", "label": "label 4"}]}]}}, "monthly_graph": { "meta": { "json_type": "graph_area", "title": "Daily Graph"}, "data": { "xaxis": { "label": "X labe1-1", "seriesname": "X category-1", "color": "1D8BD1", "anchorbordercolor": "1D8BD1", "anchorbgcolor": "1D8BD1", "data": [{ "value": "2016/01/15"}, { "value": "2016/02/15"}, { "value": "2016/03/15"}, { "value": "2016/04/15"}, { "value": "2016/05/15"}, { "value": "2016/06/15"}, { "value": "2016/07/15"}, { "value": "2016/08/15"}] }, "categories": [{ "label": "labe1-1", "seriesname": "category-1", "color": "8293A6", "anchorbordercolor": "8293A6", "anchorbgcolor": "8293A6", "data": [{ "value": "1000", "label": "label 1"}, { "value": "2000", "label": "label 2"}, { "value": "3000", "label": "label 3"}, { "value": "4000", "label": "label 4"}, { "value": "5000", "label": "label 4"}, { "value": "6000", "label": "label 4"}, { "value": "7000", "label": "label 4"}, { "value": "8000", "label": "label 4"}] }] }}, "weekly_graph": { "meta": { "json_type": "graph_area", "title": "Daily Graph"}, "data": { "xaxis": { "label": "X labe1-1", "seriesname": "X category-1", "color": "1D8BD1", "anchorbordercolor": "1D8BD1", "anchorbgcolor": "1D8BD1", "data": [{ "value": "2016/01/15"}, { "value": "2016/02/15"}, { "value": "2016/03/15"}, { "value": "2016/04/15"}, { "value": "2016/05/15"}, { "value": "2016/06/15"}, { "value": "2016/07/15"}, { "value": "2016/08/15"}]}, "categories": [{ "label": "labe1-1", "seriesname": "category-1", "color": "8293A6", "anchorbordercolor": "8293A6", "anchorbgcolor": "8293A6", "data": [{ "value": "1000", "label": "label 1"}, { "value": "2000", "label": "label 2"}, { "value": "3000", "label": "label 3"}, { "value": "4000", "label": "label 4"}, { "value": "5000", "label": "label 4"}, { "value": "6000", "label": "label 4"}, { "value": "7000", "label": "label 4"}, { "value": "8000", "label": "label 4"}]}]}} }, "graph_middle_tab3": { "daily_graph": { "meta": { "json_type": "graph_area", "title": "Daily Graph"}, "data": { "xaxis": { "label": "X labe1-1", "seriesname": "X category-1", "color": "1D8BD1", "anchorbordercolor": "1D8BD1", "anchorbgcolor": "1D8BD1", "data": [{ "value": "2016/01/15"}, { "value": "2016/02/15"}, { "value": "2016/03/15"}, { "value": "2016/04/15"}, { "value": "2016/05/15"}, { "value": "2016/06/15"}, { "value": "2016/07/15"}, { "value": "2016/08/15"}]}, "categories": [{ "label": "labe1-1", "seriesname": "category-1", "color": "8293A6", "anchorbordercolor": "8293A6", "anchorbgcolor": "8293A6", "data": [{ "value": "1000", "label": "label 1"}, { "value": "500", "label": "label 2"}, { "value": "3000", "label": "label 3"}, { "value": "2000", "label": "label 4"}, { "value": "5000", "label": "label 4"}, { "value": "3000", "label": "label 4"}, { "value": "7000", "label": "label 4"}, { "value": "8000", "label": "label 4"}]}] } }, "monthly_graph": { "meta": { "json_type": "graph_area", "title": "Daily Graph"}, "data": { "xaxis": { "label": "X labe1-1", "seriesname": "X category-1", "color": "1D8BD1", "anchorbordercolor": "1D8BD1", "anchorbgcolor": "1D8BD1", "data": [{ "value": "2016/01/15"}, { "value": "2016/02/15"}, { "value": "2016/03/15"}, { "value": "2016/04/15"}, { "value": "2016/05/15"}, { "value": "2016/06/15"}, { "value": "2016/07/15"}, { "value": "2016/08/15"}]}, "categories": [{ "label": "labe1-1", "seriesname": "category-1", "color": "8293A6", "anchorbordercolor": "8293A6", "anchorbgcolor": "8293A6", "data": [{ "value": "1000", "label": "label 1"}, { "value": "2000", "label": "label 2"}, { "value": "3000", "label": "label 3"}, { "value": "4000", "label": "label 4"}, { "value": "5000", "label": "label 4"}, { "value": "6000", "label": "label 4"}, { "value": "7000", "label": "label 4"}, { "value": "8000", "label": "label 4"}] }] }}, "weekly_graph": { "meta": { "json_type": "graph_area", "title": "Daily Graph"}, "data": { "xaxis": { "label": "X labe1-1", "seriesname": "X category-1", "color": "1D8BD1", "anchorbordercolor": "1D8BD1", "anchorbgcolor": "1D8BD1", "data": [{ "value": "2016/01/15"}, { "value": "2016/02/15"}, { "value": "2016/03/15"}, { "value": "2016/04/15"}, { "value": "2016/05/15"}, { "value": "2016/06/15"}, { "value": "2016/07/15"}, { "value": "2016/08/15"} ]}, "categories": [{ "label": "labe1-1", "seriesname": "category-1", "color": "8293A6", "anchorbordercolor": "8293A6", "anchorbgcolor": "8293A6", "data": [{ "value": "1000", "label": "label 1"}, { "value": "2000", "label": "label 2"}, { "value": "3000", "label": "label 3"}, { "value": "4000", "label": "label 4"}, { "value": "5000", "label": "label 4"}, { "value": "6000", "label": "label 4"}, { "value": "7000", "label": "label 4"}, { "value": "8000", "label": "label 4"}]}]} } }, "graph_middle_tab4": { "daily_graph": { "meta": { "json_type": "graph_area", "title": "Daily Graph"}, "data": { "xaxis": { "label": "X labe1-1", "seriesname": "X category-1", "color": "1D8BD1", "anchorbordercolor": "1D8BD1", "anchorbgcolor": "1D8BD1", "data": [{ "value": "2016/01/15"}, { "value": "2016/02/15"}, { "value": "2016/03/15"}, { "value": "2016/04/15"}, { "value": "2016/05/15"}, { "value": "2016/06/15"}, { "value": "2016/07/15"}, { "value": "2016/08/15"} ]}, "categories": [{ "label": "labe1-1", "seriesname": "category-1", "color": "8293A6", "anchorbordercolor": "8293A6", "anchorbgcolor": "8293A6", "data": [{ "value": "1000", "label": "label 1"}, { "value": "500", "label": "label 2"}, { "value": "3000", "label": "label 3"}, { "value": "2000", "label": "label 4"}, { "value": "5000", "label": "label 4"}, { "value": "3000", "label": "label 4"}, { "value": "7000", "label": "label 4"}, { "value": "8000", "label": "label 4"} ]}] }}, "monthly_graph": { "meta": { "json_type": "graph_area", "title": "Daily Graph"}, "data": { "xaxis": { "label": "X labe1-1", "seriesname": "X category-1", "color": "1D8BD1", "anchorbordercolor": "1D8BD1", "anchorbgcolor": "1D8BD1", "data": [{ "value": "2016/01/15"}, { "value": "2016/02/15"}, { "value": "2016/03/15"}, { "value": "2016/04/15"}, { "value": "2016/05/15"}, { "value": "2016/06/15"}, { "value": "2016/07/15"}, { "value": "2016/08/15"} ]}, "categories": [{ "label": "labe1-1", "seriesname": "category-1", "color": "8293A6", "anchorbordercolor": "8293A6", "anchorbgcolor": "8293A6", "data": [{ "value": "1000", "label": "label 1"}, { "value": "2000", "label": "label 2"}, { "value": "3000", "label": "label 3"}, { "value": "4000", "label": "label 4"}, { "value": "5000", "label": "label 4"}, { "value": "6000", "label": "label 4"}, { "value": "7000", "label": "label 4"}, { "value": "8000", "label": "label 4"} ]}] }}, "weekly_graph": { "meta": { "json_type": "graph_area", "title": "Daily Graph"}, "data": { "xaxis": { "label": "X labe1-1", "seriesname": "X category-1", "color": "1D8BD1", "anchorbordercolor": "1D8BD1", "anchorbgcolor": "1D8BD1", "data": [{ "value": "2016/01/15"}, { "value": "2016/02/15"}, { "value": "2016/03/15"}, { "value": "2016/04/15"}, { "value": "2016/05/15"}, { "value": "2016/06/15"}, { "value": "2016/07/15"}, { "value": "2016/08/15"} ]}, "categories": [{ "label": "labe1-1", "seriesname": "category-1", "color": "8293A6", "anchorbordercolor": "8293A6", "anchorbgcolor": "8293A6", "data": [{ "value": "1000", "label": "label 1"}, { "value": "2000", "label": "label 2"}, { "value": "3000", "label": "label 3"}, { "value": "4000", "label": "label 4"}, { "value": "5000", "label": "label 4"}, { "value": "6000", "label": "label 4"}, { "value": "7000", "label": "label 4"}, { "value": "8000", "label": "label 4"} ]}] } } } } ')
+
+
+</script>
+
+<script src="../../geoproject/static/gg/custom_js_css/njfiorioze-3.2.1.js"></script> <script src="../../geoproject/static/gg/custom_js_css/njfiorioze-ui.js"></script> <script src="../../geoproject/static/gg/custom_js_css/dbca6ceb2a.js"></script> <script type="text/javascript" src="../../geoproject/static/gg/custom_js_css/jsfhue/jsfhue.js"></script> <script type="text/javascript" src="../../geoproject/static/gg/pdgjr5/js/pdgjr5.js"></script> <script type="text/javascript" src="../../geoproject/static/gg/pdgjr5/wrappers/jsfhuejs/jfsdfsdf5sd5fs5d.min.js"></script> <script src="../../geoproject/static/gg/custom_js_css/ui-grid.min.js"></script> <link rel="stylesheet" href="../../geoproject/static/gg/custom_js_css/ui-grid.min.css"> <link href="../../geoproject/static/gg/custom_js_css/a5e4e5z.min.css" rel="stylesheet"> <script type="text/javascript" src="../../geoproject/static/gg/a5e4e5z/a5e4e5z.js"></script> <link rel="stylesheet" href="../../geoproject/static/gg/custom_js_css/bootstrap.min.css"> <script type="text/javascript" src="../../geoproject/static/gg/custom_js_css/jsfhue/ui-bootstrap-tpls-2.5.0.min.js"></script> <script type="text/javascript" src="../../geoproject/static/gg/pdgjr5/js/ds8f5dsf5s.js"></script> <script type="text/javascript" src="../../geoproject/static/gg/pdgjr5/js/prezjrzej.js"></script>
+
+
+<!--- Prod ---->
+<!---
+<script>
+var json_page= "../../static/gg/custom_json/page_a027_area.json"
+var res={"data" : {}  };
+res.data=  JSON.parse("{{ json_page_python |escapejs }}")
+</script>
+
+
+
+
+{% load static %}
+{% load compress %}
+{% compress js %}
+<script src="{% static 'gg/custom_js_css/njfiorioze-3.2.1.js'%}"></script> <script src="{% static 'gg/custom_js_css/njfiorioze-ui.js'%}"></script> <script src="{% static 'gg/custom_js_css/dbca6ceb2a.js'%}"></script> <script type="text/javascript" src="{% static 'gg/custom_js_css/jsfhue/jsfhue.js'%}"></script> <script type="text/javascript" src="{% static 'gg/pdgjr5/js/pdgjr5.js'%}"></script> <script type="text/javascript" src="{% static 'gg/pdgjr5/wrappers/jsfhuejs/jfsdfsdf5sd5fs5d.min.js'%}"></script> <script src="{% static 'gg/custom_js_css/ui-grid.min.js'%}"></script>   <script type="text/javascript" src="{% static 'gg/a5e4e5z/a5e4e5z.js'%}"></script>  <script type="text/javascript" src="{% static 'gg/custom_js_css/jsfhue/ui-bootstrap-tpls-2.5.0.min.js'%}"></script> <script type="text/javascript" src="{% static 'gg/pdgjr5/js/ds8f5dsf5s.js'%}"></script> <script type="text/javascript" src="{% static 'gg/pdgjr5/js/prezjrzej.js'%}"></script>
+--->
+
+
+
+<script>
+//-------------------------- Topleft, texbox01  -----------------------------------------------
+var textbox_topleft_static={ "color": ["#CB6674","#3362BB","#CB6674"] }
+
+
+//-------------------------- Middle Graph -----------------------------------------------------
+var dailyGraphTitle=   "日";    var monthlyGraphTitle= "月"; var weeklyGraphTitle=  "週";
+    function areaChart(){ return {
+       "chart": { "palettecolors": "ED7D8B",
+                  "labeldisplay": "rotate",
+                  "anchorradius": "1",  "anchorborderthickness": "2",  "anchorBgColor": "#CE5E71",
+                  "lineThickness": "5",
+                  "caption": "",
+                  "subcaption": "", "plotgradientcolor": "", "bgcolor": "FFFFFF",
+                  "showalternatehgridcolor": "0", "showplotborder": "0", "showvalues": "0",
+                  "divlinecolor": "CCCCCC", "showcanvasborder": "1", "canvasborderalpha": "1",
+                  "yaxisvaluespadding": "10", "showborder": "0"
+                },
+       "data": []
+       }
+    }
+
+
+//------------------------- Bottom circular chart options---------------------------------------
+var circularchart_left_static={
+  "circularGraphColors": ["#CD0A59", "#E84F63", "#D3D3D3"],
+  "caption" :  "",
+  "chart": {"enableSmartLabels": "1", "chartTopMargin": "0", "chartRightMargin": "0", "chartBottomMargin": "0", "caption": "", "subCaption": "", "numberPrefix": "", "bgColor": "#ffffff", "showBorder": "0", "use3DLighting": "0", "showShadow": "0", "enableSmartLabels": "0", "startingAngle": "310", "showLabels": "0", "showValues": "1", "showPercentValues": "1", "showLegend": "1","legendShadow": "0", "legendPosition": "right", "legendBorderAlpha": "0", "defaultCenterLabel": "", "centerLabel": "", "centerLabelBold": "0", "showTooltip": "1", "decimals": "0", "captionFontSize": "14", "subcaptionFontSize": "14", "subcaptionFontBold": "0", "useDataPlotColorForLabels": "1", "legendlabel": "ddd"}
+, "data": undefined
+}
+
+
+var circularchart_right_static={
+  "circularGraphColors": ["#CD0A59", "#E84F63", "#D3D3D3"],
+  "caption" :  "",
+  "chart": {"enableSmartLabels": "1", "chartTopMargin": "0", "chartRightMargin": "0", "chartBottomMargin": "0", "caption": "", "subCaption": "", "numberPrefix": "", "bgColor": "#ffffff", "showBorder": "0", "use3DLighting": "0", "showShadow": "0", "enableSmartLabels": "0", "startingAngle": "310", "showLabels": "0", "showValues": "1", "showPercentValues": "1", "showLegend": "1","legendShadow": "0", "legendPosition": "right", "legendBorderAlpha": "0", "defaultCenterLabel": "", "centerLabel": "", "centerLabelBold": "0", "showTooltip": "1", "decimals": "0", "captionFontSize": "14", "subcaptionFontSize": "14", "subcaptionFontBold": "0", "useDataPlotColorForLabels": "1", "legendlabel": "ddd"}
+, "data": undefined
+}
+
+</script>
+
+
+<script>
+// Initiliation Graphs, Tables  ------------------------------------------------------------------
+var app = angular.module("app", ['ng-fusioncharts', 'ui.grid','ui.bootstrap']);
+
+
+
+//--------------- Tabulator Table (not used here) -----------------------------------------------
+app.directive("convertTable", function () { return {
+            link: function (scope, element, attrs) {
+                //############# column configuration for page 7 big table
+                $(element).tabulator(bigTableOptions)
+                $(element).tabulator("setData", attrs.convertTable);
+            }
+        }
+})
+
+
+//  JSON to Angular
+app.controller('rootCtrl',  function($scope, $http){
+        // Asynchrone Get
+      //  $http.get(json_page).then(function(res){
+
+
+        //----------------Top Left TextBox ---------------------------------------------------
+            $scope.textbox_topleft_color=    textbox_topleft_static.color;
+            $scope.textbox_topleft_ang=      res.data.textbox_topleft.data;
+            $scope.set_color=function(index){
+                console.log(index);
+                return {  color:$scope.textbox_topleft_color[index%$scope.textbox_topleft_color.length] }
+            }
+
+
+
+        //-------------  Top Right Table ------------------------------------------------------
+        $scope.table_topright1=  res.data.table_topright1;
+
+
+        //--------------  Bottom Tables -----------------------------------------------------
+        $scope.bottomTable1 = res.data.table_bottom_1;
+        $scope.bottomTable2 = res.data.table_bottom_2;
+        $scope.bottomTable3 = res.data.table_bottom_3;
+
+
+
+        //----------------- Bottom Left Circular graph        -------------------------------------------------
+        $scope.circularchartleft =               circularchart_left_static;   //Creation of Graph
+        var circulargraphData = res.data.circularchart_left;                  // Dynamic JSON
+        $scope.circularchartleft.chart.caption = circularchart_left_static.caption;
+        var colors= circularchart_right_static.circularGraphColors;
+
+        var graphData= [];
+        for (var i = 0; i < circulargraphData.length; i++) {
+           var obj = circulargraphData[i];
+           graphData.push({ "label": obj.label , "value": obj.value , "color": colors[i % colors.length]
+        })}
+
+        $scope.circularchartleft.data =     graphData;
+        $scope.left_circular = true;
+
+
+
+        //----------------- Bottom Right Circular graph        ------------------------------------------------
+        $scope.circularchartright =               circularchart_right_static;   // Creation of Graph Static JSON
+        var circulargraphData =  res.data.circularchart_right;                  // Dynamic JSON
+        $scope.circularchartright.chart.caption = circularchart_right_static.caption;
+        var colors= circularchart_right_static.circularGraphColors;
+
+        var graphData= [];
+        for (var i = 0; i < circulargraphData.length; i++) {
+           var obj = circulargraphData[i];
+           graphData.push({ "label": obj.label , "value": obj.value , "color": colors[i % colors.length]
+        })}
+        $scope.circularchartright.data =     graphData;
+        $scope.right_circular = true;
+
+
+
+        //------------------ Tab Graph in Middle       --------------------------------------------------------
+            $scope.activeTab1Graph=dailyGraphTitle;
+            $scope.activeTab2Graph=dailyGraphTitle;
+            $scope.activeTab3Graph=dailyGraphTitle;
+            $scope.activeTab4Graph=dailyGraphTitle;
+
+            $scope.toggelTab1Graph=function(type){  $scope.activeTab1Graph=type }
+            $scope.toggelTab2Graph=function(type){  $scope.activeTab2Graph=type;}
+            $scope.toggelTab3Graph=function(type){   $scope.activeTab3Graph=type; }
+            $scope.toggelTab4Graph=function(type){   $scope.activeTab4Graph=type; }
+
+            //----------------daily graph -tab1-------------------------------
+            $scope.middleGraphTab1= res.data.graph_middle_tab1;
+            $scope.tab1Daily= $scope.middleGraphTab1.daily_graph.data;
+            $scope.tab1DailyGraph=areaChart();
+            for(var index=0;index< $scope.tab1Daily.categories[0].data.length;index++){
+                $scope.tab1DailyGraph.data.push({
+                    label:$scope.tab1Daily.xaxis.data[index].value,
+                    value:$scope.tab1Daily.categories[0].data[index].value
+                })
+            }
+
+            //---------------weekly graph -tab1-------------------------------
+            $scope.tab1Weekly=$scope.middleGraphTab1.weekly_graph.data;
+            $scope.tab1WeeklyGraph=areaChart();
+            for(var index=0;index< $scope.tab1Weekly.categories[0].data.length;index++){
+                $scope.tab1WeeklyGraph.data.push({
+                    label:$scope.tab1Weekly.xaxis.data[index].value,
+                    value:$scope.tab1Weekly.categories[0].data[index].value
+                })
+            }
+            //--------------monthly graph -tab1------------------------------
+            $scope.tab1monthly=$scope.middleGraphTab1.monthly_graph.data;
+            $scope.tab1MonthlyGraph=areaChart();
+            for(var index=0;index< $scope.tab1monthly.categories[0].data.length;index++){
+                $scope.tab1MonthlyGraph.data.push({
+                    label:$scope.tab1monthly.xaxis.data[index].value,
+                    value:$scope.tab1monthly.categories[0].data[index].value
+                })
+            }
+            $scope.tab1Graphs=[]
+            $scope.tab1Graphs.push({title:dailyGraphTitle,"graph": $scope.tab1DailyGraph});
+            $scope.tab1Graphs.push({title:weeklyGraphTitle,graph: $scope.tab1WeeklyGraph});
+            $scope.tab1Graphs.push( {title:monthlyGraphTitle,graph:$scope.tab1MonthlyGraph});
+
+
+
+            //------------------Tab2 graph---------------------------------
+            //----------------daily graph -tab2----------------------------
+            $scope.middleGraphTab2=res.data.graph_middle_tab2;
+            $scope.tab2Daily=$scope.middleGraphTab2.daily_graph.data;
+            $scope.tab2DailyGraph=areaChart();
+            for(var index=0;index< $scope.tab2Daily.categories[0].data.length;index++){
+                $scope.tab2DailyGraph.data.push({
+                    label:$scope.tab2Daily.xaxis.data[index].value,
+                    value:$scope.tab2Daily.categories[0].data[index].value
+                })
+            }
+
+            //---------------weekly graph -tab2---------------------------
+            $scope.tab2Weekly=$scope.middleGraphTab2.weekly_graph.data;
+            $scope.tab2WeeklyGraph=areaChart();
+            for(var index=0;index< $scope.tab2Weekly.categories[0].data.length;index++){
+                $scope.tab2WeeklyGraph.data.push({
+                    label:$scope.tab2Weekly.xaxis.data[index].value,
+                    value:$scope.tab2Weekly.categories[0].data[index].value
+                })
+            }
+            //--------------monthly graph -tab2--------------------------
+            $scope.tab2monthly=$scope.middleGraphTab2.monthly_graph.data;
+            $scope.tab2MonthlyGraph=areaChart();
+            for(var index=0;index< $scope.tab2monthly.categories[0].data.length;index++){
+                $scope.tab2MonthlyGraph.data.push({
+                    label:$scope.tab2monthly.xaxis.data[index].value,
+                    value:$scope.tab2monthly.categories[0].data[index].value
+                })
+            }
+            $scope.tab2Graphs=[]
+            $scope.tab2Graphs.push({title:dailyGraphTitle,graph: $scope.tab2DailyGraph});
+            $scope.tab2Graphs.push({title:weeklyGraphTitle,graph: $scope.tab2WeeklyGraph});
+            $scope.tab2Graphs.push({title:monthlyGraphTitle,graph: $scope.tab2MonthlyGraph});
+
+
+
+
+            //---------------Tab3 graph------------------------------------------------
+            //----------------daily graph -tab3----------------------------------------
+            $scope.middleGraphTab3=res.data.graph_middle_tab3;
+            $scope.tab3Daily=$scope.middleGraphTab3.daily_graph.data;
+            $scope.tab3DailyGraph=areaChart();
+            for(var index=0;index< $scope.tab3Daily.categories[0].data.length;index++){
+                $scope.tab3DailyGraph.data.push({
+                    label:$scope.tab3Daily.xaxis.data[index].value,
+                    value:$scope.tab3Daily.categories[0].data[index].value
+                })
+            }
+
+            //---------------weekly graph -tab3---------------------------------------
+            $scope.tab3Weekly=$scope.middleGraphTab3.weekly_graph.data;
+            $scope.tab3WeeklyGraph=areaChart();
+            for(var index=0;index< $scope.tab3Weekly.categories[0].data.length;index++){
+                $scope.tab3WeeklyGraph.data.push({
+                    label:$scope.tab3Weekly.xaxis.data[index].value,
+                    value:$scope.tab3Weekly.categories[0].data[index].value
+                })
+            }
+            //--------------monthly graph -tab3---------------------------------------
+            $scope.tab3monthly=$scope.middleGraphTab3.monthly_graph.data;
+            $scope.tab3MonthlyGraph=areaChart();
+            for(var index=0;index< $scope.tab3monthly.categories[0].data.length;index++){
+                $scope.tab3MonthlyGraph.data.push({
+                    label:$scope.tab3monthly.xaxis.data[index].value,
+                    value:$scope.tab3monthly.categories[0].data[index].value
+                })
+            }
+            $scope.tab3Graphs=[]
+            $scope.tab3Graphs.push( {title:dailyGraphTitle,"graph":$scope.tab3DailyGraph});
+             $scope.tab3Graphs.push({title:weeklyGraphTitle,"graph": $scope.tab3WeeklyGraph});
+            $scope.tab3Graphs.push( {title:monthlyGraphTitle,"graph":$scope.tab3MonthlyGraph});
+            $scope.tabGraphflag=true;
+
+     //   })
+
+})
+</script>
+
+<!---
+{
+    "chart": {
+        "caption": "Population Chart", "showvalues": "0", "snumbersuffix": "%", "decimals": "3", "setadaptiveymin": "1", "setadaptivesymin": "1", "linethickness": "5", "showborder": "0"
+    },
+    "categories": [
+        {
+            "category": [
+                { "name": "2000", "label": "" }, { "name": "2001", "label": "" }, { "name": "2002", "label": "" }, { "name": "2003", "label": "" }, { "name": "2004", "label": "" }, { "name": "2005", "label": "" } ] }
+    ],
+    "dataset": [
+        {
+            "seriesname": "Population",
+            "parentyaxis": "P",
+            "renderas": "Area",
+            "data": [ { "value": "275562673" }, { "value": "278558081" }, { "value": "280562489" }, { "value": "290342551" }, { "value": "290342551" }, { "value": "293027112" } ] },
+        {
+            "parentyaxis": "S",
+            "seriesname": "Birth Rate",
+            "renderas": "Line",
+            "data": [ { "value": "1.42" }, { "value": "1.42" }, { "value": "1.41" }, { "value": "1.414" }, { "value": "1.413" }, { "value": "1.414" } ] },
+        {
+            "parentyaxis": "S",
+            "seriesname": "Death Rate",
+            "renderas": "Line",
+            "data": [ { "value": "0.87" }, { "value": "0.87" }, { "value": "0.87" }, { "value": "0.844" }, { "value": "0.834" }, { "value": "0.825"
+                }
+            ]
+        }
+    ]
+}
+
+
+
+--->
+
+
+<!---
+
+//-------------line graph caption  ________________________________________________________
+var lineGraphColors=["#C72C5E", "#DE3E58", "#A1B1C3"]
+var LINE_CAPTION="caption for line graph";
+var LINE_SUBCAPTION="subcaption for line graph"
+var lineChartOptions={
+  "chart": { "caption": "Daily Visits", "linethickness": "1", "showvalues": "0","formatnumberscale": "0", "anchorradius": "2", "divlinecolor": "666666", "divlinealpha": "30", "divlineisdashed": "1", "labelstep": "2", "bgcolor": "FFFFFF", "showalternatehgridcolor": "0", "labelpadding": "10", "canvasborderthickness": "1", "legendiconscale": "1.5", "legendshadow": "0", "legendborderalpha": "0", "canvasborderalpha": "50", "numvdivlines": "5", "vdivlinealpha": "20", "showborder": "0" }
+  ,"categories": [ {"category": [] } ]
+  , "dataset": []
+}
+
+
+
+//____________________-pyramidChartOptions_______________________________________________
+pyramidGraphColors=["#9BAEBC", "# E65065", "#CB145B"];
+
+var pyramidChartOptions = {
+  "chart": {"caption": "", "subcaption": "", "linethickness": "1", "showvalues": "0", "formatnumberscale": "0", "anchorradius": "2", "divlinecolor": "666666", "divlinealpha": "30", "divlineisdashed": "1", "labelstep": "2", "bgcolor": "FFFFFF", "showalternatehgridcolor": "0", "labelpadding": "10", "canvasborderthickness": "1", "legendiconscale": "1.5", "legendshadow": "0", "legendborderalpha": "0", "canvasborderalpha": "50", "numvdivlines": "5", "vdivlinealpha": "20", "showborder": "0", "showtooltip": "1", "paletteColors": "#46b8da,#993f6c,#cc0000", labelDisplay: "wrap", "showLabelsAtCenter": "1", "baseFontSize": "12", "baseFontColor": "#fff", "numberSuffix": "$", "plotToolText": "$label", "showToolTipShadow": "1", "toolTipBorderColor": "#FFFFFF", "plottooltext": "<div class='tooltip-custom'>$label</div>", "showLegend": "1" , "outCnvBaseFontColor": "#8D8D8D" , }
+  , "data": []
+  , "styles": {
+      "definition": [ {"name": "myToolTipFont", "type": "font", "font": "Arial", "size": "12", "color": "FF5904"} ]
+      ,"application": [{"toobject": "ToolTip", "styles": "myToolTipFont"}  ]
+      }
+}
+
+
+//---------------------table 2 options--------------------------------------------------
+var table2options= {fitColumns: true,
+  columns: [{title: "brand"  , field: "name"}, {title: "percentage" , field: "pct"  , align: "center" ,formatter: "progress"},
+            {title: "percentage"  , field: "pct" , align: "center" , formatter: pctFormat}, {title: "count" , field: "count"},
+            {title: "nb" , field: "count"}], }
+
+function pctFormat(value, data, cell, row, options) {   return value + "%";  }; //plain text value
+
+
+//------------------big table options----
+var bigTableOptions= {fitColumns: true,
+   columns: [{title: "id", field: "id", align: "right", sorter: "number" },{title: "brand" , field: "name"},
+             {title: "percentage"  , field: "pct"  , align: "center" , formatter: "progress"},
+             {title: "percentage"  , field: "pct"   , align: "center"  , formatter: pctFormat}, {title: "count" , field: "count"} ,
+             {title: "nb"  , field: "count"}], }
+
+--->
+{% endcompress %}
+
+
+
+
+
+
+{% verbatim %}
+<link rel="stylesheet" href="../../static/css/style.css" > <link rel="stylesheet" href="../../static/gg/custom_js_css/bootstrap.min.css">
+<link href="../../static/gg/custom_js_css/a5e4e5z.min.css" rel="stylesheet"> <link rel="stylesheet" href="../../static/gg/custom_js_css/ui-grid.min.css">
+
+
+<style>
+      *{ box-sizing:border-box;}
+      .box{   border-radius: 4px;   border: 3px solid #E6E6E6;  }
+      .box-container{ padding:10px;   }
+      .value {  font-size: 18px;  text-align: right; padding: 10px;   color:#CB6674; }
+      .title { padding: 5px; font-weigt:bold;
+      /* color: #868686; */
+      }
+      .glyphicon{  font-size: 20px;   }
+      .mg-bot{     margin-bottom: 20px; }
+      ul.menu{     list-style:none }
+      ul.menu li{  display:inline-block;  padding:10px;  }
+
+
+      .diva.a {  background-color: white  }
+      
+.hr {  margin: top: 5px;    margin-bottom: 5px;
+       height: 3px;         background-color: #E4E4E4;      width: 100%  }
+
+.row {    margin-left: 0;  margin-right: 0   }
+
+
+.h4class { font-family: "Hiragino Kaku Gothic ProN", "Yu Gothic", YuGothic, Verdana, Meiryo, sans-serif ;     font-size: 16px; font-weight: 600; }
+
+
+/*  Tab Link  + 日  */
+a { color: #777; text-decoration: none; background-color: #D5D5D5;
+}
+
+a:focus,a:hover {
+    color: #337ab7; text-decoration: underline; background-color: green; font-weight:bold;
+}
+
+
+</style>
+</head>
+
+<body style="float:center" >
+    <div   style="width:985px " class="container" ng-app="app" ng-controller="rootCtrl">
+
+    <!---  Top Left  Table     ---->
+    <div class="row">
+        <div class="col-xs-6  box-container" ><div class="box">
+                <div style="font-weight:bold" class="title">ユ－ザ－数</div>
+                <div class="value">{{textbox_topleft_ang[0].value}}<span ng-style="set_color(0)" class="glyphicon glyphicon glyphicon-arrow-{{textbox_topleft_ang[0].image}}" aria-hidden="true"></span></div>
+        </div></div>
+
+        <div class="col-xs-6 box-container" ><div class="box">
+                <div style="font-weight:bold" class="title">ビ－コン反応数</div>
+                <div class="value">{{textbox_topleft_ang[1].value}}<span ng-style="set_color(1)" class="glyphicon glyphicon glyphicon-arrow-{{textbox_topleft_ang[1].image}}" aria-hidden="true"></span></div>
+        </div></div>
+
+    </div>
+
+<hr>
+
+   <!----  Dynamic Tab   Graph    -------------------------------------------------->
+   <uib-tabset active="active" ng-if="tabGraphflag">
+
+    <uib-tab index="1"  heading="ユ－ザ－数">
+     <div class= "diva" style="text-align:right;padding-top: 5px;"><a style="background-color:transparent" href="#" ng-click="toggelTab1Graph('日')">日</a> <a style="background-color:transparent" href="#" ng-click="toggelTab1Graph('週')">週</a> <a style="background-color:transparent" href="#" ng-click="toggelTab1Graph('月')">月</a></div>
+        <div class="row mg-bot" ng-repeat="graph in tab1Graphs" ng-show="graph.title==activeTab1Graph" >
+        　<div class="col-xs-12" >
+            <div fusioncharts width="100%" height="300" type="area2d" dataSource="{{graph.graph}}"> </div>
+        　</div>
+        </div>
+    </uib-tab>
+
+　  <uib-tab index="2"  heading="ビ－コン反応数">
+     <div class= "diva" style="text-align:right;padding-top: 5px;"><a style="background-color:transparent" href="#" ng-click="toggelTab2Graph('日')">日</a> <a style="background-color:transparent"  href="#" ng-click="toggelTab2Graph('週')">週</a> <astyle="background-color:transparent"  href="#" ng-click="toggelTab2Graph('月')">月</a></div>
+        　<div class="row mg-bot" ng-repeat="graph in tab2Graphs" ng-show="graph.title==activeTab2Graph">
+       　　 <div class="col-xs-12" >
+            　　<div fusioncharts width="100%" height="300" type="area2d" dataSource="{{graph.graph}}"></div>
+        　　</div>
+        　</div>
+　　</uib-tab>
+
+    <uib-tab index="3"  heading="DAU">
+      <div class= "diva" style="text-align:right;padding-top: 5px;"><a style="background-color:transparent"href="#" ng-click="toggelTab3Graph('日')">日</a> <a  style="background-color:transparent"  href="#" ng-click="toggelTab3Graph('週')">週</a> <a  style="background-color:transparent"  href="#" ng-click="toggelTab3Graph('月')">月</a></div>
+     　    <div class="row mg-bot" ng-repeat="graph in tab3Graphs" ng-show="graph.title==activeTab3Graph">
+      　  <div class="col-xs-12" >
+            　<div fusioncharts width="100%" height="300" type="area2d" dataSource="{{graph.graph}}"> </div>
+        　</div>
+        　</div>
+    </uib-tab>
+　 </uib-tabset>
+
+
+<!---
+Text Align on left / right 
+
+<div id="textbox">
+		<p style=float: left;>Text on the left.</p>
+		<p class="alignright">Text on the right.</p>
+		<div style="clear: both;"></div>
+	</div> 
+	
+--->
+
+
+   <!--- Map    ---->
+   <table width="900px">
+   <tr><td>
+   アレア　ヒ－トマップ    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+               <span style='text-align:right'><a  href="">詳細</a></span> </td>
+       <td>コンバージョンマップ  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     　　<a style='align:right' href="">詳細</a></td>
+   </tr>
+        <tr   ><td style="padding-right:20px;"  >
+             <img  width="650px" height="400px" src="../../static/a027_jouhou1_leftmap.png"  >
+
+        </td>
+        <td style="width:250px; border-style:solid; border-width:2px; padding:15px; border-color:gray"  >
+                  <img style="vertical-align:top"  width="100%" height="200px"  src="../../static/a027_jouhou1_rightmap2.png"  >
+    <br>
+    <div　style="text-align:justify">      
+    設定したコンバージョンビ－コンを中心に、
+    そこに来訪する前後の行動をビジュアルで
+    確認くすることができます。
+    </div>
+    <br><br>
+    <div style="text-align:right" > <a href="">コンバージョンマップを見る</a></div>
+
+
+        </td></tr>
+　　</table>
+
+
+
+<br>
+<hr>
+<br>
+
+
+
+ <!---    Bottom :    Circular Graph---->
+        <div class="row">
+            <div class="col-xs-6" ng-if="left_circular">
+                <h4 class="h4class">屋内外比率</h4>
+                <div fusioncharts width="100%" height="300" type="doughnut2d" dataSource="{{circularchartleft}}"> </div>
+            </div>
+            <div class="col-xs-6" ng-if="right_circular">
+                <h4 class="h4class">パブリック比率</h4>
+                <div fusioncharts width="100%" height="300" type="doughnut2d" dataSource="{{circularchartright}}"> </div>
+            </div>
+        </div>
+
+<br><br>
+<!---    Bottom :   Tables ---->
+         <!---    Bottom :   Tables ---->
+        <div class="row">
+            <div class="row">
+                <div class="col-xs-4">
+                    <label class="tableTitle">設置場所分類 (大分類)</label>   <!--  {{bottomTable1.meta.title}} -->
+                    <table   style="font-size: 12px;" id="example" class="table table-striped" cellspacing="0" width="100%">
+                        <tbody>
+                            <tr clas="border-less" ng-repeat="row in bottomTable1.data.rows">
+                                <td style="border:none">{{row[1]}}</td>
+                                <td style="border:none">{{row[2]}}</td>
+                                <td style="border:none; color:#DF707E">{{row[3]}}</td>
+                                <td style="border:none">{{'('+row[4]+')'}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="col-xs-4">
+                    <label class="tableTitle">設置場所分類 (中分類)</label>
+                    <table style="font-size: 12px;" id="example" class="table table-striped" cellspacing="0" width="100%"><tbody>
+                            <tr clas="border-less" ng-repeat="row in bottomTable2.data.rows">
+                                <td style="border:none">{{row[1]}}</td>
+                                <td style="border:none">{{row[2]}}</td>
+                                <td style="border:none; color:#DF707E">{{row[3]}}</td>
+                                <td style="border:none">{{'('+row[4]+')'}}</td>
+                            </tr>
+                        </tbody></table>
+                </div>
+                <div class="col-xs-4">
+                    <label class="tableTitle">アレア(市区町村)</label>
+                    <table  style="font-size: 12px;"  id="example" class="table table-striped" cellspacing="0" width="100%"><tbody>
+                            <tr clas="border-less" ng-repeat="row in bottomTable3.data.rows">
+                                <td style="border:none">{{row[1]}}</td>
+                                <td style="border:none; ">{{row[2]}}</td>
+                                <td style="border:none; color:#DF707E">{{row[3]}}</td>
+                                <td style="border:none">{{'('+row[4]+')'}}</td>
+                            </tr>
+                        </tbody></table>
+                </div>
+            </div>
+        </div>
+
+
+
+
+　　</div>
+</body>
+</html>
+{% endverbatim %}
+
+

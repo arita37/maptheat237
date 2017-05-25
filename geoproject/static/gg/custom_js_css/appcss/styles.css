@@ -1,0 +1,51 @@
+.container {
+    width: 1224px;
+}
+
+.tooltip-custom {
+    color: black;
+    padding: 10px;
+    text-align: center;
+    font-size: 12px;
+    font-weight: bold;
+    border-radius: 8px;
+}
+
+thead {
+    background-color: #999999;
+    color: #fff;
+}
+
+tbody tr td {
+    color: #575757;
+}
+
+.table-striped>tbody>tr:nth-of-type(odd) {
+    background-color: #DEDEDE;
+}
+
+.table-striped>tbody>tr:nth-of-type(odd) {
+    background-color: #F4F4F4;
+}
+
+.table-bordered>tbody>tr>td,
+.table-bordered>tbody>tr>th,
+.table-bordered>tfoot>tr>td,
+.table-bordered>tfoot>tr>th,
+.table-bordered>thead>tr>td,
+.table-bordered>thead>tr>th {
+    border: 1px solid #fff;
+}
+
+.hr {
+    margin: top: 5px;
+    margin-bottom: 5px;
+    height: 3px;
+    background-color: #E4E4E4;
+    width: 100%
+}
+
+.row {
+    margin-left: 0;
+    margin-right: 0
+}

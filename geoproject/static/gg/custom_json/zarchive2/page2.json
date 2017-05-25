@@ -1,0 +1,33 @@
+{
+	"value_top": {
+		"meta": {
+			"json_type": "value",
+			"title": "配信数"
+		},
+		"data": [{
+				"title": "配信数",
+				"value": "25",
+				"image": "up",
+				"position": "left",
+				"color": "red"
+			},
+			{
+				"title": "配信数",
+				"value": "25",
+				"image": "down",
+				"position": "middle",
+				"color": "red"
+			},
+			{
+				"title": "配信数",
+				"value": "25",
+				"image": "up",
+				"position": "lright",
+				"color": "red"
+			}
+		]
+	}
+}
+
+
+

@@ -1,0 +1,411 @@
+{
+
+"textbox_topleft": {
+		"meta": { "json_type": "value", "title": "配信数" },
+		"data": [{ "title": "配信数", "value": "25", "image": "up",    "position": "left",   "color": "red"},
+		    	 { "title": "配信数", "value": "25", "image": "down",  "position": "middle", "color": "red"},
+			     { "title": "配信数", "value": "25", "image": "up",    "position": "lright", "color": "red"}
+		]
+},
+
+
+"table_topright1": {
+        "columns": {"1": "ビ－コングル－プ", "2": "反応数", "3": "配信数", "4": "コンテンツ閲覧数", "5": "コンテンツ閲覧数", "6": "コンテンツ閲覧率", "7": "訪問数", "8": "訪問率"
+        }, "rows": [{ "1": "CVA 1", "2": "505050", "3": "50505", "4": "505050", "5": "50505", "6": "5050", "7": "50 %", "8": "50", "9": "10%"
+		}, { "1": "CVA 1", "2": "505050", "3": "50505", "4": "505050", "5": "50505", "6": "5050", "7": "50 %", "8": "50", "9": "10%"
+		}, { "1": "CVA 1", "2": "505050", "3": "50505", "4": "505050", "5": "50505", "6": "5050", "7": "50 %", "8": "50", "9": "10%"
+		}, { "1": "CVA 1", "2": "505050", "3": "50505", "4": "505050", "5": "50505", "6": "5050", "7": "50 %", "8": "50", "9": "10%"
+		}, { "1": "CVA 1", "2": "505050", "3": "50505", "4": "505050", "5": "50505", "6": "5050", "7": "50 %", "8": "50", "9": "10%"
+		}]
+},
+
+
+
+
+"circularchart_left": [{
+        "label": "配信", "count": "101 " }, { "label": "コンテンツ閲覧", "count": "120"}, { "label": "訪問", "count": "110 "}], "Circular_Graph_right": [{ "label": "配信", "count": "101 "}, { "label": "コンテンツ閲覧", "count": "120"}, { "label": "訪問", "count": "110 " }]
+,
+
+
+"circularchart_right": [{
+        "label": "配信", "count": "101 " }, { "label": "コンテンツ閲覧", "count": "120"}, { "label": "訪問", "count": "110 "}], "Circular_Graph_right": [{ "label": "配信", "count": "101 "}, { "label": "コンテンツ閲覧", "count": "120"}, { "label": "訪問", "count": "110 " }]
+,
+
+
+
+  "table_bottom_1": {
+        "meta": { "json_type": "table_small", "title": "Table 1"},
+        "columns": { "1": "ID", "2": "Location Type", "3": "Count", "4": "Pct"}
+      , "rows": [{ "1": "1", "2": "Office", "3": "1200", "4": "25.1%"}, { "1": "2", "2": "Kojou", "3": "1200", "4": "25.1%"}, { "1": "3", "2": "Public Park", "3": "1200", "4": "25.1%"}, { "1": "4", "2": "Office 3", "3": "1200", "4": "25.1%"}, { "1": "5", "2": "Kojou 2", "3": "1200", "4": "25.1%" }, { "1": "6", "2": "Public Office", "3": "1200", "4": "25.1%"} ]
+  },
+
+
+  "table_bottom_2": {
+        "meta": { "json_type": "table_small", "title": "Table 1"},
+          "columns": { "1": "ID", "2": "Location Type", "3": "Count", "4": "Pct"},
+          "rows": [{ "1": "1", "2": "Office", "3": "1200", "4": "25.1%"}, { "1": "2", "2": "Kojou", "3": "1200", "4": "25.1%"}, { "1": "3", "2": "Public Park", "3": "1200", "4": "25.1%"}, { "1": "4", "2": "Office 3", "3": "1200", "4": "25.1%"}, { "1": "5", "2": "Kojou 2", "3": "1200", "4": "25.1%"}, { "1": "6", "2": "Public Office", "3": "1200", "4": "25.1%"}]
+  },
+
+
+  "table_bottom_3": {
+        "meta": { "json_type": "table_small", "title": "Table 1"},
+         "columns": { "1": "ID", "2": "Location Type", "3": "Count", "4": "Pct"},
+         "rows": [{ "1": "1", "2": "Office", "3": "1200", "4": "25.1%"}, { "1": "2", "2": "Kojou", "3": "1200", "4": "25.1%"}, { "1": "3", "2": "Public Park", "3": "1200", "4": "25.1%"}, { "1": "4", "2": "Office 3", "3": "1200", "4": "25.1%"}, { "1": "5", "2": "Kojou 2", "3": "1200", "4": "25.1%"}, { "1": "6", "2": "Public Office", "3": "1200", "4": "25.1%"
+		    	}]
+  },
+
+
+
+
+
+
+
+
+"graph_middle_tab1": {
+		"daily_graph": {
+			"meta": { "json_type": "graph_area", "title": "Daily Graph"}, "data": { "xaxis": { "label": "X labe1-1", "seriesname": "X category-1", "color": "1D8BD1", "anchorbordercolor": "1D8BD1", "anchorbgcolor": "1D8BD1", "data": [{ "value": "2016/01/15"}, { "value": "2016/02/15"}, { "value": "2016/03/15"}, { "value": "2016/04/15"}, { "value": "2016/05/15"}, { "value": "2016/06/15"}, { "value": "2016/07/15"}, { "value": "2016/08/15"}]}, "categories": [{ "label": "labe1-1", "seriesname": "category-1", "color": "8293A6", "anchorbordercolor": "8293A6", "anchorbgcolor": "8293A6", "data": [{ "value": "1000", "label": "label 1"}, { "value": "500", "label": "label 2"}, { "value": "3000", "label": "label 3"}, { "value": "2000", "label": "label 4"}, { "value": "5000", "label": "label 4"}, { "value": "3000", "label": "label 4"}, { "value": "7000", "label": "label 4"}, { "value": "8000", "label": "label 4"}] }]} },
+		"monthly_graph": {
+			"meta": { "json_type": "graph_area", "title": "Daily Graph"}, "data": { "xaxis": { "label": "X labe1-1", "seriesname": "X category-1", "color": "1D8BD1", "anchorbordercolor": "1D8BD1", "anchorbgcolor": "1D8BD1", "data": [{ "value": "2016/01/15"}, { "value": "2016/02/15"}, { "value": "2016/03/15"}, { "value": "2016/04/15"}, { "value": "2016/05/15"}, { "value": "2016/06/15"}, { "value": "2016/07/15"}, { "value": "2016/08/15"}]}, "categories": [{ "label": "labe1-1", "seriesname": "category-1", "color": "8293A6", "anchorbordercolor": "8293A6", "anchorbgcolor": "8293A6", "data": [{ "value": "1000", "label": "label 1"}, { "value": "2000", "label": "label 2"}, { "value": "3000", "label": "label 3"}, { "value": "4000", "label": "label 4"}, { "value": "5000", "label": "label 4"}, { "value": "6000", "label": "label 4"}, { "value": "7000", "label": "label 4"}, { "value": "8000", "label": "label 4"}] }]} },
+		"weekly_graph": {
+			"meta": { "json_type": "graph_area", "title": "Daily Graph"}, "data": { "xaxis": { "label": "X labe1-1", "seriesname": "X category-1", "color": "1D8BD1", "anchorbordercolor": "1D8BD1", "anchorbgcolor": "1D8BD1", "data": [{ "value": "2016/01/15"}, { "value": "2016/02/15"}, { "value": "2016/03/15"}, { "value": "2016/04/15"}, { "value": "2016/05/15"}, { "value": "2016/06/15"}, { "value": "2016/07/15"}, { "value": "2016/08/15"}]}, "categories": [{ "label": "labe1-1", "seriesname": "category-1", "color": "8293A6", "anchorbordercolor": "8293A6", "anchorbgcolor": "8293A6", "data": [{ "value": "1000", "label": "label 1"}, { "value": "2000", "label": "label 2"}, { "value": "3000", "label": "label 3"}, { "value": "4000", "label": "label 4"}, { "value": "5000", "label": "label 4"}, { "value": "6000", "label": "label 4"}, { "value": "7000", "label": "label 4"}, { "value": "8000", "label": "label 4"}]}]}
+		}
+},
+
+	"graph_middle_tab2": {
+		"daily_graph": {
+			"meta": { "json_type": "graph_area", "title": "Daily Graph"}, "data": { "xaxis": { "label": "X labe1-1", "seriesname": "X category-1", "color": "1D8BD1", "anchorbordercolor": "1D8BD1", "anchorbgcolor": "1D8BD1", "data": [{ "value": "2016/01/15"}, { "value": "2016/02/15"}, { "value": "2016/03/15"}, { "value": "2016/04/15"}, { "value": "2016/05/15"}, { "value": "2016/06/15"}, { "value": "2016/07/15"}, { "value": "2016/08/15"}]}, "categories": [{ "label": "labe1-1", "seriesname": "category-1", "color": "8293A6", "anchorbordercolor": "8293A6", "anchorbgcolor": "8293A6", "data": [{ "value": "1000", "label": "label 1"}, { "value": "500", "label": "label 2"}, { "value": "3000", "label": "label 3"}, { "value": "2000", "label": "label 4"}, { "value": "5000", "label": "label 4"}, { "value": "3000", "label": "label 4"}, { "value": "7000", "label": "label 4"}, { "value": "8000", "label": "label 4"}]}]}
+		},
+		"monthly_graph": {
+			"meta": {
+				"json_type": "graph_area",
+				"title": "Daily Graph"
+			},
+			"data": {
+				"xaxis": {
+					"label": "X labe1-1",
+					"seriesname": "X category-1",
+					"color": "1D8BD1",
+					"anchorbordercolor": "1D8BD1",
+					"anchorbgcolor": "1D8BD1",
+					"data": [{ "value": "2016/01/15"}, { "value": "2016/02/15"}, { "value": "2016/03/15"}, { "value": "2016/04/15"}, { "value": "2016/05/15"}, { "value": "2016/06/15"}, { "value": "2016/07/15"}, { "value": "2016/08/15"}] },
+				"categories": [{
+					"label": "labe1-1",
+					"seriesname": "category-1",
+					"color": "8293A6",
+					"anchorbordercolor": "8293A6",
+					"anchorbgcolor": "8293A6",
+					"data": [{ "value": "1000", "label": "label 1"}, { "value": "2000", "label": "label 2"}, { "value": "3000", "label": "label 3"}, { "value": "4000", "label": "label 4"}, { "value": "5000", "label": "label 4"}, { "value": "6000", "label": "label 4"}, { "value": "7000", "label": "label 4"}, { "value": "8000", "label": "label 4"}] }
+				]
+			}
+		},
+		"weekly_graph": {
+			"meta": { "json_type": "graph_area", "title": "Daily Graph"}, "data": { "xaxis": { "label": "X labe1-1", "seriesname": "X category-1", "color": "1D8BD1", "anchorbordercolor": "1D8BD1", "anchorbgcolor": "1D8BD1", "data": [{ "value": "2016/01/15"}, { "value": "2016/02/15"}, { "value": "2016/03/15"}, { "value": "2016/04/15"}, { "value": "2016/05/15"}, { "value": "2016/06/15"}, { "value": "2016/07/15"}, { "value": "2016/08/15"}]}, "categories": [{ "label": "labe1-1", "seriesname": "category-1", "color": "8293A6", "anchorbordercolor": "8293A6", "anchorbgcolor": "8293A6", "data": [{ "value": "1000", "label": "label 1"}, { "value": "2000", "label": "label 2"}, { "value": "3000", "label": "label 3"}, { "value": "4000", "label": "label 4"}, { "value": "5000", "label": "label 4"}, { "value": "6000", "label": "label 4"}, { "value": "7000", "label": "label 4"}, { "value": "8000", "label": "label 4"}]}]}
+		}
+
+
+
+
+
+
+
+	},
+	"graph_middle_tab3": {
+		"daily_graph": {
+			"meta": { "json_type": "graph_area", "title": "Daily Graph"}, "data": { "xaxis": { "label": "X labe1-1", "seriesname": "X category-1", "color": "1D8BD1", "anchorbordercolor": "1D8BD1", "anchorbgcolor": "1D8BD1", "data": [{ "value": "2016/01/15"}, { "value": "2016/02/15"}, { "value": "2016/03/15"}, { "value": "2016/04/15"}, { "value": "2016/05/15"}, { "value": "2016/06/15"}, { "value": "2016/07/15"}, { "value": "2016/08/15"}]
+			},
+				"categories": [{ "label": "labe1-1", "seriesname": "category-1", "color": "8293A6", "anchorbordercolor": "8293A6", "anchorbgcolor": "8293A6", "data": [{ "value": "1000", "label": "label 1"}, { "value": "500", "label": "label 2"}, { "value": "3000", "label": "label 3"}, { "value": "2000", "label": "label 4"}, { "value": "5000", "label": "label 4"}, { "value": "3000", "label": "label 4"}, { "value": "7000", "label": "label 4"}, { "value": "8000", "label": "label 4"}]}] } },
+		"monthly_graph": {
+			"meta": {
+				"json_type": "graph_area",
+				"title": "Daily Graph"
+			},
+			"data": {
+				"xaxis": { "label": "X labe1-1", "seriesname": "X category-1", "color": "1D8BD1", "anchorbordercolor": "1D8BD1", "anchorbgcolor": "1D8BD1", "data": [{ "value": "2016/01/15"}, { "value": "2016/02/15"}, { "value": "2016/03/15"}, { "value": "2016/04/15"}, { "value": "2016/05/15"}, { "value": "2016/06/15"}, { "value": "2016/07/15"}, { "value": "2016/08/15"}]
+				},
+				"categories": [{
+					"label": "labe1-1", "seriesname": "category-1", "color": "8293A6", "anchorbordercolor": "8293A6", "anchorbgcolor": "8293A6", "data": [{ "value": "1000", "label": "label 1"}, { "value": "2000", "label": "label 2"}, { "value": "3000", "label": "label 3"}, { "value": "4000", "label": "label 4"}, { "value": "5000", "label": "label 4"}, { "value": "6000", "label": "label 4"}, { "value": "7000", "label": "label 4"}, { "value": "8000", "label": "label 4"}] }
+				]
+			}
+		},
+		"weekly_graph": {
+			"meta": {
+				"json_type": "graph_area",
+				"title": "Daily Graph"
+			},
+			"data": {
+				"xaxis": {
+					"label": "X labe1-1",
+					"seriesname": "X category-1",
+					"color": "1D8BD1",
+					"anchorbordercolor": "1D8BD1",
+					"anchorbgcolor": "1D8BD1",
+					"data": [{
+							"value": "2016/01/15"
+						}, {
+							"value": "2016/02/15"
+						}, {
+							"value": "2016/03/15"
+						}, {
+							"value": "2016/04/15"
+						},
+						{
+							"value": "2016/05/15"
+						}, {
+							"value": "2016/06/15"
+						}, {
+							"value": "2016/07/15"
+						}, {
+							"value": "2016/08/15"
+						}
+					]
+				},
+				"categories": [{ "label": "labe1-1", "seriesname": "category-1", "color": "8293A6", "anchorbordercolor": "8293A6", "anchorbgcolor": "8293A6", "data": [{ "value": "1000", "label": "label 1"}, { "value": "2000", "label": "label 2"}, { "value": "3000", "label": "label 3"}, { "value": "4000", "label": "label 4"}, { "value": "5000", "label": "label 4"}, { "value": "6000", "label": "label 4"}, { "value": "7000", "label": "label 4"}, { "value": "8000", "label": "label 4"}]}]
+			}
+
+
+
+
+
+
+
+
+
+		}
+
+
+
+
+
+
+
+	},
+
+
+    "graph_middle_tab4": {
+		"daily_graph": {
+			"meta": {
+				"json_type": "graph_area",
+				"title": "Daily Graph"
+			},
+			"data": {
+				"xaxis": {
+					"label": "X labe1-1",
+					"seriesname": "X category-1",
+					"color": "1D8BD1",
+					"anchorbordercolor": "1D8BD1",
+					"anchorbgcolor": "1D8BD1",
+					"data": [{
+							"value": "2016/01/15"
+						}, {
+							"value": "2016/02/15"
+						}, {
+							"value": "2016/03/15"
+						}, {
+							"value": "2016/04/15"
+						},
+						{
+							"value": "2016/05/15"
+						}, {
+							"value": "2016/06/15"
+						}, {
+							"value": "2016/07/15"
+						}, {
+							"value": "2016/08/15"
+						}
+					]
+				},
+				"categories": [{
+					"label": "labe1-1",
+					"seriesname": "category-1",
+					"color": "8293A6",
+					"anchorbordercolor": "8293A6",
+					"anchorbgcolor": "8293A6",
+					"data": [{
+							"value": "1000",
+							"label": "label 1"
+						}, {
+							"value": "500",
+							"label": "label 2"
+						}, {
+							"value": "3000",
+							"label": "label 3"
+						}, {
+							"value": "2000",
+							"label": "label 4"
+						},
+						{
+							"value": "5000",
+							"label": "label 4"
+						}, {
+							"value": "3000",
+							"label": "label 4"
+						}, {
+							"value": "7000",
+							"label": "label 4"
+						}, {
+							"value": "8000",
+							"label": "label 4"
+						}
+					]
+				}]
+
+			}
+		},
+		"monthly_graph": {
+			"meta": {
+				"json_type": "graph_area",
+				"title": "Daily Graph"
+			},
+			"data": {
+				"xaxis": {
+					"label": "X labe1-1",
+					"seriesname": "X category-1",
+					"color": "1D8BD1",
+					"anchorbordercolor": "1D8BD1",
+					"anchorbgcolor": "1D8BD1",
+					"data": [{
+							"value": "2016/01/15"
+						}, {
+							"value": "2016/02/15"
+						}, {
+							"value": "2016/03/15"
+						}, {
+							"value": "2016/04/15"
+						},
+						{
+							"value": "2016/05/15"
+						}, {
+							"value": "2016/06/15"
+						}, {
+							"value": "2016/07/15"
+						}, {
+							"value": "2016/08/15"
+						}
+					]
+				},
+				"categories": [{
+					"label": "labe1-1",
+					"seriesname": "category-1",
+					"color": "8293A6",
+					"anchorbordercolor": "8293A6",
+					"anchorbgcolor": "8293A6",
+					"data": [{
+							"value": "1000",
+							"label": "label 1"
+						}, {
+							"value": "2000",
+							"label": "label 2"
+						}, {
+							"value": "3000",
+							"label": "label 3"
+						}, {
+							"value": "4000",
+							"label": "label 4"
+						},
+						{
+							"value": "5000",
+							"label": "label 4"
+						}, {
+							"value": "6000",
+							"label": "label 4"
+						}, {
+							"value": "7000",
+							"label": "label 4"
+						}, {
+							"value": "8000",
+							"label": "label 4"
+						}
+					]
+				}]
+
+			}
+		},
+		"weekly_graph": {
+			"meta": {
+				"json_type": "graph_area",
+				"title": "Daily Graph"
+			},
+			"data": {
+				"xaxis": {
+					"label": "X labe1-1",
+					"seriesname": "X category-1",
+					"color": "1D8BD1",
+					"anchorbordercolor": "1D8BD1",
+					"anchorbgcolor": "1D8BD1",
+					"data": [{
+							"value": "2016/01/15"
+						}, {
+							"value": "2016/02/15"
+						}, {
+							"value": "2016/03/15"
+						}, {
+							"value": "2016/04/15"
+						},
+						{
+							"value": "2016/05/15"
+						}, {
+							"value": "2016/06/15"
+						}, {
+							"value": "2016/07/15"
+						}, {
+							"value": "2016/08/15"
+						}
+					]
+				},
+				"categories": [{
+					"label": "labe1-1",
+					"seriesname": "category-1",
+					"color": "8293A6",
+					"anchorbordercolor": "8293A6",
+					"anchorbgcolor": "8293A6",
+					"data": [{
+							"value": "1000",
+							"label": "label 1"
+						}, {
+							"value": "2000",
+							"label": "label 2"
+						}, {
+							"value": "3000",
+							"label": "label 3"
+						}, {
+							"value": "4000",
+							"label": "label 4"
+						},
+						{
+							"value": "5000",
+							"label": "label 4"
+						}, {
+							"value": "6000",
+							"label": "label 4"
+						}, {
+							"value": "7000",
+							"label": "label 4"
+						}, {
+							"value": "8000",
+							"label": "label 4"
+						}
+					]
+				}]
+
+			}
+
+
+
+
+
+
+
+
+
+		}
+
+
+
+
+
+
+
+	}
+
+
+}

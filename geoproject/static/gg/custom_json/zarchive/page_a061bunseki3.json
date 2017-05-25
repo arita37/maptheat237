@@ -1,0 +1,67 @@
+
+{
+	"categories": [{
+		"label": "labe1-1",
+		"seriesname": "category-1",
+		"color": "1D8BD1",
+		"anchorbordercolor": "1D8BD1",
+		"anchorbgcolor": "1D8BD1",
+		"data": [{
+			"value": "1327"
+		}, {
+			"value": "1826"
+		}, {
+			"value": "1699"
+		}, {
+			"value": "1511"
+		}, {
+			"value": "1904"
+		}, {
+			"value": "1957"
+		}, {
+			"value": "1296"
+		}]
+	},{
+		"label": "labe1-2",
+		"seriesname": "category-2",
+		"color": "993f6c",
+		"anchorbordercolor": "993f6c",
+		"anchorbgcolor": "993f6c",
+		"data": [{
+			"value": "2327"
+		}, {
+			"value": "2826"
+		}, {
+			"value": "2699"
+		}, {
+			"value": "2511"
+		}, {
+			"value": "2904"
+		}, {
+			"value": "2957"
+		}, {
+			"value": "2296"
+		}]
+	},{
+		"label": "labe1-3",
+		"seriesname": "category-3",
+		"color": "7f0000",
+		"anchorbordercolor": "7f0000",
+		"anchorbgcolor": "7f0000",
+		"data": [{
+			"value": "3327"
+		}, {
+			"value": "3826"
+		}, {
+			"value": "3699"
+		}, {
+			"value": "3511"
+		}, {
+			"value": "3904"
+		}, {
+			"value": "3957"
+		}, {
+			"value": "3296"
+		}]
+	}]
+}

@@ -1,0 +1,58 @@
+{
+	"table1": [{
+		"id": "1",
+		"name": "Apple",
+		"count": "1200",
+		"pct": "99.1"
+	}, {
+		"id": 2,
+		"name": "Android",
+		"count": "600",
+		"pct": "50.0"
+	}, {
+		"id": "3",
+		"name": "Blackbery",
+		"count": "900",
+		"pct": "3.5"
+	}, {
+		"id": "4",
+		"name": "Blackbery",
+		"count": "500",
+		"pct": "3.5"
+	}, {
+		"id": "6",
+		"name": "Android",
+		"count": "900",
+		"pct": "3.5"
+	}],
+	"table2": [{
+		"id": "1",
+		"name": "Apple",
+		"count": "1200",
+		"pct": "99.1"
+	}, {
+		"id": 2,
+		"name": "Android",
+		"count": "600",
+		"pct": "50.0"
+	}, {
+		"id": "3",
+		"name": "Blackbery",
+		"count": "900",
+		"pct": "3.5"
+	}, {
+		"id": "4",
+		"name": "Blackbery",
+		"count": "500",
+		"pct": "3.5"
+	}, {
+		"id": "6",
+		"name": "Android",
+		"count": "900",
+		"pct": "3.5"
+	}]
+
+
+
+
+}

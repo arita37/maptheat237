@@ -17,7 +17,7 @@ function getCookie(name) {
 //GLOBAL VARS    --------------------------------------------------------------------------
 var points = [];  //array for points
 var markers = [];     //array for markers
-var map;
+var map,date;
 
 var beacon_id = [];
 var beacon_target = [];
@@ -384,10 +384,15 @@ function initMap() {
 
     heatmap.setMap(map);
 
+    //Get Latitude,Longitude On Map Drag
+    google.maps.event.addListener(map, 'center_changed', function () {
+
+        LocationTable(date, map.getCenter().lng().toFixed(4), map.getCenter().lat().toFixed(4));
+    });
 
     //Change Heatmap with date
     $(document).on('click', 'ol.olTimeline li', function (e) {
-        var date = $(this).find("a").attr('data-date');
+        date = $(this).find("a").attr('data-date');
         deleteMarkers();
 
         //Load Icons
@@ -487,11 +492,17 @@ function initMap() {
           });
 }
 
+//Change Location Table Data
+function LocationTable(date,long,lat)
+{
+    $('#tdDate').html(date);
+    $('#tdLong').html(long);
+    $('#tdLat').html(lat);
+}
 
 //Load Heatmap and Markers on initMap
 function loadHeatmapMarkers() {
-    debugger
-    var date = JSON.parse(localStorage.heatmapData)[0].date;
+    date = JSON.parse(localStorage.heatmapData)[0].date;
     $.each(JSON.parse(localStorage.locationData), function (index, value) {
         if (value.date == date) {
             placeMarker({ lat: value.lat, lng: value.long }, '../static/gg/map_js_css/map_icons/' + value.icon);
@@ -511,6 +522,8 @@ function loadHeatmapMarkers() {
             location: new google.maps.LatLng(data[i][0],
                                   data[i][1]), weight: data[i][2]});
     }
+         
+    getLatLngCenter(data);
     return pointArray;
 }
 
@@ -527,16 +540,57 @@ function success(data) {
 
 //Reinitialise Heatmap Data
 function reboot(Ddatas) {
-    //    alert(Ddatas);
     var arraino = [];
     for (a in Ddatas) {
         arraino.push({location: new google.maps.LatLng(
             Ddatas[a][0],
             Ddatas[a][1]),weight:Ddatas[a][2]});
     }
-    //    alert(arraino);
+    getLatLngCenter(Ddatas);
     return (arraino);
 }
+ 
+/**
+    Center Location with Average Of Multiple Lat,Long
+ */
+function rad2degr(rad) { return rad * 180 / Math.PI; }
+function degr2rad(degr) { return degr * Math.PI / 180; }
+
+function getLatLngCenter(latLngInDegr) {
+    var LATIDX = 0;
+    var LNGIDX = 1;
+    var sumX = 0;
+    var sumY = 0;
+    var sumZ = 0;
+
+    for (var i = 0; i < latLngInDegr.length; i++) {
+        var lat = degr2rad(latLngInDegr[i][LATIDX]);
+        var lng = degr2rad(latLngInDegr[i][LNGIDX]);
+        // sum of cartesian coordinates
+        sumX += Math.cos(lat) * Math.cos(lng);
+        sumY += Math.cos(lat) * Math.sin(lng);
+        sumZ += Math.sin(lat);
+    }
+
+    var avgX = sumX / latLngInDegr.length;
+    var avgY = sumY / latLngInDegr.length;
+    var avgZ = sumZ / latLngInDegr.length;
+
+    // convert average x, y, z coordinate to latitude and longtitude
+    var lng = Math.atan2(avgY, avgX);
+    var hyp = Math.sqrt(avgX * avgX + avgY * avgY);
+    var lat = Math.atan2(avgZ, hyp);
+
+    //return ([rad2degr(lat), rad2degr(lng)]);
+
+    map.setCenter({
+        lat: rad2degr(lat),
+        lng: rad2degr(lng)
+    });
+    //Update Location Table
+    LocationTable(date, rad2degr(lng).toFixed(4), rad2degr(lat).toFixed(4));
+}
+
 function markerCoords(markerobject) {
     google.maps.event.addListener(markerobject, 'dragend', function (evt) {
         infoWindow.setOptions({

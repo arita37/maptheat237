@@ -6,9 +6,9 @@
         var lookup = {};
 
         //Load Locations
-
+        debugger
         $.ajax({
-            url: "../static/gg/map_js_css/icon.json",
+            url: HeatmapGlobal.icons,
             dataType: 'json',
             async: false,           
             success: function (data) {
@@ -18,7 +18,7 @@
 
 
         $.ajax({
-            url: "../static/gg/map_js_css/heatmap.json",
+            url: HeatmapGlobal.heatmap,
             dataType: 'json',
             async: false,         
             success: function (data) {

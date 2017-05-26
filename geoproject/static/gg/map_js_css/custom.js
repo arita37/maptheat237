@@ -17,12 +17,13 @@ function getCookie(name) {
 //GLOBAL VARS    --------------------------------------------------------------------------
 var points = [];  //array for points
 var markers = [];     //array for markers
-var map,date;
+var map, date;
 
 var beacon_id = [];
 var beacon_target = [];
 var beacon_target_latlng = [];
 
+var locationData = [];
 
 PNG_NORMAL = 'http://maps.google.com/mapfiles/kml/paddle/grn-circle-lv.png';
 PNG_SELECTED = 'http://maps.google.com/mapfiles/ms/icons/red-dot.png';
@@ -379,15 +380,32 @@ function initMap() {
 
     heatmap = new google.maps.visualization.HeatmapLayer({
         radius: localStorage.heatmapRadius,
-        data: pointArray        
+        data: pointArray
     });
 
     heatmap.setMap(map);
 
-    //Get Latitude,Longitude On Map Drag
-    google.maps.event.addListener(map, 'center_changed', function () {
+    //Find Maximum and Minimum Lat/Long And Update Location Table
+    google.maps.event.addListener(map, 'idle', function () {
+        //alert(map.getBounds());
+        debugger
+        var data = [];
+        var bb = map.getBounds();
+        var ne = bb.getNorthEast(); // top-left
+        var sw = bb.getSouthWest(); // bottom-right
 
-        LocationTable(date, map.getCenter().lng().toFixed(4), map.getCenter().lat().toFixed(4));
+        //"min lat:" + ne.lat()
+        //"max lat:" + sw.lat()
+        //"min lng:" + sw.lng();
+        //"max lng:" + ne.lng();
+
+        $.each(locationData, function (index, value) {
+            if (value[0] < ne.lat() && value[1] < ne.lng() && value[0] > sw.lat() && value[1] > sw.lng()) {
+                data.push([value[1], value[0]])
+            }
+        });
+        UpdateLocationTable(data);
+
     });
 
     //Change Heatmap with date
@@ -493,15 +511,22 @@ function initMap() {
 }
 
 //Change Location Table Data
-function LocationTable(date,long,lat)
-{
-    $('#tdDate').html(date);
-    $('#tdLong').html(long);
-    $('#tdLat').html(lat);
+function UpdateLocationTable(data) {    
+    $('#tblLocation').find('tbody').html('');
+    var locationRows = '';
+    $.each(data, function (index, value) {
+        locationRows += "<tr><td class='text-left'>" + date + "</td><td class='text-left'>" + value[1] + "</td><td class='text-left'>" + value[0] + "</td></tr>"
+    });
+    $('#tblLocation').find('tbody').append(locationRows);
+    if (data.length <= 0)
+    {
+        $('#tblLocation').find('tbody').append("<tr><td class='text-left'></td><td class='text-left'></td><td class='text-left'></td></tr>");
+    }
 }
 
 //Load Heatmap and Markers on initMap
 function loadHeatmapMarkers() {
+    debugger
     date = JSON.parse(localStorage.heatmapData)[0].date;
     $.each(JSON.parse(localStorage.locationData), function (index, value) {
         if (value.date == date) {
@@ -510,20 +535,21 @@ function loadHeatmapMarkers() {
     });
 
     //Load Heatmap    
-    var data = [];
+    locationData = [];
     $.each(JSON.parse(localStorage.heatmapData), function (index, value) {
         if (value.date == date) {
-            data.push([value.lat, value.long, value.intensity]);
+            locationData.push([value.lat, value.long, value.intensity]);
         }
     });
     var pointArray = [];
-    for (var i = 0; i < data.length; i++) {
+    for (var i = 0; i < locationData.length; i++) {
         pointArray.push({
-            location: new google.maps.LatLng(data[i][0],
-                                  data[i][1]), weight: data[i][2]});
+            location: new google.maps.LatLng(locationData[i][0],
+                                  locationData[i][1]), weight: locationData[i][2]
+        });
     }
-         
-    getLatLngCenter(data);
+
+    getLatLngCenter(locationData);    
     return pointArray;
 }
 
@@ -542,14 +568,17 @@ function success(data) {
 function reboot(Ddatas) {
     var arraino = [];
     for (a in Ddatas) {
-        arraino.push({location: new google.maps.LatLng(
-            Ddatas[a][0],
-            Ddatas[a][1]),weight:Ddatas[a][2]});
+        arraino.push({
+            location: new google.maps.LatLng(
+                Ddatas[a][0],
+                Ddatas[a][1]), weight: Ddatas[a][2]
+        });
     }
     getLatLngCenter(Ddatas);
+    locationData = Ddatas;
     return (arraino);
 }
- 
+
 /**
     Center Location with Average Of Multiple Lat,Long
  */
@@ -586,9 +615,7 @@ function getLatLngCenter(latLngInDegr) {
     map.setCenter({
         lat: rad2degr(lat),
         lng: rad2degr(lng)
-    });
-    //Update Location Table
-    LocationTable(date, rad2degr(lng).toFixed(4), rad2degr(lat).toFixed(4));
+    });      
 }
 
 function markerCoords(markerobject) {

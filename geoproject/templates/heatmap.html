@@ -4,8 +4,7 @@
     <title>Beacon Map Selection</title>
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
     <meta charset="utf-8">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
-    <!--<link rel="stylesheet" href='{% static "css/style.css" %}'>-->
+    <link href="../static/gg/map_js_css/js_css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous"/>
     <link href="../static/gg/map_js_css/style.css" rel="stylesheet" />
     <script>
         document.oncontextmenu = function (e) {
@@ -75,8 +74,8 @@
             </div>
             <!---TimeLine Section Begin--->
             <section id="cd-horizontal-timeline"></section>
-            <!---TimeLine Section End--->
-
+            
+            <!---Location Table--->
             <table class="table-fill" id="tblLocation">
                 <thead>
                     <tr>
@@ -85,12 +84,7 @@
                         <th class="text-left">Latitude</th>
                     </tr>
                 </thead>
-                <tbody class="table-hover">
-                    <tr>
-                        <td class="text-left" id="tdDate"></td>
-                        <td class="text-left" id="tdLong"></td>
-                        <td class="text-left" id="tdLat"></td>
-                    </tr>
+                <tbody class="table-hover">                   
                 </tbody>
             </table>
 
@@ -98,21 +92,16 @@
             <br />
             <br />
         </div>
-    </div>
-    <!--<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAmWX0-q2XOLGVD69-MQQSM-r8-9R1CWi4&libraries=visualization,places&style=element:geometry%7Ccolor:0xf5f5f5&style=element:labels.icon%7Cvisibility:off&style=element:labels.text.fill%7Ccolor:0x616161&style=element:labels.text.stroke%7Ccolor:0xf5f5f5&style=feature:administrative.land_parcel%7Celement:labels.text.fill%7Ccolor:0xbdbdbd&style=feature:poi%7Celement:geometry%7Ccolor:0xeeeeee&style=feature:poi%7Celement:labels.text.fill%7Ccolor:0x757575&style=feature:poi.park%7Celement:geometry%7Ccolor:0xe5e5e5&style=feature:poi.park%7Celement:labels.text.fill%7Ccolor:0x9e9e9e&style=feature:road%7Celement:geometry%7Ccolor:0xffffff&style=feature:road.arterial%7Celement:labels.text.fill%7Ccolor:0x757575&style=feature:road.highway%7Celement:geometry%7Ccolor:0xdadada&style=feature:road.highway%7Celement:labels.text.fill%7Ccolor:0x616161&style=feature:road.local%7Celement:labels.text.fill%7Ccolor:0x9e9e9e&style=feature:transit.line%7Celement:geometry%7Ccolor:0xe5e5e5&style=feature:transit.station%7Celement:geometry%7Ccolor:0xeeeeee&style=feature:water%7Celement:geometry%7Ccolor:0xc9c9c9&style=feature:water%7Celement:labels.text.fill%7Ccolor:0x9e9e9e&size=480x360"></script>-->
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAmWX0-q2XOLGVD69-MQQSM-r8-9R1CWi4&libraries=visualization,places"></script>
-    <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
-    <script src="../static/gg/map_js_css/timeline.js"></script>
-    <!--<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAmWX0-q2XOLGVD69-MQQSM-r8-9R1CWi4&libraries=visualization,places&callback=initMap"
-            async defer></script>-->
+    </div>    
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAmWX0-q2XOLGVD69-MQQSM-r8-9R1CWi4&libraries=visualization,places"></script>    
+    <script src="../static/gg/map_js_css/js_css/jquery.min.js"></script>
+    <script src="../static/gg/map_js_css/timeline.js"></script>    
     <script src="../static/gg/map_js_css/heatmap.js"></script>
-    <script src="../static/gg/map_js_css/gmaps-heatmap.js"></script>
-    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
-    <!--<script src='maptheat237\geoproject\static\gg\map_js_css/custom.js'></script>-->
-    <script src="../static/gg/map_js_css/custom.js"></script>
-    <script src="https://cdn.jsdelivr.net/lodash/4.17.4/lodash.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
-
+    <script src="../static/gg/map_js_css/gmaps-heatmap.js"></script>    
+    <script src="../static/gg/map_js_css/js_css/jquery-3.1.1.slim.min.js"  integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>    
+    <script src="../static/gg/map_js_css/js_css/tether.min.js"  integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>    
+    <script src="../static/gg/map_js_css/js_css/bootstrap.min.js"  integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+    <script src="../static/gg/map_js_css/custom.js"></script>    
+    <script src="../static/gg/map_js_css/js_css/lodash.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
 </body>
 </html>

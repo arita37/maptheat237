@@ -6,7 +6,7 @@
         var lookup = {};
 
         //Load Locations
-        debugger
+         
         $.ajax({
             url: HeatmapGlobal.icons,
             dataType: 'json',
@@ -22,7 +22,7 @@
             dataType: 'json',
             async: false,         
             success: function (data) {
-           debugger
+            
             var steps = '';
             localStorage.heatmapData = JSON.stringify(data.Locations);
             localStorage.heatmapRadius = data.Radius;

@@ -5,11 +5,11 @@
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
     <meta charset="utf-8">
     <script src="../static/gg/map_js_css/js_css/jquery.min.js"></script>
-    <link href="../static/gg/map_js_css/js_css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous" /> 
+    <link href="../static/gg/map_js_css/js_css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous" />
     <link href="../static/gg/map_js_css/js_css/bootstrap-toggle.min.css" rel="stylesheet" />
     <script src="../static/gg/map_js_css/js_css/bootstrap-toggle.min.js"></script>
     <link href="../static/gg/map_js_css/style.css" rel="stylesheet" />
-    <script>
+    <script type="text/javascript">
         /*
             document.oncontextmenu = function (e) {
                 console.log(e.button);
@@ -20,173 +20,348 @@
             }
          */
         //Intitialize map on DOM load
-        document.addEventListener("DOMContentLoaded", function (event) {  initMap();  });
+        document.addEventListener("DOMContentLoaded", function (event) {
+            initMap();
+        });
 
         //Global variables
         var HeatmapGlobal = function () {
             var HeatmapExt = {
-                heatmap: '',      /*   '../static/gg/map_js_css/heatmap.json'  */
-                icons: '../static/gg/map_js_css/icon.json'            /*   '../static/gg/map_js_css/icon.json'   */
+                heatmap: ({
+                    "Locations": [
+                      {
+                          "long": 139.6493,
+                          "lat": 35.6764,
+                          "date": "16/01/2017",
+                          "intensity": "2"
+                      },
+                      {
+                          "long": 139.6993,
+                          "lat": 35.7148,
+                          "date": "16/01/2017",
+                          "intensity": "4"
+                      },
+                      {
+                          "long": 139.6862,
+                          "lat": 35.6810,
+                          "date": "16/01/2017",
+                          "intensity": "2"
+                      },
+                      {
+                          "long": 139.6909,
+                          "lat": 35.6856,
+                          "date": "16/01/2017",
+                          "intensity": "15"
+                      },
+                      {
+                          "long": 139.6868,
+                          "lat": 35.6829,
+                          "date": "16/01/2017",
+                          "intensity": "15"
+                      },
+                      {
+                          "long": 139.6746,
+                          "lat": 35.6880,
+                          "date": "16/01/2017",
+                          "intensity": "8"
+                      },
+                      {
+                          "long": 139.6523,
+                          "lat": 35.6905,
+                          "date": "16/01/2017",
+                          "intensity": "7"
+                      },
+                      {
+                          "long": 139.6202,
+                          "lat": 35.7072,
+                          "date": "16/01/2017",
+                          "intensity": "3"
+                      },
+                      {
+                          "long": 139.6802,
+                          "lat": 35.7372,
+                          "date": "16/01/2017",
+                          "intensity": "2"
+                      },
+                      {
+                          "long": 139.620082,
+                          "lat": 35.613205,
+                          "date": "16/01/2017",
+                          "intensity": "1"
+                      },
+                      {
+                          "long": 139.610082,
+                          "lat": 35.663205,
+                          "date": "16/01/2017",
+                          "intensity": "3"
+                      },
+                      {
+                          "long": 139.640082,
+                          "lat": 35.693205,
+                          "date": "16/01/2017",
+                          "intensity": "10"
+                      },
+                      {
+                          "long": 139.643151,
+                          "lat": 35.689679,
+                          "date": "16/01/2017",
+                          "intensity": "8"
+                      },
+                      {
+                          "long": 139.650532,
+                          "lat": 35.689609,
+                          "date": "16/01/2017",
+                          "intensity": "12"
+                      },
+                      {
+                          "long": 139.646262,
+                          "lat": 35.689557,
+                          "date": "16/01/2017",
+                          "intensity": "5"
+                      },
+                      {
+                          "long": 139.647099,
+                          "lat": 35.690480,
+                          "date": "28/02/2017",
+                          "intensity": "4"
+                      },
+                      {
+                          "long": 139.638966,
+                          "lat": 35.690445,
+                          "date": "28/02/2017",
+                          "intensity": "3"
+                      },
+                      {
+                          "long": 139.647077,
+                          "lat": 35.691613,
+                          "date": "28/02/2017",
+                          "intensity": "5"
+                      },
+                      {
+                          "long": 139.645962,
+                          "lat": 35.690480,
+                          "date": "28/02/2017",
+                          "intensity": "2"
+                      },
+                      {
+                          "long": 139.643601,
+                          "lat": 35.690410,
+                          "date": "28/02/2017",
+                          "intensity": "5"
+                      },
+                      {
+                          "long": 139.645618,
+                          "lat": 35.690585,
+                          "date": "28/02/2017",
+                          "intensity": "15"
+                      },
+                      {
+                          "long": 139.640383,
+                          "lat": 35.690376,
+                          "date": "28/02/2017",
+                          "intensity": "25"
+                      },
+                      {
+                          "long": 139.649009,
+                          "lat": 35.690689,
+                          "date": "28/02/2017",
+                          "intensity": "7"
+                      },
+                      {
+                          "long": 139.649051,
+                          "lat": 35.690776,
+                          "date": "28/02/2017",
+                          "intensity": "8"
+                      },
+                      {
+                          "long": 139.645640,
+                          "lat": 35.690864,
+                          "date": "28/02/2017",
+                          "intensity": "7"
+                      },
+                      {
+                          "long": 139.645404,
+                          "lat": 35.690968,
+                          "date": "28/02/2017",
+                          "intensity": "5"
+                      },
+                      {
+                          "long": 139.651154,
+                          "lat": 35.690829,
+                          "date": "28/02/2017",
+                          "intensity": "7"
+                      },
+                      {
+                          "long": 139.648172,
+                          "lat": 35.690811,
+                          "date": "28/02/2017",
+                          "intensity": "3"
+                      },
+                      {
+                          "long": 139.652270,
+                          "lat": 35.690864,
+                          "date": "28/02/2017",
+                          "intensity": "7"
+                      },
+                      {
+                          "long": 139.634997,
+                          "lat": 35.690951,
+                          "date": "28/02/2017",
+                          "intensity": "25"
+                      },
+                      {
+                          "long": 139.6869,
+                          "lat": 35.6829,
+                          "date": "20/04/2017",
+                          "intensity": "2"
+                      },
+                      {
+                          "long": 139.6862,
+                          "lat": 35.6810,
+                          "date": "20/05/2017",
+                          "intensity": "3"
+                      },
+                      {
+                          "long": 139.6909,
+                          "lat": 35.6856,
+                          "date": "09/07/2017",
+                          "intensity": "7"
+                      },
+                      {
+                          "long": 139.6868,
+                          "lat": 35.6829,
+                          "date": "30/08/2017",
+                          "intensity": "8"
+                      },
+                      {
+                          "long": 139.6746,
+                          "lat": 35.6880,
+                          "date": "15/09/2017",
+                          "intensity": "25"
+                      },
+                      {
+                          "long": 139.6523,
+                          "lat": 35.6905,
+                          "date": "01/11/2017",
+                          "intensity": "12"
+                      },
+                      {
+                          "long": 139.6202,
+                          "lat": 35.7072,
+                          "date": "10/12/2017",
+                          "intensity": "11"
+                      },
+                      {
+                          "long": 137.3634,
+                          "lat": 34.8292,
+                          "date": "19/01/2015",
+                          "intensity": "2"
+                      },
+                      {
+                          "long": 139.4622,
+                          "lat": 35.8929,
+                          "date": "19/02/2015",
+                          "intensity": "7"
+                      },
+                      {
+                          "long": 139.4122,
+                          "lat": 35.8529,
+                          "date": "19/03/2015",
+                          "intensity": "25"
+                      },
+                      {
+                          "long": 139.4122,
+                          "lat": 35.8529,
+                          "date": "19/03/2017",
+                          "intensity": "11"
+                      }
+                    ],
+
+                    "Radius": 20
+                }),
+                icons: [
+                  {
+                      "long": 139.678835,
+                      "lat": 35.680895,
+                      "icon": "他社_リスト追加済.png",
+                      "date": "16/01/2017"
+                  },
+                  {
+                      "long": 139.673856,
+                      "lat": 35.681173,
+                      "icon": "他社_利用中.png",
+                      "date": "16/01/2017"
+                  },
+                  {
+                      "long": 139.675595,
+                      "lat": 35.680720,
+                      "icon": "他社_撰択済.png",
+                      "date": "16/01/2017"
+                  },
+                  {
+                      "long": 139.674972,
+                      "lat": 35.680860,
+                      "icon": "他社_未選択.png",
+                      "date": "16/01/2017"
+                  },
+                  {
+                      "long": 139.679393,
+                      "lat": 35.680581,
+                      "icon": "自社_リスト追加済.png",
+                      "date": "16/01/2017"
+                  },
+                  {
+                      "long": 139.647077,
+                      "lat": 35.691613,
+                      "icon": "自社_利用中.png",
+                      "date": "28/02/2017"
+                  },
+                  {
+                      "long": 139.647099,
+                      "lat": 35.690480,
+                      "icon": "自社_未選択.png",
+                      "date": "28/02/2017"
+                  },
+                  {
+                      "long": 139.638966,
+                      "lat": 35.690445,
+                      "icon": "自社_選択中.png",
+                      "date": "28/02/2017"
+                  }
+                ]
             };
             return HeatmapExt;
         }();
+        $(document).on('change', '#chkToggle', function (e) {
+            debugger
+            if ($(this).prop("checked") == true) {
+                alert('yes')
+                //run code
+            } else {
+                alert('no')
+                //run code
+            }
+        });
 
-        
-        
     </script>
     <style type="text/css">
         .toggle.ios, .toggle-on.ios, .toggle-off.ios {
             border-radius: 20px;
         }
 
-<<<<<<< Updated upstream
             .toggle.ios .toggle-handle {
                 border-radius: 20px;
             }
-=======
-     .addressSearchBox {   z-index: 1; float: right; }
-
-
-#map {  height: 400px;}
-
-#description {
-    font-family: Roboto;
-    font-size: 15px;
-    font-weight: 300;
-}
-
-#infowindow-content .title {
-    font-weight: bold;
-}
-
-#infowindow-content {
-    display: none;
-}
-
-#map #infowindow-content {
-    display: inline;
-}
-
-.pac-card {
-    margin: 10px 10px 0 0;
-    border-radius: 2px 0 0 2px;
-    box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    outline: none;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
-    background-color: #fff;
-    font-family: Roboto;
-}
-
-#pac-container {
-    padding-bottom: 12px;
-    margin-right: 12px;
-}
-
-.pac-controls {
-    display: inline-block;
-    padding: 5px 11px;
-}
-
-    .pac-controls label {
-        font-family: Roboto;
-        font-size: 10px;
-        font-weight: 300;
-    }
-
-#pac-input {
-    background-color: #fff;
-    font-family: Roboto;
-    font-size: 9px;
-    font-weight: 300;
-
-    margin-left: 0px;
-        padding: 2px 0px 2px 5px;
-    text-overflow: ellipsis;
-    width: 150px;
-    border-radius: 999px;
-    text-align: left !important;
-    margin-right: 10px !important;
-    height: 12px;
-    outline:none;
-    border: 2px solid rgb(174, 174, 174);
-}
-
-    #pac-input:focus {
-        border-color: #4d90fe;
-    }
-
-
-
-.Button--round.Button--default {
-    color: rgb(255, 255, 255);
-    background-color: rgb(125, 139, 157);
-    box-shadow: 1px 1px rgb(148, 160, 175) inset, -1px -1px rgb(110, 126, 146) inset;
-    margin-right: 15px;
-
-}
-
-
-.Button--round {
-    border-radius: 26px;
-    font-weight: bold;
-}
-
-.Button {
-    text-decoration: none;
-    display: inline-block;
-    margin-bottom: 0px;
-    font-weight: normal;
-    text-align: center;
-    vertical-align: middle;
-    cursor: pointer;
-    background-image: none;
-    white-space: nowrap;
-    -moz-user-select: none;
-    border: 1px solid transparent;
-    padding: 0px 1.4em;
-    font-size: 10px;
-    line-height: 20px;
-    min-height: 20px;
-    letter-spacing: 0.1em;
-}
-
-
-.btn-group-lg > .btn, .btn-lg {
-    padding: .25rem 0.5rem;
-    font-size: 0.85rem;
-    border-radius: .3rem;
-}
-
-.btn-group-sm > .btn, .btn-sm {
-    padding: .25rem .5rem;
-    font-size: .875rem;
-    border-radius: .2rem;
-}
->>>>>>> Stashed changes
 
         .addressSearchBox {
             z-index: 1;
             float: right;
         }
 
-<<<<<<< Updated upstream
 
         #map {
             height: 400px;
         }
-=======
-    </style>
-</head>
-<body>
-    <div class="container">
-
-
-        <table style="width:700px" class="pac-card col-md-12">
-          <tr><td>
-              <div class="showButton"   style="float: left">
-              </div>
->>>>>>> Stashed changes
 
         #description {
             font-family: Roboto;
@@ -309,9 +484,8 @@
             <tr>
                 <td>
                     <div class="showButton" style="float: left">
-                        <input id="inputToggle"  class="inputToggle" placeholder="住所、アレア" type="text">
-                        <input type="checkbox" checked data-toggle="toggle" data-style="ios" class="inlineToggle"  id="chkToggle">
-                        
+                        <input id="inputToggle" class="inputToggle" placeholder="住所、アレア" type="text">
+                        <input type="checkbox" checked data-toggle="toggle" data-style="ios" class="inlineToggle" id="chkToggle">
                     </div>
                     <div class="addressSearchBox">
                         <input id="pac-input" placeholder="住所、アレア" type="text"><button class="Button Button--round Button--default">地図切替</button>

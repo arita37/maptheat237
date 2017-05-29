@@ -387,7 +387,7 @@ function initMap() {
     //Find Maximum and Minimum Lat/Long And Update Location Table
     google.maps.event.addListener(map, 'idle', function () {
         //alert(map.getBounds());
-        debugger
+         
         var data = [];
         var bb = map.getBounds();
         var ne = bb.getNorthEast(); // top-left
@@ -530,6 +530,7 @@ function loadHeatmapMarkers() {
      
     var pointArray = [];
     if (localStorage.heatmapData != 'undefined') {
+        debugger
         date = JSON.parse(localStorage.heatmapData)[0].date;
         $.each(JSON.parse(localStorage.locationData), function (index, value) {
             if (value.date == date) {
@@ -556,7 +557,7 @@ function loadHeatmapMarkers() {
 
 //Reset Heatmap Data
 function success(data) {
-    debugger
+     
     while (Datas.length > 0) {
         Datas.pop();
     }

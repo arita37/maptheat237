@@ -387,7 +387,7 @@ function initMap() {
     //Find Maximum and Minimum Lat/Long And Update Location Table
     google.maps.event.addListener(map, 'idle', function () {
         //alert(map.getBounds());
-        // debugger
+        debugger
         var data = [];
         var bb = map.getBounds();
         var ne = bb.getNorthEast(); // top-left
@@ -491,10 +491,12 @@ function initMap() {
     // Sets a listener on a radio button to change the filter type on Places
     // Autocomplete.
     function setupClickListener(id, types) {
-        var radioButton = document.getElementById(id);
-        radioButton.addEventListener('click', function () {
-            autocomplete.setTypes(types);
-        });
+        var radioButton = document.getElementById(id);        
+        if (radioButton != null) {
+            radioButton.addEventListener('click', function () {
+                autocomplete.setTypes(types);
+            });
+        }
     }
 
     setupClickListener('changetype-all', []);
@@ -502,11 +504,11 @@ function initMap() {
     setupClickListener('changetype-establishment', ['establishment']);
     setupClickListener('changetype-geocode', ['geocode']);
 
-    document.getElementById('use-strict-bounds')
-          .addEventListener('click', function () {
-              console.log('Checkbox clicked! New state=' + this.checked);
-              autocomplete.setOptions({ strictBounds: this.checked });
-          });
+    //document.getElementById('use-strict-bounds')
+    //      .addEventListener('click', function () {
+    //          console.log('Checkbox clicked! New state=' + this.checked);
+    //          autocomplete.setOptions({ strictBounds: this.checked });
+    //      });
 }
 
 //Change Location Table Data
@@ -527,7 +529,7 @@ function UpdateLocationTable(data) {
 function loadHeatmapMarkers() {
      
     var pointArray = [];
-    if (localStorage.heatmapData != undefined) {
+    if (localStorage.heatmapData != 'undefined') {
         date = JSON.parse(localStorage.heatmapData)[0].date;
         $.each(JSON.parse(localStorage.locationData), function (index, value) {
             if (value.date == date) {

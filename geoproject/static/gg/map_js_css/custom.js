@@ -387,7 +387,7 @@ function initMap() {
     //Find Maximum and Minimum Lat/Long And Update Location Table
     google.maps.event.addListener(map, 'idle', function () {
         //alert(map.getBounds());
-        debugger
+        // debugger
         var data = [];
         var bb = map.getBounds();
         var ne = bb.getNorthEast(); // top-left

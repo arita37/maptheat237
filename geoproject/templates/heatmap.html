@@ -20,15 +20,13 @@
             }
          */
         //Intitialize map on DOM load
-        document.addEventListener("DOMContentLoaded", function (event) {
-            initMap();
-        });
+        document.addEventListener("DOMContentLoaded", function (event) {  initMap();  });
 
         //Global variables
         var HeatmapGlobal = function () {
             var HeatmapExt = {
-                heatmap: '../static/gg/map_js_css/heatmap.json',
-                icons: '../static/gg/map_js_css/icon.json'
+                heatmap: '',      /*   '../static/gg/map_js_css/heatmap.json'  */
+                icons: '../static/gg/map_js_css/icon.json'            /*   '../static/gg/map_js_css/icon.json'   */
             };
             return HeatmapExt;
         }();
@@ -41,19 +39,154 @@
             border-radius: 20px;
         }
 
+<<<<<<< Updated upstream
             .toggle.ios .toggle-handle {
                 border-radius: 20px;
             }
+=======
+     .addressSearchBox {   z-index: 1; float: right; }
+
+
+#map {  height: 400px;}
+
+#description {
+    font-family: Roboto;
+    font-size: 15px;
+    font-weight: 300;
+}
+
+#infowindow-content .title {
+    font-weight: bold;
+}
+
+#infowindow-content {
+    display: none;
+}
+
+#map #infowindow-content {
+    display: inline;
+}
+
+.pac-card {
+    margin: 10px 10px 0 0;
+    border-radius: 2px 0 0 2px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    outline: none;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    background-color: #fff;
+    font-family: Roboto;
+}
+
+#pac-container {
+    padding-bottom: 12px;
+    margin-right: 12px;
+}
+
+.pac-controls {
+    display: inline-block;
+    padding: 5px 11px;
+}
+
+    .pac-controls label {
+        font-family: Roboto;
+        font-size: 10px;
+        font-weight: 300;
+    }
+
+#pac-input {
+    background-color: #fff;
+    font-family: Roboto;
+    font-size: 9px;
+    font-weight: 300;
+
+    margin-left: 0px;
+        padding: 2px 0px 2px 5px;
+    text-overflow: ellipsis;
+    width: 150px;
+    border-radius: 999px;
+    text-align: left !important;
+    margin-right: 10px !important;
+    height: 12px;
+    outline:none;
+    border: 2px solid rgb(174, 174, 174);
+}
+
+    #pac-input:focus {
+        border-color: #4d90fe;
+    }
+
+
+
+.Button--round.Button--default {
+    color: rgb(255, 255, 255);
+    background-color: rgb(125, 139, 157);
+    box-shadow: 1px 1px rgb(148, 160, 175) inset, -1px -1px rgb(110, 126, 146) inset;
+    margin-right: 15px;
+
+}
+
+
+.Button--round {
+    border-radius: 26px;
+    font-weight: bold;
+}
+
+.Button {
+    text-decoration: none;
+    display: inline-block;
+    margin-bottom: 0px;
+    font-weight: normal;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    background-image: none;
+    white-space: nowrap;
+    -moz-user-select: none;
+    border: 1px solid transparent;
+    padding: 0px 1.4em;
+    font-size: 10px;
+    line-height: 20px;
+    min-height: 20px;
+    letter-spacing: 0.1em;
+}
+
+
+.btn-group-lg > .btn, .btn-lg {
+    padding: .25rem 0.5rem;
+    font-size: 0.85rem;
+    border-radius: .3rem;
+}
+
+.btn-group-sm > .btn, .btn-sm {
+    padding: .25rem .5rem;
+    font-size: .875rem;
+    border-radius: .2rem;
+}
+>>>>>>> Stashed changes
 
         .addressSearchBox {
             z-index: 1;
             float: right;
         }
 
+<<<<<<< Updated upstream
 
         #map {
             height: 400px;
         }
+=======
+    </style>
+</head>
+<body>
+    <div class="container">
+
+
+        <table style="width:700px" class="pac-card col-md-12">
+          <tr><td>
+              <div class="showButton"   style="float: left">
+              </div>
+>>>>>>> Stashed changes
 
         #description {
             font-family: Roboto;

@@ -4,18 +4,21 @@
     <title>Beacon Map Selection</title>
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
     <meta charset="utf-8">
-    <link href="../static/gg/map_js_css/js_css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous"/>
+    <script src="../static/gg/map_js_css/js_css/jquery.min.js"></script>
+    <link href="../static/gg/map_js_css/js_css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous" /> 
+    <link href="../static/gg/map_js_css/js_css/bootstrap-toggle.min.css" rel="stylesheet" />
+    <script src="../static/gg/map_js_css/js_css/bootstrap-toggle.min.js"></script>
     <link href="../static/gg/map_js_css/style.css" rel="stylesheet" />
     <script>
-    /*
-        document.oncontextmenu = function (e) {
-            console.log(e.button);
-            if (e.button == 2) {
-                e.preventDefault();
-                return false;
+        /*
+            document.oncontextmenu = function (e) {
+                console.log(e.button);
+                if (e.button == 2) {
+                    e.preventDefault();
+                    return false;
+                }
             }
-        }
-     */
+         */
         //Intitialize map on DOM load
         document.addEventListener("DOMContentLoaded", function (event) {
             initMap();
@@ -29,200 +32,231 @@
             };
             return HeatmapExt;
         }();
+
+        
+        
     </script>
     <style type="text/css">
+        .toggle.ios, .toggle-on.ios, .toggle-off.ios {
+            border-radius: 20px;
+        }
 
-     .addressSearchBox {   z-index: 1; float: right; }
+            .toggle.ios .toggle-handle {
+                border-radius: 20px;
+            }
 
-
-#map {
-    height: 400px;
-}
-
-#description {
-    font-family: Roboto;
-    font-size: 15px;
-    font-weight: 300;
-}
-
-#infowindow-content .title {
-    font-weight: bold;
-}
-
-#infowindow-content {
-    display: none;
-}
-
-#map #infowindow-content {
-    display: inline;
-}
-
-.pac-card {
-    margin: 10px 10px 0 0;
-    border-radius: 2px 0 0 2px;
-    box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    outline: none;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
-    background-color: #fff;
-    font-family: Roboto;
-}
-
-#pac-container {
-    padding-bottom: 12px;
-    margin-right: 12px;
-}
-
-.pac-controls {
-    display: inline-block;
-    padding: 5px 11px;
-}
-
-    .pac-controls label {
-        font-family: Roboto;
-        font-size: 10px;
-        font-weight: 300;
-    }
-
-#pac-input {
-    background-color: #fff;
-    font-family: Roboto;
-    font-size: 9px;
-    font-weight: 300;
-
-    margin-left: 0px;
-        padding: 2px 0px 2px 5px;
-    text-overflow: ellipsis;
-    width: 150px;
-    border-radius: 999px;
-    text-align: left !important;
-    margin-right: 10px !important;
-    height: 12px;
-    outline:none;
-    border: 2px solid rgb(174, 174, 174);
-}
-
-    #pac-input:focus {
-        border-color: #4d90fe;
-    }
+        .addressSearchBox {
+            z-index: 1;
+            float: right;
+        }
 
 
+        #map {
+            height: 400px;
+        }
 
-.Button--round.Button--default {
-    color: rgb(255, 255, 255);
-    background-color: rgb(125, 139, 157);
-    box-shadow: 1px 1px rgb(148, 160, 175) inset, -1px -1px rgb(110, 126, 146) inset;
-    margin-right: 15px;
+        #description {
+            font-family: Roboto;
+            font-size: 15px;
+            font-weight: 300;
+        }
 
-}
+        #infowindow-content .title {
+            font-weight: bold;
+        }
 
+        #infowindow-content {
+            display: none;
+        }
 
-.Button--round {
-    border-radius: 26px;
-    font-weight: bold;
-}
+        #map #infowindow-content {
+            display: inline;
+        }
 
-.Button {
-    text-decoration: none;
-    display: inline-block;
-    margin-bottom: 0px;
-    font-weight: normal;
-    text-align: center;
-    vertical-align: middle;
-    cursor: pointer;
-    background-image: none;
-    white-space: nowrap;
-    -moz-user-select: none;
-    border: 1px solid transparent;
-    padding: 0px 1.4em;
-    font-size: 10px;
-    line-height: 20px;
-    min-height: 20px;
-    letter-spacing: 0.1em;
+        .pac-card {
+            margin: 10px 10px 0 0;
+            border-radius: 2px 0 0 2px;
+            box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            outline: none;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+            background-color: #fff;
+            font-family: Roboto;
+        }
 
-}
+        #pac-container {
+            padding-bottom: 12px;
+            margin-right: 12px;
+        }
+
+        .pac-controls {
+            display: inline-block;
+            padding: 5px 11px;
+        }
+
+            .pac-controls label {
+                font-family: Roboto;
+                font-size: 10px;
+                font-weight: 300;
+            }
+
+        #pac-input {
+            background-color: #fff;
+            font-family: Roboto;
+            font-size: 9px;
+            font-weight: 300;
+            margin-left: 0px;
+            padding: 2px 0px 2px 5px;
+            text-overflow: ellipsis;
+            width: 150px;
+            border-radius: 999px;
+            text-align: left !important;
+            margin-right: 10px !important;
+            height: 12px;
+            outline: none;
+            border: 2px solid rgb(174, 174, 174);
+        }
+
+            #pac-input:focus {
+                border-color: #4d90fe;
+            }
 
 
 
-.btn-group-lg > .btn, .btn-lg {
-    padding: .25rem 0.5rem;
-    font-size: 0.85rem;
-    border-radius: .3rem;
-}
-
-.btn-group-sm > .btn, .btn-sm {
-    padding: .25rem .5rem;
-    font-size: .875rem;
-    border-radius: .2rem;
-}
+        .Button--round.Button--default {
+            color: rgb(255, 255, 255);
+            background-color: rgb(125, 139, 157);
+            box-shadow: 1px 1px rgb(148, 160, 175) inset, -1px -1px rgb(110, 126, 146) inset;
+            margin-right: 15px;
+        }
 
 
+        .Button--round {
+            border-radius: 26px;
+            font-weight: bold;
+        }
+
+        .Button {
+            text-decoration: none;
+            display: inline-block;
+            margin-bottom: 0px;
+            font-weight: normal;
+            text-align: center;
+            vertical-align: middle;
+            cursor: pointer;
+            background-image: none;
+            white-space: nowrap;
+            -moz-user-select: none;
+            border: 1px solid transparent;
+            padding: 0px 1.4em;
+            font-size: 10px;
+            line-height: 20px;
+            min-height: 20px;
+            letter-spacing: 0.1em;
+        }
+
+
+
+        .btn-group-lg > .btn, .btn-lg {
+            padding: .25rem 0.5rem;
+            font-size: 0.85rem;
+            border-radius: .3rem;
+        }
+
+        .btn-group-sm > .btn, .btn-sm {
+            padding: .25rem .5rem;
+            font-size: .875rem;
+            border-radius: .2rem;
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <table style="width:700px" class="pac-card col-md-12">
-          <tr><td>
-              <div class="showButton"   style="float: left">
-              </div>
-                  
+            <tr>
+                <td>
+                    <div class="showButton" style="float: left">
+                        <input id="inputToggle"  class="inputToggle" placeholder="住所、アレア" type="text">
+                        <input type="checkbox" checked data-toggle="toggle" data-style="ios" class="inlineToggle"  id="chkToggle">
+                        
+                    </div>
+                    <div class="addressSearchBox">
+                        <input id="pac-input" placeholder="住所、アレア" type="text"><button class="Button Button--round Button--default">地図切替</button>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div id="map" class="col-md-8"></div>
+                    <div id="infowindow-content">
+                        <img src="" width="16" height="16" id="place-icon">
+                        <span id="place-name" class="title"></span><br>
+                        <span id="place-address"></span>
+                    </div>
+                    <!---TimeLine Section Begin--->
+                    <section id="cd-horizontal-timeline"></section>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <table class="Table Table--beaconMapStatus u-w-100p">
+                        <tbody>
+                            <tr>
+                                <th>List of icons with text</th>
+                                <td>
+                                    <div class="dvmapIcons">
+                                        <img src="../static/gg/map_js_css/map_icons/他社_リスト追加済.png">  他社_リスト追加済  <img>
+                                        <img src="../static/gg/map_js_css/map_icons/他社_利用中.png">  他社_利用中<img>
+                                        <img src="../static/gg/map_js_css/map_icons/他社_撰択済.png">  他社_撰択済<img>
+                                        <img src="../static/gg/map_js_css/map_icons/他社_未選択.png">  他社_未選択<img>
+                                        <img src="../static/gg/map_js_css/map_icons/自社_リスト追加済.png">  自社_リスト追加済<img>
+                                        <img src="../static/gg/map_js_css/map_icons/自社_利用中.png">  自社_利用中<img>
+                                        <img src="../static/gg/map_js_css/map_icons/自社_未選択.png">  自社_未選択<img>
+                                        <img src="../static/gg/map_js_css/map_icons/自社_選択中.png">  自社_選択中 <img>
+
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                </td>
+            </tr>
+
+        </table>
 
 
-                <div  class="addressSearchBox">
-                    <input id="pac-input" placeholder="住所、アレア" type="text"><button class="Button Button--round Button--default">地図切替</button>
-                </div>
-          </tr></td><tr><td>
-
-            <div id="map" class="col-md-8"></div>
-
-            <div id="infowindow-content">
-                <img src="" width="16" height="16" id="place-icon">
-                <span id="place-name" class="title"></span><br>
-                <span id="place-address"></span>
-            </div>
-            <!---TimeLine Section Begin--->
-            <section id="cd-horizontal-timeline"></section>
-
-          </tr></td><tr><td>
-
-           List of icons with text  <img >  icons 2:  <img>
-           </tr></td>
-
-           </table>
+        <br /><br />
 
 
-  <br /><br />
+        <!---Location Table--->
+        <table class="table-fill" id="tblLocation">
+            <thead>
+                <tr>
+                    <th class="text-left">Date</th>
+                    <th class="text-left">Longitude</th>
+                    <th class="text-left">Latitude</th>
+                </tr>
+            </thead>
+            <tbody class="table-hover"></tbody>
+        </table>
 
-
-            <!---Location Table--->
-            <table class="table-fill" id="tblLocation">
-                <thead>
-                    <tr>
-                        <th class="text-left">Date</th>
-                        <th class="text-left">Longitude</th>
-                        <th class="text-left">Latitude</th>
-                    </tr>
-                </thead>
-                <tbody class="table-hover">                   
-                </tbody>
-            </table>
-
-            <br />
+        <br />
 
 
     </div>
 
 
 
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAmWX0-q2XOLGVD69-MQQSM-r8-9R1CWi4&libraries=visualization,places"></script>    
-    <script src="../static/gg/map_js_css/js_css/jquery.min.js"></script>
-    <script src="../static/gg/map_js_css/timeline.js"></script>    
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAmWX0-q2XOLGVD69-MQQSM-r8-9R1CWi4&libraries=visualization,places"></script>
+
+    <script src="../static/gg/map_js_css/timeline.js"></script>
     <script src="../static/gg/map_js_css/heatmap.js"></script>
-    <script src="../static/gg/map_js_css/gmaps-heatmap.js"></script>    
-    <script src="../static/gg/map_js_css/js_css/jquery-3.1.1.slim.min.js"  integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>    
-    <script src="../static/gg/map_js_css/js_css/tether.min.js"  integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>    
-    <script src="../static/gg/map_js_css/js_css/bootstrap.min.js"  integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
-    <script src="../static/gg/map_js_css/custom.js"></script>    
+    <script src="../static/gg/map_js_css/gmaps-heatmap.js"></script>
+    <script src="../static/gg/map_js_css/js_css/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+    <script src="../static/gg/map_js_css/js_css/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="../static/gg/map_js_css/js_css/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+    <script src="../static/gg/map_js_css/custom.js"></script>
     <script src="../static/gg/map_js_css/js_css/lodash.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
 
 </body>

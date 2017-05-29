@@ -377,14 +377,13 @@ function initMap() {
     //Load heatmap for first date
     pointArray = loadHeatmapMarkers();
     // pointArray = new google.maps.MVCArray(Datas);
-
-    heatmap = new google.maps.visualization.HeatmapLayer({
-        radius: localStorage.heatmapRadius,
-        data: pointArray
-    });
-
-    heatmap.setMap(map);
-
+    if (pointArray != undefined) {
+        heatmap = new google.maps.visualization.HeatmapLayer({
+            radius: localStorage.heatmapRadius,
+            data: pointArray
+        });
+        heatmap.setMap(map);
+    }
     //Find Maximum and Minimum Lat/Long And Update Location Table
     google.maps.event.addListener(map, 'idle', function () {
         //alert(map.getBounds());
@@ -526,31 +525,31 @@ function UpdateLocationTable(data) {
 
 //Load Heatmap and Markers on initMap
 function loadHeatmapMarkers() {
-    debugger
-    date = JSON.parse(localStorage.heatmapData)[0].date;
-    $.each(JSON.parse(localStorage.locationData), function (index, value) {
-        if (value.date == date) {
-            placeMarker({ lat: value.lat, lng: value.long }, '../static/gg/map_js_css/map_icons/' + value.icon);
-        }
-    });
-
-    //Load Heatmap    
-    locationData = [];
-    $.each(JSON.parse(localStorage.heatmapData), function (index, value) {
-        if (value.date == date) {
-            locationData.push([value.lat, value.long, value.intensity]);
-        }
-    });
+     
     var pointArray = [];
-    for (var i = 0; i < locationData.length; i++) {
-        pointArray.push({
-            location: new google.maps.LatLng(locationData[i][0],
-                                  locationData[i][1]), weight: locationData[i][2]
+    if (localStorage.heatmapData != undefined) {
+        date = JSON.parse(localStorage.heatmapData)[0].date;
+        $.each(JSON.parse(localStorage.locationData), function (index, value) {
+            if (value.date == date) {
+                placeMarker({ lat: value.lat, lng: value.long }, '../static/gg/map_js_css/map_icons/' + value.icon);
+            }
         });
+        //Load Heatmap    
+        locationData = [];
+        $.each(JSON.parse(localStorage.heatmapData), function (index, value) {
+            if (value.date == date) {
+                locationData.push([value.lat, value.long, value.intensity]);
+            }
+        });
+        for (var i = 0; i < locationData.length; i++) {
+            pointArray.push({
+                location: new google.maps.LatLng(locationData[i][0],
+                                      locationData[i][1]), weight: locationData[i][2]
+            });
+        }
+        getLatLngCenter(locationData);
+        return pointArray;
     }
-
-    getLatLngCenter(locationData);    
-    return pointArray;
 }
 
 //Reset Heatmap Data

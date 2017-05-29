@@ -20,7 +20,7 @@
     padding: 3px 5px;
 }
 
- 
+
 
 
 
@@ -419,135 +419,247 @@ Main Components
 
 
 div.table-title {
-   display: block;
-  margin: auto;
-  max-width: 600px;
-  padding:5px;
-  width: 100%;
+    display: block;
+    margin: auto;
+    max-width: 600px;
+    padding: 5px;
+    width: 100%;
 }
 
 .table-title h3 {
-   color: #fafafa;
-   font-size: 30px;
-   font-weight: 400;
-   font-style:normal;
-   font-family: "Roboto", helvetica, arial, sans-serif;
-   text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.1);
-   text-transform:uppercase;
+    color: #fafafa;
+    font-size: 30px;
+    font-weight: 400;
+    font-style: normal;
+    font-family: "Roboto", helvetica, arial, sans-serif;
+    text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.1);
+    text-transform: uppercase;
 }
 
 
 /*** Table Styles **/
 
 .table-fill {
-  background: white;
-  border-radius:3px;
-  border-collapse: collapse;  
-  margin: auto;
-  max-width: 100%;
-  padding:5px;
-  width: 100%;
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-  animation: float 5s infinite;
-}
- 
-th {
-  color:#D5DDE5;;
-  background:#1b1e24;
-  border-bottom:4px solid #9ea7af;
-  border-right: 1px solid #343a45;
-  font-size:23px;
-  font-weight: 100;
-  padding:5px;
-  text-align:left;
-  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
-  vertical-align:middle;
+    background: white;
+    border-radius: 3px;
+    border-collapse: collapse;
+    margin: auto;
+    max-width: 100%;
+    padding: 5px;
+    width: 100%;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    animation: float 5s infinite;
 }
 
+    .table-fill th {
+        color: #D5DDE5;
+        background: #1b1e24;
+        border-bottom: 4px solid #9ea7af;
+        border-right: 1px solid #343a45;
+        font-size: 23px;
+        font-weight: 100;
+        padding: 5px;
+        text-align: left;
+        text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+        vertical-align: middle;
+    }
+
 th:first-child {
-  border-top-left-radius:3px;
+    border-top-left-radius: 3px;
 }
- 
+
 th:last-child {
-  border-top-right-radius:3px;
-  border-right:none;
+    border-top-right-radius: 3px;
+    border-right: none;
 }
-  
+
 tr {
-  border-top: 1px solid #C1C3D1;
-  border-bottom-: 1px solid #C1C3D1;
-  color:#666B85;
-  font-size:16px;
-  font-weight:normal;
-  text-shadow: 0 1px 1px rgba(256, 256, 256, 0.1);
+    border-top: 1px solid #C1C3D1;
+    border-bottom-: 1px solid #C1C3D1;
+    color: #666B85;
+    font-size: 16px;
+    font-weight: normal;
+    text-shadow: 0 1px 1px rgba(256, 256, 256, 0.1);
 }
- 
-tr:hover td {
+
+    /*tr:hover td {
   background:#4E5066;
   color:#FFFFFF;
   border-top: 1px solid #22262e;
   border-bottom: 1px solid #22262e;
-}
- 
-tr:first-child {
-  border-top:none;
-}
+}*/
 
-tr:last-child {
-  border-bottom:none;
-}
- 
-tr:nth-child(odd) td {
+    tr:first-child {
+        border-top: none;
+    }
+
+    tr:last-child {
+        border-bottom: none;
+    }
+
+        /*tr:nth-child(odd) td {
   background:#EBEBEB;
-}
- 
-tr:nth-child(odd):hover td {
+}*/
+
+        /*tr:nth-child(odd):hover td {
   background:#4E5066;
-}
+}*/
 
-tr:last-child td:first-child {
-  border-bottom-left-radius:3px;
-}
- 
-tr:last-child td:last-child {
-  border-bottom-right-radius:3px;
-}
- 
+        tr:last-child td:first-child {
+            border-bottom-left-radius: 3px;
+        }
+
+        tr:last-child td:last-child {
+            border-bottom-right-radius: 3px;
+        }
+
 td {
-  background:#FFFFFF;
-  padding:5px;
-  text-align:left;
-  vertical-align:middle;
-  font-weight:300;
-  font-size:18px;
-  text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.1);
-  border-right: 1px solid #C1C3D1;
+    background: #FFFFFF;
+    padding: 5px;
+    text-align: left;
+    vertical-align: middle;
+    font-weight: 300;
+    font-size: 18px;
+    text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.1);
+    border-right: 1px solid #C1C3D1;
 }
 
-td:last-child {
-  border-right: 0px;
-}
+    td:last-child {
+        border-right: 0px;
+    }
 
 th.text-left {
-  text-align: left;
+    text-align: left;
 }
 
 th.text-center {
-  text-align: center;
+    text-align: center;
 }
 
 th.text-right {
-  text-align: right;
+    text-align: right;
 }
 
 td.text-left {
-  text-align: left;
+    text-align: left;
 }
 
 td.text-center {
-  text-align: center;
+    text-align: center;
 }
 
 td.text-right {
-  text-align: right;
+    text-align: right;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.Table--beaconMapStatus {
+    border-collapse: collapse;
+    border: 1px solid rgb(213, 213, 213);
+    margin-top: 10px;
+    font-size: 10px;
+    font-weight: bold;
+}
+
+.u-w-100p {
+    width: 100% !important;
+}
+
+Table--beaconMapStatus tbody td {
+    background-color: rgb(255, 255, 255);
+}
+
+.Table--beaconMapStatus tbody th, .Table--beaconMapStatus tbody td {
+    padding: 5px;
+    text-align: left;
+    vertical-align: top;
+}
+
+.Table--beaconMapStatus th, .Table--beaconMapStatus td {
+    border: 1px solid rgb(213, 213, 213);
+}
+
+.Table--beaconMapStatus tbody th {
+    background-color: rgb(235, 235, 235);
+    white-space: nowrap;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.dvmapIcons {
+    font-size: 12px;
+    font-weight: bold;
+    background-color: white;
+}
+
+.btn-primary {
+    color: rgb(255, 255, 255);
+    background-color: rgb(125, 139, 157);
+    /*box-shadow: 1px 1px rgb(148, 160, 175) inset, -1px -1px rgb(110, 126, 146) inset;*/
+}
+
+.btn-default {
+    color: rgb(255, 255, 255);
+    background-color: rgb(204, 210, 218);
+    /*box-shadow: 1px 1px rgb(204, 210, 218) inset, -1px -1px rgb(204, 210, 218) inset;*/
+}
+
+.btn-primary:hover {
+    color: rgb(255, 255, 255);
+    background-color: rgb(125, 139, 157);
+}
+
+.showButton {
+    position: relative;
+    width: 200px;
+}
+
+.toggle {
+    width: 72px;
+    height: 28px !important;
+    position: absolute;
+    margin-top: -31px;
+    margin-left: 123px;
+}
+
+.toggle-on, .toggle-off {
+    top: -4px !important;
+}
+
+.toggle.btn {
+    min-width: 59px;
+    min-height: 0 !important;
+}
+
+.inputToggle {
+    background-color: #fff;
+    font-family: Roboto;
+    font-size: 9px;
+    font-weight: 300;
+    margin-left: 0px;
+    padding: 2px 0px 2px 5px;
+    text-overflow: ellipsis;
+    width: 150px;
+    border-radius: 999px;
+    text-align: left !important;
+    margin-right: 10px !important;
+    height: 12px;
+    outline: none;
+    height: 35px !important;
+    display: inline-block !important;
+    width: 100% !important;
+}
+
+

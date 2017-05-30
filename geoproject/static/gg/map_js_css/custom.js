@@ -415,7 +415,7 @@ function initMap() {
         //Load Icons
         $.each(JSON.parse(localStorage.locationData), function (index, value) {
             if (value.date == date) {
-                placeMarker({ lat: value.lat, lng: value.long }, '../static/gg/map_js_css/map_icons/' + value.icon);
+                placeMarker({ lat: value.lat, lng: value.lng }, '../static/gg/map_js_css/map_icons/' + value.icon);
             }
         });
 
@@ -423,7 +423,7 @@ function initMap() {
         var data = [];
         $.each(JSON.parse(localStorage.heatmapData), function (index, value) {
             if (value.date == date) {
-                data.push([value.lat, value.long, value.intensity]);
+                data.push([value.lat, value.lng, value.intensity]);
             }
         });
         success(data);
@@ -534,14 +534,14 @@ function loadHeatmapMarkers() {
         date = JSON.parse(localStorage.heatmapData)[0].date;
         $.each(JSON.parse(localStorage.locationData), function (index, value) {
             if (value.date == date) {
-                placeMarker({ lat: value.lat, lng: value.long }, '../static/gg/map_js_css/map_icons/' + value.icon);
+                placeMarker({ lat: value.lat, lng: value.lng }, '../static/gg/map_js_css/map_icons/' + value.icon);
             }
         });
         //Load Heatmap    
         locationData = [];
         $.each(JSON.parse(localStorage.heatmapData), function (index, value) {
             if (value.date == date) {
-                locationData.push([value.lat, value.long, value.intensity]);
+                locationData.push([value.lat, value.lng, value.intensity]);
             }
         });
         for (var i = 0; i < locationData.length; i++) {

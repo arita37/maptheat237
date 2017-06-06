@@ -17,11 +17,13 @@ function getCookie(name) {
 //GLOBAL VARS    --------------------------------------------------------------------------
 var points = [];  //array for points
 var markers = [];     //array for markers
-var map, date;
+var map, date, marker;
 
 var beacon_id = [];
 var beacon_target = [];
 var beacon_target_latlng = [];
+
+
 
 var locationData = [];
 
@@ -106,15 +108,31 @@ function beacon_save_target() {
 
 
 
+
 // Sets the map on all markers in the array.
-function placeMarker(location, icon) {
-    var marker = new google.maps.Marker({
+function placeMarker(location, icon, popup) {        
+    var infowindow = new google.maps.InfoWindow({
+        content: popup
+    });
+    marker = new google.maps.Marker({
         position: location,
         icon: icon,
+        title: 'Main Info',
         map: map
     });
+
+
     markers.push(marker);   //add marker to markers array
     points.push(location);  //add marker location to the array
+    
+    var infowindow = new google.maps.InfoWindow()
+
+    google.maps.event.addListener(marker, 'click', (function (marker, popup, infowindow) {
+        return function () {
+            infowindow.setContent(popup);
+            infowindow.open(map, marker);
+        };
+    })(marker, popup, infowindow));
 }
 
 function colorMarkers(color) { //No need use Google Map
@@ -387,7 +405,7 @@ function initMap() {
     //Find Maximum and Minimum Lat/Long And Update Location Table
     google.maps.event.addListener(map, 'idle', function () {
         //alert(map.getBounds());
-         
+
         var data = [];
         var bb = map.getBounds();
         var ne = bb.getNorthEast(); // top-left
@@ -409,13 +427,14 @@ function initMap() {
 
     //Change Heatmap with date
     $(document).on('click', 'ol.olTimeline li', function (e) {
+        debugger
         date = $(this).find("a").attr('data-date');
         deleteMarkers();
 
         //Load Icons
         $.each(JSON.parse(localStorage.locationData), function (index, value) {
             if (value.date == date) {
-                placeMarker({ lat: value.lat, lng: value.lng }, '../static/gg/map_js_css/map_icons/' + value.icon);
+                placeMarker({ lat: value.lat, lng: value.long }, '../static/gg/map_js_css/map_icons/' + value.icon, value.popup);
             }
         });
 
@@ -423,7 +442,7 @@ function initMap() {
         var data = [];
         $.each(JSON.parse(localStorage.heatmapData), function (index, value) {
             if (value.date == date) {
-                data.push([value.lat, value.lng, value.intensity]);
+                data.push([value.lat, value.long, value.intensity]);
             }
         });
         success(data);
@@ -491,7 +510,7 @@ function initMap() {
     // Sets a listener on a radio button to change the filter type on Places
     // Autocomplete.
     function setupClickListener(id, types) {
-        var radioButton = document.getElementById(id);        
+        var radioButton = document.getElementById(id);
         if (radioButton != null) {
             radioButton.addEventListener('click', function () {
                 autocomplete.setTypes(types);
@@ -512,36 +531,35 @@ function initMap() {
 }
 
 //Change Location Table Data
-function UpdateLocationTable(data) {    
+function UpdateLocationTable(data) {
     $('#tblLocation').find('tbody').html('');
     var locationRows = '';
     $.each(data, function (index, value) {
         locationRows += "<tr><td class='text-left'>" + date + "</td><td class='text-left'>" + value[1] + "</td><td class='text-left'>" + value[0] + "</td></tr>"
     });
     $('#tblLocation').find('tbody').append(locationRows);
-    if (data.length <= 0)
-    {
+    if (data.length <= 0) {
         $('#tblLocation').find('tbody').append("<tr><td class='text-left'></td><td class='text-left'></td><td class='text-left'></td></tr>");
     }
 }
 
 //Load Heatmap and Markers on initMap
 function loadHeatmapMarkers() {
-     
+
     var pointArray = [];
     if (localStorage.heatmapData != 'undefined') {
         debugger
         date = JSON.parse(localStorage.heatmapData)[0].date;
         $.each(JSON.parse(localStorage.locationData), function (index, value) {
             if (value.date == date) {
-                placeMarker({ lat: value.lat, lng: value.lng }, '../static/gg/map_js_css/map_icons/' + value.icon);
+                placeMarker({ lat: value.lat, lng: value.long }, '../static/gg/map_js_css/map_icons/' + value.icon);
             }
         });
         //Load Heatmap    
         locationData = [];
         $.each(JSON.parse(localStorage.heatmapData), function (index, value) {
             if (value.date == date) {
-                locationData.push([value.lat, value.lng, value.intensity]);
+                locationData.push([value.lat, value.long, value.intensity]);
             }
         });
         for (var i = 0; i < locationData.length; i++) {
@@ -557,7 +575,7 @@ function loadHeatmapMarkers() {
 
 //Reset Heatmap Data
 function success(data) {
-     
+
     while (Datas.length > 0) {
         Datas.pop();
     }
@@ -617,7 +635,7 @@ function getLatLngCenter(latLngInDegr) {
     map.setCenter({
         lat: rad2degr(lat),
         lng: rad2degr(lng)
-    });      
+    });
 }
 
 function markerCoords(markerobject) {
@@ -857,7 +875,7 @@ http://www.jquerybyexample.net/2012/02/remove-item-from-array-using-jquery.html
 jQuery.inArray( value, array [, fromIndex ] )
 
 
-ar marker = new google.maps.Marker({
+var marker = new google.maps.Marker({
         position: latlng,
         map: map,
         zoom:25,
@@ -1067,50 +1085,5 @@ function insert_points() {
 
 
 
-/*
-    function send_points(){
-      var http = new XMLHttpRequest();
-      var url = '/getpoints/'
-      var params = "points="+JSON.stringify(points);
-      http.open("POST", url, true);
-      http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-      http.setRequestHeader("X-CSRFToken", getCookie('csrftoken'));
-      http.onreadystatechange = function() {//Call a function when the state changes.
-        if(http.readyState == 4 && http.status == 200) {
-          deleteMarkers()
-          obj=JSON.parse(http.responseText);
-          gjson=JSON.parse(obj.near_points);
-          inputs=JSON.parse(obj.inputs);
-          $('#data').empty();
-          var i=0;
-          j=gjson.features.length;
-          for (i; i<j;i++)
-          {
-            $('#data').append('<tr><td>'+gjson.features[i].geometry.coordinates[1]+'</td><td>'+gjson.features[i].geometry.coordinates[0]+'</td><td>'+gjson.features[i].properties.address+'</td>        </tr>');
-            var marker = new google.maps.Marker({
-                position: new google.maps.LatLng(gjson.features[i].geometry.coordinates[1], gjson.features[i].geometry.coordinates[0]),
-                map: map,
-                icon:'http://maps.google.com/mapfiles/ms/icons/green-dot.png',
-            });
-            markers.push(marker);
-            points.push(new google.maps.LatLng(gjson.features[i].geometry.coordinates[1], gjson.features[i].geometry.coordinates[0]));
-          }
-          $('#data').append('<th colspan="3">Inputs</th>');
-          i=0;
-          j=inputs.length;
-          for (i; i<j;i++)
-          {
-            $('#data').append('<tr><td>'+inputs[i].PointList.lat+'</td><td>'+inputs[i].PointList.lng+'</td><td>'+inputs[i].PointList.address+'</td>       </tr>');
-            var marker = new google.maps.Marker({
-                position: new google.maps.LatLng(inputs[i].PointList.lat, inputs[i].PointList.lng),
-                map: map
-            });
-            markers.push(marker);
-            points.push(new google.maps.LatLng(inputs[i].PointList.lat, inputs[i].PointList.lng));
-          }
-        }
-    }
-    http.send(params);
-    }
 
-*/
+

@@ -24,7 +24,7 @@
             initMap();
         });
 
-        //Global variables
+        ////Global variables
         var HeatmapGlobal = function () {
             var HeatmapExt = {
                 heatmap: ({
@@ -35,9 +35,7 @@
                 icons: jQuery.extend(true, {}, res.data.map_icons)                  
             };
             return HeatmapExt;
-        }();
-      
-
+        }();        
     </script>
     <style type="text/css">
         .toggle.ios, .toggle-on.ios, .toggle-off.ios {
@@ -156,6 +154,18 @@
             line-height: 20px;
             min-height: 20px;
             letter-spacing: 0.1em;
+        }
+        
+        .gm-style-iw {
+            width: 100% !important;
+            top: 0px !important;
+            left: 0px !important;
+            background-color: #fff;
+            border: 1px solid #e8616b;
+            box-shadow:6px 9px 10px;
+            min-height: 100% !important;
+            padding: 10px !important;
+            
         }
 
 

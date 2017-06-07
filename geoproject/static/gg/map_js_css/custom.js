@@ -1,3 +1,4 @@
+/// <reference path="js_css/infobubble-compiled.js" />
 function getCookie(name) {
     var cookieValue = null;
     if (document.cookie && document.cookie != '') {
@@ -17,7 +18,7 @@ function getCookie(name) {
 //GLOBAL VARS    --------------------------------------------------------------------------
 var points = [];  //array for points
 var markers = [];     //array for markers
-var map, date, marker;
+var map, date, marker, infoBubble;
 
 var beacon_id = [];
 var beacon_target = [];
@@ -110,10 +111,28 @@ function beacon_save_target() {
 
 
 // Sets the map on all markers in the array.
-function placeMarker(location, icon, popup) {        
-    var infowindow = new google.maps.InfoWindow({
-        content: popup
+function placeMarker(location, icon, popup) {
+    debugger    
+    infoBubble = new InfoBubble({
+        map: map,
+        content: popup,
+        borderColor:"#e8616b",
+        shadowStyle: 1,
+        padding: 10,
+        borderRadius: 5,        
+        borderWidth: 2,
+        arrowPosition: 30,
+        backgroundClassName: 'transparent',
+        arrowStyle: 2,
+        minHeight:150
     });
+   
+    //var infowindow = new google.maps.InfoWindow({
+    //    content: popup
+    //});
+
+
+
     marker = new google.maps.Marker({
         position: location,
         icon: icon,
@@ -122,17 +141,26 @@ function placeMarker(location, icon, popup) {
     });
 
 
+    
+
     markers.push(marker);   //add marker to markers array
     points.push(location);  //add marker location to the array
-    
-    var infowindow = new google.maps.InfoWindow()
+
+ //   var infowindow = new google.maps.InfoWindow()
+
+    //google.maps.event.addListener(marker, 'click', function () {
+        
+    //        infoBubble.open(map, marker);
+        
+    //});
 
     google.maps.event.addListener(marker, 'click', (function (marker, popup, infowindow) {
         return function () {
-            infowindow.setContent(popup);
-            infowindow.open(map, marker);
+            infoBubble.setContent('<div style="font-size: 13px;">' + popup + '</div>');
+            infoBubble.open(map, marker);
+            //infowindow.open(map, marker);
         };
-    })(marker, popup, infowindow));
+    })(marker, popup, infoBubble));
 }
 
 function colorMarkers(color) { //No need use Google Map
@@ -446,6 +474,7 @@ function initMap() {
             }
         });
         success(data);
+
     });
 
 
